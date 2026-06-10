@@ -1,39 +1,38 @@
+import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
-// Small white cards holding an integration's mark. We render simplified,
-// recognizable glyphs (not official trademarked logos) per integration.
-type Integration = "zoho" | "meta" | "odoo" | "whatsapp";
+// Clean white logo cards matching the Figma hero (rounded, soft shadow, ring).
+// Simplified, recognizable marks for each integration.
+type Integration = "zoho" | "meta" | "odoo";
 
-const MARKS: Record<Integration, React.ReactNode> = {
+const MARKS: Record<Integration, ReactNode> = {
   zoho: (
-    <span className="flex gap-0.5" aria-hidden>
-      <span className="size-2 rounded-[2px] bg-[#e42527]" />
-      <span className="size-2 rounded-[2px] bg-[#089949]" />
-      <span className="size-2 rounded-[2px] bg-[#226db4]" />
-      <span className="size-2 rounded-[2px] bg-[#f9b21d]" />
+    <span className="flex items-center gap-1" aria-hidden>
+      <span className="h-4 w-2.5 rounded-[3px] bg-[#e42527]" />
+      <span className="h-4 w-2.5 rounded-[3px] bg-[#089949]" />
+      <span className="h-4 w-2.5 rounded-[3px] bg-[#226db4]" />
+      <span className="h-4 w-2.5 rounded-[3px] bg-[#f9b21d]" />
     </span>
   ),
   meta: (
-    <svg width="22" height="14" viewBox="0 0 22 14" aria-hidden>
+    <svg width="30" height="20" viewBox="0 0 30 20" fill="none" aria-hidden>
       <path
-        d="M1 11C1 5 3 2 5.5 2 9 2 11 11 14 11s4-3 4-5-1-4-3-4-3 2-4 4"
-        fill="none"
-        stroke="#0081fb"
-        strokeWidth="2.2"
+        d="M3 16C3 8.5 5.4 4 8.8 4c2.8 0 4.6 2.6 6.2 5.6C16.6 6.6 18.4 4 21.2 4 24.6 4 27 8.5 27 16"
+        stroke="#0081FB"
+        strokeWidth="3"
         strokeLinecap="round"
+        fill="none"
       />
-    </svg>
-  ),
-  odoo: <span className="text-xs font-semibold text-[#9c5789]">odoo</span>,
-  whatsapp: (
-    <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden>
-      <circle cx="10" cy="10" r="9" fill="#25d366" />
       <path
-        d="M6.5 6.5c-.3 0-.6.1-.8.4-.3.3-.7.8-.7 1.8s.8 2.1.9 2.2c.1.2 1.5 2.4 3.7 3.2 1.8.7 2.2.6 2.6.5.4 0 1.2-.5 1.4-1 .2-.5.2-.9.1-1l-.6-.3s-1-.5-1.2-.6c-.2 0-.3-.1-.4.1l-.6.7c-.1.1-.2.1-.4 0-.2-.1-.8-.3-1.5-1-.6-.5-1-1.1-1.1-1.3-.1-.2 0-.3.1-.4l.3-.4q.15-.15.1-.3v-.4l-.6-1.4c-.1-.3-.3-.3-.4-.3z"
-        fill="#fff"
+        d="M3 16c0-3 1.4-5 3.4-5 2.6 0 4.4 3 6.1 5.6M27 16c0-3-1.4-5-3.4-5-2.6 0-4.4 3-6.1 5.6"
+        stroke="#0064E1"
+        strokeWidth="3"
+        strokeLinecap="round"
+        fill="none"
       />
     </svg>
   ),
+  odoo: <span className="text-sm font-bold lowercase text-[#714b67]">odoo</span>,
 };
 
 export function IntegrationChip({
@@ -46,7 +45,7 @@ export function IntegrationChip({
   return (
     <span
       className={cn(
-        "inline-flex size-12 items-center justify-center rounded-md bg-[var(--color-background)] shadow-md ring-1 ring-[var(--color-border-subtle)]",
+        "inline-flex size-14 items-center justify-center rounded-2xl bg-white shadow-[0_8px_24px_rgba(18,17,21,0.10)] ring-1 ring-black/5",
         className,
       )}
       title={type}

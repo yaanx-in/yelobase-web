@@ -107,3 +107,46 @@ function StaggerItem({
 }
 
 Stagger.Item = StaggerItem;
+
+type FloatProps = {
+  children: ReactNode;
+  className?: string;
+  delay?: number;
+  /** Vertical travel of the idle float, px. */
+  amount?: number;
+  /** Float cycle duration, seconds. */
+  duration?: number;
+};
+
+/**
+ * Pop-in entrance + gentle infinite float. Used for the hero's floating
+ * badges/chips. Under prefers-reduced-motion it renders static.
+ */
+export function Float({
+  children,
+  className,
+  delay = 0,
+  amount = 8,
+  duration = 5,
+}: FloatProps) {
+  const reduceMotion = useReducedMotion();
+
+  if (reduceMotion) {
+    return <div className={className}>{children}</div>;
+  }
+
+  return (
+    <motion.div
+      className={className}
+      initial={{ opacity: 0, scale: 0.85 }}
+      animate={{ opacity: 1, scale: 1, y: [0, -amount, 0] }}
+      transition={{
+        opacity: { duration: 0.5, delay, ease: EASE_OUT },
+        scale: { duration: 0.5, delay, ease: EASE_OUT },
+        y: { duration, delay, repeat: Infinity, ease: "easeInOut" },
+      }}
+    >
+      {children}
+    </motion.div>
+  );
+}
