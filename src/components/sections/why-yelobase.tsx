@@ -39,14 +39,14 @@ export function WhyYelobase() {
               src="/decor/pedestal-left.webp"
               alt=""
               aria-hidden
-              className="pointer-events-none absolute bottom-[-34px] left-[-60px] z-0 hidden w-36 lg:block"
+              className="pointer-events-none absolute bottom-[-49px] left-[-60px] z-0 hidden w-36 lg:block"
             />
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/decor/pedestal-right.webp"
               alt=""
               aria-hidden
-              className="pointer-events-none absolute bottom-[-30px] right-[-10px] z-0 hidden w-36 lg:block"
+              className="pointer-events-none absolute bottom-[-45px] right-[-10px] z-0 hidden w-36 lg:block"
             />
 
             {/* Left table */}
