@@ -54,7 +54,7 @@ export function ZohoPartnership() {
                   <img
                     src={point.icon}
                     alt=""
-                    className="mt-px size-6 shrink-0"
+                    className="mt-px size-7 shrink-0"
                   />
                   <span className="max-w-[480px] text-[15px] text-[var(--color-text-secondary)]">
                     {point.text}
