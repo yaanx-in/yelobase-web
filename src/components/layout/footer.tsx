@@ -81,16 +81,16 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col gap-6 border-t border-white/10 pt-8 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-8 flex flex-col gap-6 rounded-2xl bg-[#050505] px-8 py-8 sm:flex-row sm:items-center sm:gap-12 sm:px-10">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/brand/footer-lockup.svg"
             alt="Yelobase — Zoho Authorized Partner"
             width={313}
             height={56}
-            className="h-12 w-auto"
+            className="h-11 w-auto shrink-0"
           />
-          <p className="max-w-xl text-sm text-white/60">
+          <p className="max-w-[720px] text-sm leading-[1.45] text-white/55">
             Transforming businesses through intelligent Zoho automation and
             custom AI agents. We help companies streamline operations and enhance
             productivity across all industries.
