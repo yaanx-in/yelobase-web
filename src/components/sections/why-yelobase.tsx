@@ -17,11 +17,11 @@ const YELOBASE = [
 
 export function WhyYelobase() {
   return (
-    <section id="why-yelobase" className="bg-[var(--color-tint-pink)] py-14">
+    <section id="why-yelobase" className="bg-[var(--color-tint-pink)] py-12">
       <Container>
         <Reveal className="mx-auto max-w-3xl text-center">
           <Eyebrow color="teal">Why Yelobase?</Eyebrow>
-          <h2 className="mt-3 text-[2.4rem] font-bold leading-[1.12] tracking-tight text-[var(--color-text-primary)] sm:text-[2.6rem]">
+          <h2 className="mt-3 text-[2.1rem] font-bold leading-[1.1] tracking-tight text-[var(--color-text-primary)] sm:text-[2.5rem]">
             We&rsquo;re not your vendor. We&rsquo;re your technology partner
           </h2>
           <p className="mt-2 text-[var(--color-text-secondary)]">
@@ -32,25 +32,25 @@ export function WhyYelobase() {
 
         <Reveal delay={0.1}>
           {/* Comparison block: table with the partner card overlapping on the right */}
-          <div className="relative mx-auto mt-9 max-w-[900px] lg:h-[224px]">
+          <div className="relative mx-auto mt-10 max-w-[950px] lg:h-[222px]">
             {/* decorative cylinders behind the cards */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/decor/pedestal-left.webp"
               alt=""
               aria-hidden
-              className="pointer-events-none absolute bottom-[-49px] left-[-60px] z-0 hidden w-36 lg:block"
+              className="pointer-events-none absolute bottom-[-40px] left-[-50px] z-0 hidden w-36 lg:block"
             />
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/decor/pedestal-right.webp"
               alt=""
               aria-hidden
-              className="pointer-events-none absolute bottom-[-65px] right-[-10px] z-0 hidden w-36 lg:block"
+              className="pointer-events-none absolute bottom-[-46px] right-[6px] z-0 hidden w-36 lg:block"
             />
 
             {/* Left table */}
-            <div className="relative z-[2] overflow-hidden rounded-xl bg-[#222222] text-white/85 lg:w-[670px]">
+            <div className="relative z-[2] overflow-hidden rounded-xl bg-[#222222] text-white/85 lg:w-[700px]">
               <div className="grid grid-cols-2 bg-[#4b4654] text-sm">
                 <div className="px-4 py-[18px] font-semibold text-white">
                   Software <span className="font-normal text-white/55">vendor</span>
@@ -74,7 +74,7 @@ export function WhyYelobase() {
             </div>
 
             {/* Yelobase Partner — overlaps the table on desktop, stacks on mobile */}
-            <div className="relative z-[3] mt-5 overflow-hidden rounded-xl shadow-2xl lg:absolute lg:left-[590px] lg:top-[-22px] lg:mt-0 lg:w-[300px]">
+            <div className="relative z-[3] mt-5 overflow-hidden rounded-xl shadow-2xl lg:absolute lg:left-[635px] lg:top-[-24px] lg:mt-0 lg:w-[300px]">
               <div className="flex items-center gap-2 bg-brand-coral px-5 py-[22px]">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
@@ -100,7 +100,7 @@ export function WhyYelobase() {
         </Reveal>
 
         <Reveal delay={0.15}>
-          <div className="mt-12 flex flex-col items-center gap-2">
+          <div className="mt-10 flex flex-col items-center gap-2">
             <p className="text-center text-sm italic text-[var(--color-text-muted)]">
               &ldquo;Leave the headache to us.&rdquo;
             </p>
