@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { Reveal } from "@/components/ui/reveal";
 import { Eyebrow } from "@/components/ui/eyebrow";
-import { ArrowRight } from "@/components/ui/icon";
 import { Container } from "@/components/layout/container";
 
 const STATS = [
@@ -61,21 +60,44 @@ export function Proof() {
               </div>
             ))}
 
-            {/* Dark highlight stat — minimal: white number, gray text, green link */}
-            <div className="flex h-[400px] flex-col rounded-2xl bg-[var(--color-surface-dark)] p-6 text-white shadow-sm">
-              <p className="font-mono text-[2.6rem] font-bold leading-none tracking-tight">
+            {/* Dark highlight stat — coral number, avatar cluster, white CTA */}
+            <div className="relative h-[400px] overflow-hidden rounded-2xl bg-gradient-to-br from-[#2b2b2d] to-[#100f12] p-6 text-white shadow-sm">
+              <p className="font-mono text-[2.6rem] font-bold leading-none tracking-tight text-brand-coral">
                 100%
               </p>
-              <p className="mt-3 max-w-[230px] text-[15px] leading-[1.45] text-white/70">
-                User adoption in 3 weeks — consistently, because we build for
-                people, not demos.
+              <p className="mt-3 max-w-[230px] text-[15px] leading-[1.3] text-white/85">
+                user adoption in 3 weeks, consistently — because we build for
+                people, not demos
               </p>
+
+              {/* avatar cluster */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/avatars/adopt-1.webp"
+                alt=""
+                aria-hidden
+                className="absolute left-5 top-[208px] w-24"
+              />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/avatars/adopt-2.webp"
+                alt=""
+                aria-hidden
+                className="absolute left-[148px] top-[172px] w-[72px]"
+              />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/avatars/adopt-3.webp"
+                alt=""
+                aria-hidden
+                className="absolute left-[156px] top-[268px] w-[54px]"
+              />
+
               <Link
                 href="/customer-stories"
-                className="mt-auto inline-flex items-center gap-1.5 text-sm font-semibold text-brand-teal-bright focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2 rounded-sm"
+                className="absolute bottom-6 left-6 inline-flex items-center rounded-lg bg-white px-4 py-2.5 text-sm font-semibold text-[var(--color-text-primary)] transition-colors hover:bg-white/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2"
               >
                 Read Case Studies
-                <ArrowRight className="size-4" />
               </Link>
             </div>
           </div>
