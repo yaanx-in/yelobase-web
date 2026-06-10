@@ -2,50 +2,86 @@
 
 /*
  * Design tokens — Tailwind CSS v4 @theme.
- *
- * ⚠️ PLACEHOLDER VALUES ONLY. These neutral defaults exist so the app
- * compiles during Phase 1 (scaffold). They are NOT brand values.
- * Phase 2 replaces every token below with real values extracted from the
- * Yelobase Branding Figma file (see docs/DESIGN.md). Do not build UI against
- * these placeholders as if they were final.
- *
+ * Mirrored from docs/DESIGN.md (synced from Figma SVG export, 2026-06-10).
  * Source of truth: docs/DESIGN.md → this file → components.
+ *
+ * ⚠️ Pending confirmation (see DESIGN.md §9): exact font families, coral-button
+ * text contrast, shadow values, icon library. Font vars below are fed by
+ * next/font in layout.tsx (Space Mono + Inter, inferred — swap when confirmed).
  */
 @theme {
-  /* Color — PLACEHOLDER (neutral grayscale until Figma sync) */
-  --color-brand: #1a1a1a;
-  --color-brand-foreground: #ffffff;
+  /* ---- Color: neutrals & text ---- */
   --color-background: #ffffff;
-  --color-surface: #f5f5f5;
-  --color-text-primary: #1a1a1a;
-  --color-text-secondary: #6b6b6b;
-  --color-border: #e5e5e5;
-  --color-accent: #1a1a1a;
-  --color-success: #2e7d32;
-  --color-error: #c62828;
+  --color-background-warm: #fff8f8;
+  --color-surface: #f9f9f9;
+  --color-surface-dark: #121115;
+  --color-surface-dark-2: #201d23;
+  --color-surface-dark-3: #262626;
 
-  /* Radius — PLACEHOLDER */
-  --radius-sm: 0.25rem;
-  --radius-md: 0.5rem;
-  --radius-lg: 1rem;
-  --radius-full: 9999px;
+  --color-text-primary: #121115;
+  --color-text-secondary: #3a3a3a;
+  --color-text-muted: #8a8a8a;
+  --color-text-on-dark: #f9f9f9;
 
-  /* Typography families — PLACEHOLDER (system stack until next/font wired in Phase 2) */
+  --color-border: #d5d7da;
+  --color-border-subtle: #f4f4f4;
+
+  /* ---- Color: brand ---- */
+  --color-brand-coral: #ff7070;
+  --color-brand-coral-strong: #ef5a5a;
+  --color-brand-purple: #8a6bff;
+  --color-brand-purple-strong: #6f4bef;
+  --color-brand-teal: #21b293;
+  --color-brand-teal-bright: #3ed1b2;
+
+  /* ---- Color: pastel tint surfaces ---- */
+  --color-tint-pink: #faebeb;
+  --color-tint-pink-soft: #ffcece;
+  --color-tint-cream: #ffeabf;
+  --color-tint-lavender: #efe9ff;
+  --color-tint-lavender-2: #e2d8ff;
+  --color-tint-mint: #ccf4ec;
+
+  /* ---- Radius (from Figma rx values) ---- */
+  --radius-xs: 2px;
+  --radius-sm: 8px;
+  --radius-md: 24px;
+  --radius-pill: 9999px;
+
+  /* ---- Elevation (⚠️ proposed — confirm; baked as blurs in export) ---- */
+  --shadow-sm: 0 1px 2px rgba(18, 17, 21, 0.06);
+  --shadow-md: 0 8px 24px rgba(18, 17, 21, 0.08);
+  --shadow-lg: 0 24px 48px rgba(18, 17, 21, 0.1);
+
+  /* ---- Typography families (fed by next/font; ⚠️ inferred names) ---- */
   --font-sans:
-    ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica,
-    Arial, sans-serif;
-  --font-display: var(--font-sans);
+    var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+  --font-mono:
+    var(--font-space-mono), ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --font-display: var(--font-mono);
 
-  /* Motion tokens — concrete values, not brand-dependent.
-     Source: build prompt. Animate only transform/opacity for 60fps. */
+  /* ---- Motion (concrete; from build prompt) ---- */
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --duration-micro: 200ms; /* buttons, links, cards: 150–250ms */
   --duration-reveal: 400ms; /* section reveals: 300–500ms */
 
-  /* Layout — PLACEHOLDER (replaced from DESIGN.md §4 grid spec) */
-  --container-max: 72rem;
-  --container-gutter: 1.5rem;
-  --section-padding-y: 5rem;
+  /* ---- Layout / grid (DESIGN.md §4) ---- */
+  --container-max: 1200px;
+  --container-gutter: 1rem; /* mobile; scales up via media queries below */
+  --section-padding-y: clamp(4rem, 8vw, 7.5rem);
+}
+
+/* Container gutter scales up with viewport (capped by --container-max). */
+@media (min-width: 768px) {
+  :root {
+    --container-gutter: 1.5rem;
+  }
+}
+@media (min-width: 1280px) {
+  :root {
+    --container-gutter: 2.5rem;
+  }
 }
 
 :root {
