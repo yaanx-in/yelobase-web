@@ -87,12 +87,17 @@ export function Hero() {
             </div>
           </Float>
 
-          {/* Meta below Zoho, with 100+ badge offset at its top-left */}
-          <Float delay={0.4} duration={6} className="absolute left-[18%] bottom-[10%]">
-            <div className="flex flex-col items-start gap-3">
-              <Badge tint="cream">100+ Projects Delivered</Badge>
+          {/* Meta below Zoho, with 100+ badge stuck to its top-left corner */}
+          <Float delay={0.4} duration={6} className="absolute left-[24%] bottom-[10%]">
+            <div className="relative w-max">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={LOGOS.meta.src} alt={LOGOS.meta.alt} className="ml-16 h-20 w-auto" />
+              <img src={LOGOS.meta.src} alt={LOGOS.meta.alt} className="h-20 w-auto" />
+              <Badge
+                tint="cream"
+                className="absolute -left-[172px] -top-[26px] whitespace-nowrap"
+              >
+                100+ Projects Delivered
+              </Badge>
             </div>
           </Float>
 

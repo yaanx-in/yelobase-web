@@ -34,18 +34,19 @@ export function RealityTake() {
     target: ref,
     offset: ["start end", "end start"],
   });
-  // Problem (warm coral-dark) → solution (cool teal-dark) as you scroll through.
+  // Problem (red) → solution (green) as you scroll through — kept dark enough
+  // for white text on the overlapping card.
   const background = useTransform(
     scrollYProgress,
-    [0.15, 0.85],
-    ["#241318", "#0e2a22"],
+    [0.1, 0.5, 0.9],
+    ["#431016", "#1c1a1c", "#0d3a23"],
   );
 
   return (
     <motion.section
       ref={ref}
       style={reduceMotion ? { background: "#161318" } : { background }}
-      className="relative overflow-hidden py-[var(--section-padding-y)]"
+      className="relative overflow-hidden pt-[var(--section-padding-y)] pb-12"
     >
       {/* subtle grid texture */}
       <div

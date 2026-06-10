@@ -106,9 +106,7 @@ export function Header() {
         </nav>
 
         <div className="hidden lg:block">
-          <Button variant="dark" className="!rounded-xl">
-            Book Free Audit
-          </Button>
+          <Button variant="dark">Book Free Audit</Button>
         </div>
 
         {/* Mobile toggle */}

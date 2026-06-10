@@ -22,7 +22,7 @@ const sizes: Record<Size, string> = {
 };
 
 const baseClasses =
-  "inline-flex items-center justify-center gap-2 rounded-pill font-medium " +
+  "inline-flex items-center justify-center gap-2 rounded-xl font-medium " +
   "transition-[transform,background-color,opacity] duration-[var(--duration-micro)] " +
   "ease-[var(--ease-out)] motion-safe:hover:-translate-y-0.5 motion-safe:active:translate-y-0 " +
   "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple " +
