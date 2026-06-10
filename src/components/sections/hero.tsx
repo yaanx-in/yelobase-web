@@ -54,7 +54,7 @@ export function Hero() {
         </Stagger>
 
         {/* Desktop: large mark centered with floating badge+logo pairs around it */}
-        <div className="relative mx-auto mt-4 hidden h-[400px] max-w-4xl md:block">
+        <div className="relative mx-auto mt-4 hidden h-[440px] max-w-[60rem] md:block">
           {/* soft glow */}
           <div
             aria-hidden
@@ -69,17 +69,20 @@ export function Hero() {
             className="absolute left-1/2 top-1/2 w-[23rem] -translate-x-1/2 -translate-y-1/2 lg:w-[26rem]"
           />
 
-          {/* top-left: Official Zoho Partner + Zoho (badge left of logo) */}
-          <Float delay={0.12} className="absolute left-[12%] top-[14%]">
+          {/* top-left: Zoho logo with its two badges to the left */}
+          <Float delay={0.12} className="absolute left-[2%] top-[8%]">
             <div className="flex items-center gap-2">
-              <Badge tint="lavender">Official Zoho Partner</Badge>
+              <div className="flex flex-col items-end gap-2">
+                <Badge tint="lavender">Official Zoho Partner</Badge>
+                <Badge tint="cream">100+ Projects Delivered</Badge>
+              </div>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={LOGOS.zoho.src} alt={LOGOS.zoho.alt} className="h-20 w-auto" />
             </div>
           </Float>
 
-          {/* top-right: Claude + India badge (badge right of logo) */}
-          <Float delay={0.22} duration={5.5} className="absolute right-[6%] top-[12%]">
+          {/* top-right: Claude logo with India badge to its right */}
+          <Float delay={0.2} duration={5.5} className="absolute right-[2%] top-[8%]">
             <div className="flex items-center gap-2">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={LOGOS.claude.src} alt={LOGOS.claude.alt} className="h-20 w-auto" />
@@ -87,23 +90,20 @@ export function Hero() {
             </div>
           </Float>
 
-          {/* lower-left: 100+ Projects Delivered to the left of Meta */}
-          <Float delay={0.34} duration={6} className="absolute left-[14%] bottom-[14%]">
-            <div className="flex items-center gap-2">
-              <Badge tint="cream">100+ Projects Delivered</Badge>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={LOGOS.meta.src} alt={LOGOS.meta.alt} className="h-20 w-auto" />
-            </div>
+          {/* Meta below Zoho, nudged toward center */}
+          <Float delay={0.4} duration={6} className="absolute left-[26%] bottom-[12%]">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={LOGOS.meta.src} alt={LOGOS.meta.alt} className="h-20 w-auto" />
           </Float>
 
-          {/* right: odoo (solo) */}
-          <Float delay={0.45} duration={5} className="absolute right-[16%] top-[46%]">
+          {/* odoo (solo) */}
+          <Float delay={0.45} duration={5} className="absolute right-[10%] top-[46%]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={LOGOS.odoo.src} alt={LOGOS.odoo.alt} className="h-20 w-auto" />
           </Float>
 
-          {/* bottom-right: WhatsApp (solo) */}
-          <Float delay={0.55} duration={6.5} className="absolute right-[28%] bottom-[8%]">
+          {/* WhatsApp (solo) */}
+          <Float delay={0.55} duration={6.5} className="absolute right-[24%] bottom-[8%]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={LOGOS.whatsapp.src} alt={LOGOS.whatsapp.alt} className="h-20 w-auto" />
           </Float>
