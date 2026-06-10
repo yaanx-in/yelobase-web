@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Container } from "./container";
-import { Logo } from "@/components/ui/logo";
 import { Mail, Phone, MapPin } from "@/components/ui/icon";
 
 const SERVICES = [
@@ -83,19 +82,14 @@ export function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col gap-6 border-t border-white/10 pt-8 sm:flex-row sm:items-center sm:justify-between">
-          <div className="flex items-center gap-3">
-            <Logo tone="light" />
-            <span className="h-5 w-px bg-white/20" aria-hidden />
-            <span className="inline-flex items-center gap-1.5 text-xs text-white/60">
-              <span className="flex gap-0.5" aria-hidden>
-                <span className="size-2 rounded-[2px] bg-[#e42527]" />
-                <span className="size-2 rounded-[2px] bg-[#089949]" />
-                <span className="size-2 rounded-[2px] bg-[#226db4]" />
-                <span className="size-2 rounded-[2px] bg-[#f9b21d]" />
-              </span>
-              Zoho Authorized Partner
-            </span>
-          </div>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/brand/footer-lockup.svg"
+            alt="Yelobase — Zoho Authorized Partner"
+            width={313}
+            height={56}
+            className="h-12 w-auto"
+          />
           <p className="max-w-xl text-sm text-white/60">
             Transforming businesses through intelligent Zoho automation and
             custom AI agents. We help companies streamline operations and enhance

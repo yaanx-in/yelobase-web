@@ -1,7 +1,7 @@
+import Image from "next/image";
 import { Reveal } from "@/components/ui/reveal";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { Check } from "@/components/ui/icon";
-import { IsoMark } from "@/components/ui/iso-mark";
 import { Container } from "@/components/layout/container";
 
 // Heading + first bullets legible in Figma; supporting copy extrapolated to
@@ -45,19 +45,14 @@ export function ZohoPartnership() {
           </Reveal>
 
           <Reveal delay={0.1}>
-            <div className="relative mx-auto flex max-w-md items-center justify-center rounded-md bg-[var(--color-background-warm)] p-12">
-              <div className="w-48 sm:w-60">
-                <IsoMark />
-              </div>
-              <span className="absolute right-6 top-6 inline-flex items-center gap-1.5 rounded-pill bg-[var(--color-background)] px-3 py-1.5 text-xs font-semibold shadow-md">
-                <span className="flex gap-0.5" aria-hidden>
-                  <span className="size-2 rounded-[2px] bg-[#e42527]" />
-                  <span className="size-2 rounded-[2px] bg-[#089949]" />
-                  <span className="size-2 rounded-[2px] bg-[#226db4]" />
-                  <span className="size-2 rounded-[2px] bg-[#f9b21d]" />
-                </span>
-                Zoho Authorized Partner
-              </span>
+            <div className="mx-auto flex max-w-md items-center justify-center rounded-md bg-[var(--color-background-warm)] p-8 sm:p-12">
+              <Image
+                src="/graphics/zoho-partnership.webp"
+                alt="Yelobase as an Official Zoho Authorized Partner"
+                width={840}
+                height={663}
+                className="h-auto w-full"
+              />
             </div>
           </Reveal>
         </div>

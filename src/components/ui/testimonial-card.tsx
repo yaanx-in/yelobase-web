@@ -46,7 +46,7 @@ export function TestimonialCard({
         {t.quote}
       </blockquote>
       <div className="mt-6 flex items-center gap-3">
-        <Avatar name={t.name} />
+        <Avatar name={t.name} src={t.image} />
         <div>
           <p
             className={cn(

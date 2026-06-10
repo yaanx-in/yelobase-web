@@ -1,6 +1,7 @@
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
-// Initials avatar (no real photos available). Deterministic tint by name.
+// Photo avatar when an image is provided; otherwise a deterministic initials chip.
 const TINTS = [
   "bg-tint-lavender text-brand-purple-strong",
   "bg-tint-mint text-brand-teal",
@@ -17,7 +18,27 @@ function initials(name: string) {
     .toUpperCase();
 }
 
-export function Avatar({ name, className }: { name: string; className?: string }) {
+export function Avatar({
+  name,
+  src,
+  className,
+}: {
+  name: string;
+  src?: string;
+  className?: string;
+}) {
+  if (src) {
+    return (
+      <Image
+        src={src}
+        alt={name}
+        width={40}
+        height={40}
+        className={cn("size-10 rounded-full object-cover", className)}
+      />
+    );
+  }
+
   const tint = TINTS[name.length % TINTS.length];
   return (
     <span

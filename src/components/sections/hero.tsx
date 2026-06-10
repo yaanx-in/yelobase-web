@@ -1,10 +1,10 @@
 "use client";
 
+import Image from "next/image";
 import { Stagger } from "@/components/ui/reveal";
 import { Button, ButtonLink } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { IntegrationChip } from "@/components/ui/integration-chip";
-import { IsoMark } from "@/components/ui/iso-mark";
 import { ArrowRight } from "@/components/ui/icon";
 import { Container } from "@/components/layout/container";
 
@@ -47,9 +47,14 @@ export function Hero() {
 
         {/* Graphic + floating proof badges */}
         <div className="relative mx-auto mt-12 max-w-2xl sm:mt-16">
-          <div className="mx-auto w-44 sm:w-64 lg:w-72">
-            <IsoMark />
-          </div>
+          <Image
+            src="/graphics/hero-mark.webp"
+            alt="Yelobase isometric mark"
+            width={640}
+            height={375}
+            priority
+            className="mx-auto w-56 sm:w-72 lg:w-80"
+          />
 
           {/* Desktop: floating around the mark */}
           <div className="pointer-events-none absolute inset-0 hidden md:block">
@@ -64,10 +69,18 @@ export function Hero() {
             </Badge>
             <IntegrationChip type="zoho" className="absolute left-12 top-0" />
             <IntegrationChip type="meta" className="absolute left-0 bottom-2" />
-            <IntegrationChip type="odoo" className="absolute right-10 bottom-10" />
-            <IntegrationChip
-              type="whatsapp"
-              className="absolute right-2 bottom-0"
+            <IntegrationChip type="odoo" className="absolute right-12 top-0" />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/integrations/spark.svg"
+              alt="Anthropic"
+              className="absolute right-8 bottom-12 size-12"
+            />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/integrations/whatsapp.svg"
+              alt="WhatsApp"
+              className="absolute right-2 bottom-0 size-14"
             />
           </div>
         </div>
@@ -82,7 +95,10 @@ export function Hero() {
           <IntegrationChip type="zoho" />
           <IntegrationChip type="meta" />
           <IntegrationChip type="odoo" />
-          <IntegrationChip type="whatsapp" />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/integrations/spark.svg" alt="Anthropic" className="size-12" />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/integrations/whatsapp.svg" alt="WhatsApp" className="size-12" />
         </div>
       </Container>
     </section>

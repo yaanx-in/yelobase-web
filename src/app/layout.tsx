@@ -1,22 +1,28 @@
 import type { Metadata } from "next";
-import { Inter, Space_Mono } from "next/font/google";
+import { Inter, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 
-// ⚠️ INFERRED families (text was outlined in the Figma export, so exact names
-// are pending confirmation — see docs/DESIGN.md §9). Inter = sans/body/headings,
-// Space Mono = monospace display (hero + final CTA). Swap here when confirmed;
-// components reference --font-sans / --font-mono only.
+// Fonts confirmed from Figma: IBM Plex Mono (display — hero & CTAs),
+// IBM Plex Sans (headings), Inter (body). Components reference the
+// --font-mono / --font-heading / --font-sans tokens only.
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-inter",
 });
 
-const spaceMono = Space_Mono({
+const plexSans = IBM_Plex_Sans({
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
-  variable: "--font-space-mono",
+  variable: "--font-plex-sans",
+});
+
+const plexMono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+  variable: "--font-plex-mono",
 });
 
 export const metadata: Metadata = {
@@ -31,7 +37,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${spaceMono.variable}`}>
+    <html
+      lang="en"
+      className={`${inter.variable} ${plexSans.variable} ${plexMono.variable}`}
+    >
       <body>{children}</body>
     </html>
   );

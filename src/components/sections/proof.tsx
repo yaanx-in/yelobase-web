@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Reveal } from "@/components/ui/reveal";
 import { Eyebrow } from "@/components/ui/eyebrow";
@@ -8,11 +9,17 @@ const STATS = [
   {
     value: "80%",
     label: "Reduction in manual work after full Zoho automation.",
+    image: "/graphics/dashboard.webp",
+    imgW: 960,
+    imgH: 600,
   },
   {
     value: "6 weeks",
     label:
       "From chaos to operational clarity — a typical implementation timeline for SMBs.",
+    image: "/graphics/hourglass.webp",
+    imgW: 420,
+    imgH: 437,
   },
 ];
 
@@ -32,7 +39,7 @@ export function Proof() {
             {STATS.map((stat) => (
               <div
                 key={stat.value}
-                className="flex flex-col rounded-md border border-[var(--color-border-subtle)] bg-[var(--color-background)] p-7 shadow-sm"
+                className="flex flex-col overflow-hidden rounded-md border border-[var(--color-border-subtle)] bg-[var(--color-background)] p-7 shadow-sm"
               >
                 <p className="font-mono text-4xl font-bold tracking-tight text-[var(--color-text-primary)] sm:text-5xl">
                   {stat.value}
@@ -40,6 +47,13 @@ export function Proof() {
                 <p className="mt-3 text-[var(--color-text-secondary)]">
                   {stat.label}
                 </p>
+                <Image
+                  src={stat.image}
+                  alt=""
+                  width={stat.imgW}
+                  height={stat.imgH}
+                  className="mt-6 h-auto w-full"
+                />
               </div>
             ))}
 
