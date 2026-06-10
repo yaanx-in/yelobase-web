@@ -35,7 +35,23 @@ export function WhyYelobase() {
         </Reveal>
 
         <Reveal delay={0.1}>
-          <div className="mx-auto mt-12 grid max-w-4xl items-start gap-5 lg:grid-cols-[1.4fr_1fr]">
+          <div className="relative mx-auto mt-12 max-w-4xl">
+            {/* decorative pedestals tucked behind the cards */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/decor/pedestal-left.webp"
+              alt=""
+              aria-hidden
+              className="pointer-events-none absolute -bottom-10 -left-8 hidden w-40 lg:block"
+            />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/decor/pedestal-right.webp"
+              alt=""
+              aria-hidden
+              className="pointer-events-none absolute -bottom-10 -right-8 hidden w-40 lg:block"
+            />
+            <div className="relative grid items-start gap-5 lg:grid-cols-[1.4fr_1fr]">
             {/* Others — dark table, two columns */}
             <div className="overflow-hidden rounded-md bg-[var(--color-surface-dark)] text-white/85">
               <div className="grid grid-cols-2 border-b border-white/10 text-sm font-semibold">
@@ -82,6 +98,7 @@ export function WhyYelobase() {
                   </div>
                 ))}
               </div>
+            </div>
             </div>
           </div>
         </Reveal>
