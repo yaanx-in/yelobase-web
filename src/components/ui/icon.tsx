@@ -1,0 +1,149 @@
+import type { SVGProps } from "react";
+
+// Thin-stroke line icons (Figma uses a Lucide/Feather-style set). Inline to
+// avoid an icon dependency. All inherit currentColor and a 1.75 stroke.
+type IconProps = SVGProps<SVGSVGElement>;
+
+function base(props: IconProps) {
+  return {
+    width: 24,
+    height: 24,
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: 1.75,
+    strokeLinecap: "round" as const,
+    strokeLinejoin: "round" as const,
+    "aria-hidden": true,
+    focusable: false,
+    ...props,
+  };
+}
+
+export function ArrowRight(props: IconProps) {
+  return (
+    <svg {...base(props)}>
+      <path d="M5 12h14" />
+      <path d="m13 6 6 6-6 6" />
+    </svg>
+  );
+}
+
+export function Layers(props: IconProps) {
+  return (
+    <svg {...base(props)}>
+      <path d="m12 2 9 5-9 5-9-5 9-5Z" />
+      <path d="m3 12 9 5 9-5" />
+      <path d="m3 17 9 5 9-5" />
+    </svg>
+  );
+}
+
+export function Workflow(props: IconProps) {
+  return (
+    <svg {...base(props)}>
+      <rect x="3" y="3" width="7" height="7" rx="1.5" />
+      <rect x="14" y="14" width="7" height="7" rx="1.5" />
+      <path d="M10 6.5h4a3 3 0 0 1 3 3V14" />
+    </svg>
+  );
+}
+
+export function Handshake(props: IconProps) {
+  return (
+    <svg {...base(props)}>
+      <path d="m11 17 2 2a1 1 0 0 0 1.5-.1l3.5-4" />
+      <path d="m21 11-4.5 4.5" />
+      <path d="M3 11.5 8 7l3 2.5 3-2.5 6 4.5" />
+      <path d="m3 11.5 4 4a1 1 0 0 0 1.4 0l1.6-1.6" />
+    </svg>
+  );
+}
+
+export function Check(props: IconProps) {
+  return (
+    <svg {...base(props)}>
+      <circle cx="12" cy="12" r="9" />
+      <path d="m8.5 12 2.5 2.5 4.5-5" />
+    </svg>
+  );
+}
+
+export function AlertCircle(props: IconProps) {
+  return (
+    <svg {...base(props)}>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M12 8v4" />
+      <path d="M12 16h.01" />
+    </svg>
+  );
+}
+
+export function Bolt(props: IconProps) {
+  return (
+    <svg {...base(props)}>
+      <path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z" />
+    </svg>
+  );
+}
+
+export function Mail(props: IconProps) {
+  return (
+    <svg {...base(props)}>
+      <rect x="3" y="5" width="18" height="14" rx="2" />
+      <path d="m4 7 8 6 8-6" />
+    </svg>
+  );
+}
+
+export function Phone(props: IconProps) {
+  return (
+    <svg {...base(props)}>
+      <path d="M5 4h3l1.5 5L7 11a12 12 0 0 0 6 6l2-2.5 5 1.5v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z" />
+    </svg>
+  );
+}
+
+export function MapPin(props: IconProps) {
+  return (
+    <svg {...base(props)}>
+      <path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11Z" />
+      <circle cx="12" cy="10" r="2.5" />
+    </svg>
+  );
+}
+
+export function Star(props: IconProps) {
+  return (
+    <svg {...base(props)} fill="currentColor" stroke="none">
+      <path d="m12 2 2.9 6 6.6.6-5 4.3 1.5 6.4L12 16.9 6 19.3l1.5-6.4-5-4.3 6.6-.6L12 2Z" />
+    </svg>
+  );
+}
+
+export function Menu(props: IconProps) {
+  return (
+    <svg {...base(props)}>
+      <path d="M4 7h16" />
+      <path d="M4 12h16" />
+      <path d="M4 17h16" />
+    </svg>
+  );
+}
+
+export function Close(props: IconProps) {
+  return (
+    <svg {...base(props)}>
+      <path d="M6 6l12 12" />
+      <path d="M18 6 6 18" />
+    </svg>
+  );
+}
+
+export function Quote(props: IconProps) {
+  return (
+    <svg {...base(props)} fill="currentColor" stroke="none">
+      <path d="M7 7h4v4c0 2.5-1.5 4.3-4 5v-2c1.2-.5 2-1.4 2-2.5H7V7Zm8 0h4v4c0 2.5-1.5 4.3-4 5v-2c1.2-.5 2-1.4 2-2.5h-2V7Z" />
+    </svg>
+  );
+}
