@@ -1,14 +1,16 @@
 import Link from "next/link";
+import type { ReactNode } from "react";
 import { Reveal } from "@/components/ui/reveal";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { FlipCard } from "@/components/ui/flip-card";
 import { Container } from "@/components/layout/container";
-import { ArrowRight } from "@/components/ui/icon";
+import { ArrowRight, Sparkles } from "@/components/ui/icon";
 
 type Service = {
   title: string;
   tag: string;
-  icon: string;
+  icon?: string;
+  iconNode?: ReactNode;
   body: string;
   back: string; // back-face tint class
 };
@@ -36,6 +38,17 @@ const SERVICES: Service[] = [
     icon: "/icons/managed-services.svg",
     body: "We stay on as your technology arm — monitoring, improving, and scaling your systems month after month.",
     back: "bg-tint-cream",
+  },
+  {
+    title: "Custom AI Agents",
+    tag: "Intelligence",
+    iconNode: (
+      <span className="inline-flex size-12 items-center justify-center rounded-full bg-[#f9f9f9]">
+        <Sparkles className="size-8 text-[#3a3a3a]" />
+      </span>
+    ),
+    body: "AI agents that handle support, data entry, and follow-ups — trained on your processes to work alongside your team.",
+    back: "bg-tint-pink",
   },
 ];
 
@@ -70,8 +83,10 @@ export function WhatWeDo() {
                   backClassName={s.back}
                   front={
                     <>
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={s.icon} alt="" className="size-12" />
+                      {s.iconNode ?? (
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img src={s.icon} alt="" className="size-12" />
+                      )}
                       <div className="mt-auto">
                         <h3 className="text-lg font-semibold text-[var(--color-text-primary)]">
                           {s.title}

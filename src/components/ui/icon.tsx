@@ -87,6 +87,15 @@ export function Bolt(props: IconProps) {
   );
 }
 
+export function Sparkles(props: IconProps) {
+  return (
+    <svg {...base(props)}>
+      <path d="M12 3l1.8 4.6L18.4 9.4 13.8 11.2 12 15.8 10.2 11.2 5.6 9.4 10.2 7.6 12 3Z" />
+      <path d="M18 14l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8.8-2Z" />
+    </svg>
+  );
+}
+
 export function Mail(props: IconProps) {
   return (
     <svg {...base(props)}>
