@@ -25,7 +25,7 @@ export function Logo({
         alt="Yelobase"
         width={123}
         height={40}
-        className={cn("h-8 w-auto", className)}
+        className={cn("h-10 w-auto", className)}
       />
     );
   }

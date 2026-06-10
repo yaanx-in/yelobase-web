@@ -96,7 +96,7 @@ export function Header() {
               <li key={link.label}>
                 <Link
                   href={link.href}
-                  className="text-sm text-[var(--color-text-secondary)] transition-colors duration-[var(--duration-micro)] hover:text-[var(--color-text-primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2 rounded-sm"
+                  className="font-mono text-sm text-[var(--color-text-secondary)] transition-colors duration-[var(--duration-micro)] hover:text-[var(--color-text-primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2 rounded-sm"
                 >
                   {link.label}
                 </Link>
@@ -106,7 +106,9 @@ export function Header() {
         </nav>
 
         <div className="hidden lg:block">
-          <Button variant="dark">Book Free Audit</Button>
+          <Button variant="dark" className="!rounded-xl">
+            Book Free Audit
+          </Button>
         </div>
 
         {/* Mobile toggle */}
@@ -170,7 +172,7 @@ export function Header() {
                       <Link
                         href={link.href}
                         onClick={close}
-                        className="flex min-h-12 items-center border-b border-[var(--color-border-subtle)] text-base text-[var(--color-text-primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple"
+                        className="flex min-h-12 items-center border-b border-[var(--color-border-subtle)] font-mono text-base text-[var(--color-text-primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple"
                       >
                         {link.label}
                       </Link>
