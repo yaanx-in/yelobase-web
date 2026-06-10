@@ -18,14 +18,11 @@ const YELOBASE = [
 
 export function WhyYelobase() {
   return (
-    <section
-      id="why-yelobase"
-      className="bg-[var(--color-tint-pink)] py-[var(--section-padding-y)]"
-    >
+    <section id="why-yelobase" className="bg-[var(--color-tint-pink)] py-16">
       <Container>
         <Reveal className="mx-auto max-w-2xl text-center">
           <Eyebrow color="teal">Why Yelobase?</Eyebrow>
-          <h2 className="mt-3 text-balance text-3xl font-bold tracking-tight text-[var(--color-text-primary)] sm:text-4xl">
+          <h2 className="mt-3 text-balance text-[2.1rem] font-bold leading-[1.15] tracking-tight text-[var(--color-text-primary)] sm:text-[2.5rem]">
             We&rsquo;re not your vendor. We&rsquo;re your technology partner
           </h2>
           <p className="mt-3 text-[var(--color-text-secondary)]">
@@ -35,63 +32,61 @@ export function WhyYelobase() {
         </Reveal>
 
         <Reveal delay={0.1}>
-          <div className="relative mx-auto mt-12 max-w-4xl">
-            {/* decorative pedestals tucked behind the cards */}
+          {/* Comparison block: table with the partner card overlapping on the right */}
+          <div className="relative mx-auto mt-10 max-w-[860px]">
+            {/* decorative cylinders behind the cards */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/decor/pedestal-left.webp"
               alt=""
               aria-hidden
-              className="pointer-events-none absolute -bottom-10 -left-8 hidden w-40 lg:block"
+              className="pointer-events-none absolute bottom-[-34px] left-[-56px] z-0 hidden w-36 lg:block"
             />
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/decor/pedestal-right.webp"
               alt=""
               aria-hidden
-              className="pointer-events-none absolute -bottom-10 -right-8 hidden w-40 lg:block"
+              className="pointer-events-none absolute bottom-[-34px] right-[-44px] z-0 hidden w-36 lg:block"
             />
-            <div className="relative grid items-start gap-5 lg:grid-cols-[1.4fr_1fr]">
-            {/* Others — dark table, two columns */}
-            <div className="overflow-hidden rounded-md bg-[var(--color-surface-dark)] text-white/85">
-              <div className="grid grid-cols-2 border-b border-white/10 text-sm font-semibold">
-                <div className="px-5 py-4">
-                  Software <span className="text-white/50">vendor</span>
+
+            {/* Left table */}
+            <div className="relative z-10 overflow-hidden rounded-2xl bg-[var(--color-surface-dark-2)] text-white/85 lg:w-[600px]">
+              <div className="grid grid-cols-2 bg-[#2d2934] text-sm">
+                <div className="px-4 py-4 font-semibold">
+                  Software <span className="font-normal text-white/45">vendor</span>
                 </div>
-                <div className="border-l border-white/10 px-5 py-4">
+                <div className="border-l border-white/10 px-4 py-4 font-semibold">
                   Implementation{" "}
-                  <span className="text-white/50">Agency</span>
+                  <span className="font-normal text-white/45">Agency</span>
                 </div>
               </div>
               {OTHERS.map((row) => (
                 <div
                   key={row.role}
-                  className="grid grid-cols-2 border-b border-white/5 text-sm last:border-0"
+                  className="grid grid-cols-2 border-t border-white/[0.06] text-sm"
                 >
-                  <div className="px-5 py-4 text-white/70">{row.role}</div>
-                  <div className="border-l border-white/10 px-5 py-4 text-white/70">
+                  <div className="px-4 py-4 text-white/65">{row.role}</div>
+                  <div className="border-l border-white/10 px-4 py-4 text-white/65">
                     {row.role2}
                   </div>
                 </div>
               ))}
             </div>
 
-            {/* Yelobase — highlighted card */}
-            <div className="overflow-hidden rounded-md shadow-lg">
-              <div className="flex items-center gap-2 bg-brand-coral px-5 py-4">
+            {/* Yelobase Partner — overlaps the table on desktop, stacks on mobile */}
+            <div className="relative z-20 mt-5 overflow-hidden rounded-2xl shadow-xl lg:absolute lg:left-[480px] lg:top-[-18px] lg:mt-0 lg:w-[320px]">
+              <div className="flex items-center gap-2 bg-brand-coral px-5 py-5">
                 <Logo tone="light" withWordmark={false} />
-                <span className="text-sm font-semibold text-[var(--color-text-primary)]">
-                  Yelobase{" "}
-                  <span className="font-normal text-[var(--color-text-primary)]/70">
-                    Partner
-                  </span>
+                <span className="text-sm font-bold text-white">
+                  Yelobase <span className="font-normal text-white/85">Partner</span>
                 </span>
               </div>
               <div className="bg-[var(--color-surface-dark)]">
                 {YELOBASE.map((item) => (
                   <div
                     key={item}
-                    className="flex items-center gap-3 border-b border-white/5 px-5 py-4 text-sm text-white last:border-0"
+                    className="flex items-center gap-3 border-t border-white/[0.06] px-5 py-4 text-sm text-white first:border-t-0"
                   >
                     <Bolt className="size-4 shrink-0 text-brand-purple" />
                     {item}
@@ -99,13 +94,14 @@ export function WhyYelobase() {
                 ))}
               </div>
             </div>
-            </div>
           </div>
         </Reveal>
 
         <Reveal delay={0.15}>
-          <p className="mt-8 text-center text-sm italic text-[var(--color-text-muted)]">
-            &ldquo;Leave the headache to us.&rdquo;
+          <p className="mt-10 text-center text-sm italic text-[var(--color-text-muted)]">
+            <span className="border-b-2 border-brand-teal pb-1">
+              &ldquo;Leave the headache to us.&rdquo;
+            </span>
           </p>
         </Reveal>
       </Container>
