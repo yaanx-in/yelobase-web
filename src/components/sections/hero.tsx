@@ -4,9 +4,17 @@ import Image from "next/image";
 import { Stagger, Float } from "@/components/ui/reveal";
 import { Button, ButtonLink } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { IntegrationChip } from "@/components/ui/integration-chip";
 import { ArrowRight } from "@/components/ui/icon";
 import { Container } from "@/components/layout/container";
+
+// Real brand logo cards (each SVG/asset already includes its white card).
+const LOGOS = {
+  zoho: { src: "/integrations/zoho.svg", alt: "Zoho" },
+  meta: { src: "/integrations/meta.svg", alt: "Meta" },
+  odoo: { src: "/integrations/odoo.webp", alt: "Odoo" },
+  claude: { src: "/integrations/claude.svg", alt: "Claude" },
+  whatsapp: { src: "/integrations/whatsapp.svg", alt: "WhatsApp" },
+} as const;
 
 export function Hero() {
   return (
@@ -62,37 +70,40 @@ export function Hero() {
           />
 
           {/* top-left cluster: badge + Zoho */}
-          <Float delay={0.1} className="absolute left-[14%] top-[16%]">
+          <Float delay={0.1} className="absolute left-[12%] top-[16%]">
             <Badge tint="lavender">Official Zoho Partner</Badge>
           </Float>
-          <Float delay={0.25} duration={5.5} className="absolute left-[32%] top-[8%]">
-            <IntegrationChip type="zoho" />
+          <Float delay={0.25} duration={5.5} className="absolute left-[32%] top-[6%]">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={LOGOS.zoho.src} alt={LOGOS.zoho.alt} className="h-16 w-auto" />
           </Float>
 
-          {/* top-right cluster: spark + badge */}
-          <Float delay={0.3} duration={5} className="absolute right-[34%] top-[6%]">
+          {/* top-right cluster: claude + badge */}
+          <Float delay={0.3} duration={5} className="absolute right-[36%] top-[4%]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/integrations/spark.svg" alt="Anthropic" className="size-14" />
+            <img src={LOGOS.claude.src} alt={LOGOS.claude.alt} className="h-16 w-auto" />
           </Float>
           <Float delay={0.18} duration={6} className="absolute right-[6%] top-[16%]">
             <Badge tint="pink">India, US, UK, UAE, Australia</Badge>
           </Float>
 
           {/* left side */}
-          <Float delay={0.4} duration={5.5} className="absolute left-[10%] bottom-[20%]">
+          <Float delay={0.4} duration={5.5} className="absolute left-[8%] bottom-[20%]">
             <Badge tint="cream">100+ Projects Delivered</Badge>
           </Float>
-          <Float delay={0.5} duration={6} className="absolute left-[20%] bottom-[6%]">
-            <IntegrationChip type="meta" />
+          <Float delay={0.5} duration={6} className="absolute left-[18%] bottom-[4%]">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={LOGOS.meta.src} alt={LOGOS.meta.alt} className="h-16 w-auto" />
           </Float>
 
           {/* right side */}
           <Float delay={0.45} duration={5} className="absolute right-[12%] top-[46%]">
-            <IntegrationChip type="odoo" />
-          </Float>
-          <Float delay={0.55} duration={6.5} className="absolute right-[26%] bottom-[8%]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/integrations/whatsapp.svg" alt="WhatsApp" className="size-14" />
+            <img src={LOGOS.odoo.src} alt={LOGOS.odoo.alt} className="h-16 w-auto" />
+          </Float>
+          <Float delay={0.55} duration={6.5} className="absolute right-[26%] bottom-[6%]">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={LOGOS.whatsapp.src} alt={LOGOS.whatsapp.alt} className="h-16 w-auto" />
           </Float>
         </div>
 
@@ -111,14 +122,17 @@ export function Hero() {
             <Badge tint="cream">100+ Projects Delivered</Badge>
             <Badge tint="pink">India, US, UK, UAE, Australia</Badge>
           </div>
-          <div className="mt-4 flex items-center justify-center gap-3">
-            <IntegrationChip type="zoho" />
-            <IntegrationChip type="meta" />
-            <IntegrationChip type="odoo" />
+          <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/integrations/spark.svg" alt="Anthropic" className="size-14" />
+            <img src={LOGOS.zoho.src} alt={LOGOS.zoho.alt} className="h-14 w-auto" />
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/integrations/whatsapp.svg" alt="WhatsApp" className="size-14" />
+            <img src={LOGOS.meta.src} alt={LOGOS.meta.alt} className="h-14 w-auto" />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={LOGOS.odoo.src} alt={LOGOS.odoo.alt} className="h-14 w-auto" />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={LOGOS.claude.src} alt={LOGOS.claude.alt} className="h-14 w-auto" />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={LOGOS.whatsapp.src} alt={LOGOS.whatsapp.alt} className="h-14 w-auto" />
           </div>
         </div>
       </Container>
