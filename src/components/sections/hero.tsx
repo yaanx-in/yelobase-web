@@ -54,7 +54,7 @@ export function Hero() {
         </Stagger>
 
         {/* Desktop: large mark centered with floating badge+logo pairs around it */}
-        <div className="relative mx-auto mt-4 hidden h-[400px] max-w-5xl md:block">
+        <div className="relative mx-auto mt-4 hidden h-[400px] max-w-4xl md:block">
           {/* soft glow */}
           <div
             aria-hidden
@@ -70,7 +70,7 @@ export function Hero() {
           />
 
           {/* top-left: Official Zoho Partner + Zoho (badge left of logo) */}
-          <Float delay={0.12} className="absolute left-[2%] top-[12%]">
+          <Float delay={0.12} className="absolute left-[12%] top-[14%]">
             <div className="flex items-center gap-2">
               <Badge tint="lavender">Official Zoho Partner</Badge>
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -79,7 +79,7 @@ export function Hero() {
           </Float>
 
           {/* top-right: Claude + India badge (badge right of logo) */}
-          <Float delay={0.22} duration={5.5} className="absolute right-[2%] top-[10%]">
+          <Float delay={0.22} duration={5.5} className="absolute right-[6%] top-[12%]">
             <div className="flex items-center gap-2">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={LOGOS.claude.src} alt={LOGOS.claude.alt} className="h-20 w-auto" />
@@ -87,23 +87,23 @@ export function Hero() {
             </div>
           </Float>
 
-          {/* lower-left: 100+ Projects Delivered above Meta */}
-          <Float delay={0.34} duration={6} className="absolute left-[12%] bottom-[10%]">
-            <div className="flex flex-col items-start gap-2">
+          {/* lower-left: 100+ Projects Delivered to the left of Meta */}
+          <Float delay={0.34} duration={6} className="absolute left-[14%] bottom-[14%]">
+            <div className="flex items-center gap-2">
               <Badge tint="cream">100+ Projects Delivered</Badge>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={LOGOS.meta.src} alt={LOGOS.meta.alt} className="ml-6 h-20 w-auto" />
+              <img src={LOGOS.meta.src} alt={LOGOS.meta.alt} className="h-20 w-auto" />
             </div>
           </Float>
 
           {/* right: odoo (solo) */}
-          <Float delay={0.45} duration={5} className="absolute right-[6%] top-[48%]">
+          <Float delay={0.45} duration={5} className="absolute right-[16%] top-[46%]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={LOGOS.odoo.src} alt={LOGOS.odoo.alt} className="h-20 w-auto" />
           </Float>
 
           {/* bottom-right: WhatsApp (solo) */}
-          <Float delay={0.55} duration={6.5} className="absolute right-[26%] bottom-[4%]">
+          <Float delay={0.55} duration={6.5} className="absolute right-[28%] bottom-[8%]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={LOGOS.whatsapp.src} alt={LOGOS.whatsapp.alt} className="h-20 w-auto" />
           </Float>
