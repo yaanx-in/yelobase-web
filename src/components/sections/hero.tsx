@@ -88,11 +88,11 @@ export function Hero() {
           </Float>
 
           {/* lower-left: 100+ Projects Delivered above Meta */}
-          <Float delay={0.34} duration={6} className="absolute left-[4%] bottom-[6%]">
+          <Float delay={0.34} duration={6} className="absolute left-[12%] bottom-[10%]">
             <div className="flex flex-col items-start gap-2">
               <Badge tint="cream">100+ Projects Delivered</Badge>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={LOGOS.meta.src} alt={LOGOS.meta.alt} className="ml-8 h-20 w-auto" />
+              <img src={LOGOS.meta.src} alt={LOGOS.meta.alt} className="ml-6 h-20 w-auto" />
             </div>
           </Float>
 
