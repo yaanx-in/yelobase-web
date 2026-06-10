@@ -12,7 +12,7 @@ import { Menu, Close } from "@/components/ui/icon";
 const NAV_LINKS = [
   { label: "Services", href: "#what-we-do" },
   { label: "About", href: "#why-yelobase" },
-  { label: "Case Studies", href: "#stories" },
+  { label: "Case Studies", href: "/customer-stories" },
   { label: "Industries", href: "#who-we-work-with" },
   { label: "Blog", href: "#" },
   { label: "Contact Us", href: "#footer" },

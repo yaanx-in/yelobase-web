@@ -53,7 +53,7 @@ export function Proof() {
                 people, not demos.
               </p>
               <Link
-                href="#stories"
+                href="/customer-stories"
                 className="mt-auto inline-flex items-center gap-1.5 pt-6 text-sm font-semibold text-brand-teal-bright focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2 rounded-sm"
               >
                 Read Case Studies

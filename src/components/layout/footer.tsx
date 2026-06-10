@@ -12,7 +12,7 @@ const SERVICES = [
 
 const COMPANY = [
   { label: "About Us", href: "#why-yelobase" },
-  { label: "Wall of Love", href: "#stories" },
+  { label: "Wall of Love", href: "/customer-stories" },
   { label: "Contact", href: "#footer" },
   { label: "Privacy Policy", href: "#" },
   { label: "Terms of Service", href: "#" },
