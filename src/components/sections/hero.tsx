@@ -69,13 +69,10 @@ export function Hero() {
             className="absolute left-1/2 top-1/2 w-[23rem] -translate-x-1/2 -translate-y-1/2 lg:w-[26rem]"
           />
 
-          {/* top-left: Zoho logo with its two badges to the left */}
-          <Float delay={0.12} className="absolute left-[2%] top-[8%]">
+          {/* top-left: Zoho logo with Official Zoho Partner badge */}
+          <Float delay={0.12} className="absolute left-[8%] top-[10%]">
             <div className="flex items-center gap-2">
-              <div className="flex flex-col items-end gap-2">
-                <Badge tint="lavender">Official Zoho Partner</Badge>
-                <Badge tint="cream">100+ Projects Delivered</Badge>
-              </div>
+              <Badge tint="lavender">Official Zoho Partner</Badge>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={LOGOS.zoho.src} alt={LOGOS.zoho.alt} className="h-20 w-auto" />
             </div>
@@ -90,10 +87,13 @@ export function Hero() {
             </div>
           </Float>
 
-          {/* Meta below Zoho, nudged toward center */}
-          <Float delay={0.4} duration={6} className="absolute left-[26%] bottom-[12%]">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={LOGOS.meta.src} alt={LOGOS.meta.alt} className="h-20 w-auto" />
+          {/* Meta below Zoho, with 100+ badge offset at its top-left */}
+          <Float delay={0.4} duration={6} className="absolute left-[18%] bottom-[10%]">
+            <div className="flex flex-col items-start gap-3">
+              <Badge tint="cream">100+ Projects Delivered</Badge>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={LOGOS.meta.src} alt={LOGOS.meta.alt} className="ml-16 h-20 w-auto" />
+            </div>
           </Float>
 
           {/* odoo (solo) */}

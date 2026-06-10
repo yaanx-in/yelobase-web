@@ -6,14 +6,13 @@ type Variant = "primary" | "dark" | "outline" | "link";
 type Size = "md" | "lg";
 
 const variants: Record<Variant, string> = {
-  // Coral fill with DARK text — white-on-coral fails WCAG AA, so we use
-  // near-black text per design decision (DESIGN.md §2a).
-  primary:
-    "bg-brand-coral text-[var(--color-text-primary)] hover:bg-brand-coral-strong shadow-sm",
+  // Coral fill with white text to match the Figma design (note: white-on-coral
+  // is slightly under WCAG AA contrast).
+  primary: "bg-brand-coral text-white hover:bg-brand-coral-strong shadow-sm",
   dark: "bg-surface-dark text-[var(--color-text-on-dark)] hover:opacity-90",
   outline:
     "border border-[var(--color-border)] text-[var(--color-text-primary)] hover:bg-surface",
-  link: "text-[var(--color-text-primary)] underline-offset-4 hover:underline px-0 min-h-0",
+  link: "text-[var(--color-text-primary)] hover:opacity-70 px-0 min-h-0",
 };
 
 const sizes: Record<Size, string> = {
