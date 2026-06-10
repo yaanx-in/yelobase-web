@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+/*
+ * Design tokens — Tailwind CSS v4 @theme.
+ *
+ * ⚠️ PLACEHOLDER VALUES ONLY. These neutral defaults exist so the app
+ * compiles during Phase 1 (scaffold). They are NOT brand values.
+ * Phase 2 replaces every token below with real values extracted from the
+ * Yelobase Branding Figma file (see docs/DESIGN.md). Do not build UI against
+ * these placeholders as if they were final.
+ *
+ * Source of truth: docs/DESIGN.md → this file → components.
+ */
+@theme {
+  /* Color — PLACEHOLDER (neutral grayscale until Figma sync) */
+  --color-brand: #1a1a1a;
+  --color-brand-foreground: #ffffff;
+  --color-background: #ffffff;
+  --color-surface: #f5f5f5;
+  --color-text-primary: #1a1a1a;
+  --color-text-secondary: #6b6b6b;
+  --color-border: #e5e5e5;
+  --color-accent: #1a1a1a;
+  --color-success: #2e7d32;
+  --color-error: #c62828;
+
+  /* Radius — PLACEHOLDER */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-full: 9999px;
+
+  /* Typography families — PLACEHOLDER (system stack until next/font wired in Phase 2) */
+  --font-sans:
+    ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  --font-display: var(--font-sans);
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
