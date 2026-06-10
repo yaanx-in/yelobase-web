@@ -1,7 +1,6 @@
 import { Reveal } from "@/components/ui/reveal";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { Bolt } from "@/components/ui/icon";
-import { Logo } from "@/components/ui/logo";
 import { Container } from "@/components/layout/container";
 
 const OTHERS = [
@@ -77,10 +76,13 @@ export function WhyYelobase() {
             {/* Yelobase Partner — overlaps the table on desktop, stacks on mobile */}
             <div className="relative z-20 mt-5 overflow-hidden rounded-2xl shadow-xl lg:absolute lg:left-[480px] lg:top-[-18px] lg:mt-0 lg:w-[320px]">
               <div className="flex items-center gap-2 bg-brand-coral px-5 py-5">
-                <Logo tone="light" withWordmark={false} />
-                <span className="text-sm font-bold text-white">
-                  Yelobase <span className="font-normal text-white/85">Partner</span>
-                </span>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/brand/logo-white.svg"
+                  alt="Yelobase"
+                  className="h-6 w-auto"
+                />
+                <span className="text-sm font-normal text-white/85">Partner</span>
               </div>
               <div className="bg-[var(--color-surface-dark)]">
                 {YELOBASE.map((item) => (
