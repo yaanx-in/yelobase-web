@@ -46,7 +46,7 @@ export function WhyYelobase() {
               src="/decor/pedestal-right.webp"
               alt=""
               aria-hidden
-              className="pointer-events-none absolute bottom-[-45px] right-[-10px] z-0 hidden w-36 lg:block"
+              className="pointer-events-none absolute bottom-[-65px] right-[-10px] z-0 hidden w-36 lg:block"
             />
 
             {/* Left table */}
