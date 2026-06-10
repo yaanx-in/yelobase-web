@@ -87,6 +87,46 @@ export function Bolt(props: IconProps) {
   );
 }
 
+export function ShieldCheck(props: IconProps) {
+  return (
+    <svg {...base(props)}>
+      <path d="M12 3l7 3v6c0 4.5-3 7.6-7 9-4-1.4-7-4.5-7-9V6l7-3Z" />
+      <path d="m9 12 2 2 4-4" />
+    </svg>
+  );
+}
+
+export function Grid(props: IconProps) {
+  return (
+    <svg {...base(props)}>
+      <rect x="3.5" y="3.5" width="7" height="7" rx="1.5" />
+      <rect x="13.5" y="3.5" width="7" height="7" rx="1.5" />
+      <rect x="3.5" y="13.5" width="7" height="7" rx="1.5" />
+      <rect x="13.5" y="13.5" width="7" height="7" rx="1.5" />
+    </svg>
+  );
+}
+
+export function Globe(props: IconProps) {
+  return (
+    <svg {...base(props)}>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M3 12h18" />
+      <path d="M12 3c2.5 2.6 3.6 6 3.6 9s-1.1 6.4-3.6 9c-2.5-2.6-3.6-6-3.6-9s1.1-6.4 3.6-9Z" />
+    </svg>
+  );
+}
+
+export function Sprout(props: IconProps) {
+  return (
+    <svg {...base(props)}>
+      <path d="M12 20v-8" />
+      <path d="M12 12C12 9 9.5 6.5 6 6.5 6 10 8.5 12 12 12Z" />
+      <path d="M12 13.5c0-2.5 2-4.5 5-4.5 0 3-2.5 4.5-5 4.5Z" />
+    </svg>
+  );
+}
+
 export function Sparkles(props: IconProps) {
   return (
     <svg {...base(props)}>

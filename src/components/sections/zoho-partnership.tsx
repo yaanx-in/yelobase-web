@@ -1,59 +1,83 @@
 import Image from "next/image";
+import type { ComponentType, SVGProps } from "react";
 import { Reveal } from "@/components/ui/reveal";
 import { Eyebrow } from "@/components/ui/eyebrow";
-import { Check } from "@/components/ui/icon";
+import { ShieldCheck, Grid, Globe, Sprout } from "@/components/ui/icon";
 import { Container } from "@/components/layout/container";
 
-// Heading + first bullets legible in Figma; supporting copy extrapolated to
-// match tone (flagged to the user — confirm exact copy).
-const POINTS = [
-  "Official Zoho Partner — vetted, trained, and recognized by Zoho.",
-  "100+ implementations across CRM, Books, Inventory, Analytics, Creator, People, and more.",
-  "Serving clients in India, US, UK, UAE, and Australia.",
-  "Deep, hands-on Zoho ecosystem experience — architecture, not just admin.",
+type Point = {
+  icon: ComponentType<SVGProps<SVGSVGElement>>;
+  text: string;
+};
+
+const POINTS: Point[] = [
+  {
+    icon: ShieldCheck,
+    text: "Official Zoho Partner — verified, trained, and recognized by Zoho",
+  },
+  {
+    icon: Grid,
+    text: "100+ implementations across CRM, Books, Inventory, Analytics, Creator, People, and more",
+  },
+  {
+    icon: Globe,
+    text: "Serving clients in India, US, UK, UAE, and Australia",
+  },
+  {
+    icon: Sprout,
+    text: "5–7 years of deep Zoho ecosystem experience",
+  },
 ];
 
 export function ZohoPartnership() {
   return (
-    <section className="bg-[var(--color-background)] py-[var(--section-padding-y)]">
+    <section className="bg-[var(--color-background-warm)] py-16 sm:py-20">
       <Container>
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+        <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-10">
           <Reveal>
             <Eyebrow color="teal">Zoho Partnership</Eyebrow>
-            <h2 className="mt-3 text-balance text-3xl font-bold tracking-tight text-[var(--color-text-primary)] sm:text-4xl">
-              We are an Official Zoho Partner. That&rsquo;s not a badge,
-              it&rsquo;s a foundation.
+            <h2 className="mt-4 text-[2.4rem] font-bold leading-[1.1] tracking-tight text-[var(--color-text-primary)] sm:text-[2.85rem]">
+              We are an Official Zoho
+              <br className="hidden sm:block" /> Partner. That&rsquo;s not a
+              badge,
+              <br className="hidden sm:block" /> it&rsquo;s a foundation.
             </h2>
-            <p className="mt-5 text-[var(--color-text-secondary)]">
-              Our founders built their careers inside the Zoho ecosystem — at
-              the level of architecture, not just administration. That depth is
-              what separates a system that works from one that just looks like it
-              does.
+            <p className="mt-5 max-w-[600px] text-base leading-[1.55] text-[var(--color-text-secondary)]">
+              Our founders built their careers inside the Zoho ecosystem. We
+              know it at the level of architecture, not just administration. That
+              depth is what separates a system that works from one that just
+              looks like it does.
             </p>
-            <ul className="mt-8 space-y-4">
-              {POINTS.map((point) => (
-                <li key={point} className="flex items-start gap-3">
-                  <span className="mt-0.5 inline-flex size-6 shrink-0 items-center justify-center rounded-full bg-tint-mint">
-                    <Check className="size-4 text-brand-teal" />
-                  </span>
-                  <span className="text-[var(--color-text-secondary)]">
-                    {point}
-                  </span>
-                </li>
-              ))}
+
+            <ul className="mt-8 space-y-5">
+              {POINTS.map((point) => {
+                const Icon = point.icon;
+                return (
+                  <li key={point.text} className="flex items-start gap-3.5">
+                    <Icon className="mt-0.5 size-5 shrink-0 text-[var(--color-text-muted)]" />
+                    <span className="max-w-[480px] text-[15px] text-[var(--color-text-secondary)]">
+                      {point.text}
+                    </span>
+                  </li>
+                );
+              })}
             </ul>
+
+            <p className="mt-8 max-w-[600px] text-[17px] leading-[1.55] text-[var(--color-text-secondary)]">
+              Zoho is where we start. As your business grows, we grow the
+              architecture with it — adding integrations, third-party tools, and
+              AI layers as you need them.
+            </p>
           </Reveal>
 
           <Reveal delay={0.1}>
-            <div className="mx-auto flex max-w-md items-center justify-center rounded-md bg-[var(--color-background-warm)] p-8 sm:p-12">
-              <Image
-                src="/graphics/zoho-partnership.webp"
-                alt="Yelobase as an Official Zoho Authorized Partner"
-                width={840}
-                height={663}
-                className="h-auto w-full"
-              />
-            </div>
+            <Image
+              src="/graphics/zoho-partnership.webp"
+              alt="Yelobase as an Official Zoho Authorized Partner"
+              width={840}
+              height={663}
+              className="mx-auto h-auto w-full max-w-[480px] lg:justify-self-end"
+            />
           </Reveal>
         </div>
       </Container>
