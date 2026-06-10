@@ -4,7 +4,7 @@ import { Container } from "@/components/layout/container";
 
 export function TrustedBy() {
   return (
-    <section className="border-y border-[var(--color-border-subtle)] bg-[var(--color-background)] py-10">
+    <section className="bg-[var(--color-background-warm)] pb-14 pt-2">
       <Container>
         <Reveal className="text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-text-muted)]">

@@ -81,7 +81,7 @@ export function Header() {
       className={`sticky top-0 z-50 transition-[background-color,box-shadow] duration-[var(--duration-micro)] ${
         scrolled
           ? "bg-[var(--color-background)]/85 shadow-sm backdrop-blur-md"
-          : "bg-[var(--color-background)]/0"
+          : "bg-[var(--color-background-warm)]"
       }`}
     >
       <Container className="flex items-center justify-between py-4">
