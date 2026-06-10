@@ -23,7 +23,7 @@ export function FinalCta() {
               src="/decor/cta-bottom.webp"
               alt=""
               aria-hidden
-              className="pointer-events-none absolute bottom-[-22px] right-[-8px] z-20 hidden w-[54px] lg:block"
+              className="pointer-events-none absolute bottom-[-22px] right-[42px] z-20 hidden w-[54px] lg:block"
             />
 
             <div className="relative z-10 rounded-[24px] bg-[var(--color-surface-dark)] px-7 py-12 shadow-xl sm:px-14">
