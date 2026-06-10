@@ -33,13 +33,13 @@ export default function CustomerStoriesPage() {
 
             <dl className="mx-auto mt-10 grid max-w-3xl grid-cols-2 gap-6 sm:grid-cols-4">
               {STORY_STATS.map((s) => (
-                <div key={s.label}>
-                  <dt className="sr-only">{s.label}</dt>
+                <div key={s.tag}>
+                  <dt className="sr-only">{s.caption}</dt>
                   <dd className="font-mono text-3xl font-bold tracking-tight text-[var(--color-text-primary)]">
                     {s.value}
                   </dd>
                   <p className="mt-1 text-xs uppercase tracking-wide text-[var(--color-text-muted)]">
-                    {s.label}
+                    {s.caption}
                   </p>
                 </div>
               ))}

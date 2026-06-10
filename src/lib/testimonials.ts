@@ -51,10 +51,10 @@ export const TESTIMONIALS: Testimonial[] = [
 ];
 
 export const STORY_STATS = [
-  { value: "50+", label: "Happy Clients" },
-  { value: "100+", label: "Projects Completed" },
-  { value: "5.0", label: "Average Rating" },
-  { value: "15+", label: "Countries Served" },
+  { tag: "Trust", value: "50+", caption: "Happy Clients" },
+  { tag: "Delivery", value: "100+", caption: "Projects Completed" },
+  { tag: "Quality", value: "5.0", caption: "Average Rating" },
+  { tag: "Global", value: "15+", caption: "Countries Served" },
 ];
 
 export const STORY_FILTERS = [
