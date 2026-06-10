@@ -45,12 +45,12 @@ export function Hero() {
           </Stagger.Item>
         </Stagger>
 
-        {/* Desktop: mark centered with floating badges/chips around it */}
-        <div className="relative mx-auto mt-14 hidden h-[460px] max-w-3xl md:block">
+        {/* Desktop: large mark centered with floating badges/chips clustered around it */}
+        <div className="relative mx-auto mt-10 hidden h-[460px] max-w-4xl md:block">
           {/* soft glow */}
           <div
             aria-hidden
-            className="pointer-events-none absolute left-1/2 top-1/2 size-80 -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-purple/10 blur-3xl"
+            className="pointer-events-none absolute left-1/2 top-[56%] size-[26rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-purple/10 blur-3xl"
           />
           <Image
             src="/graphics/hero-mark.webp"
@@ -58,33 +58,39 @@ export function Hero() {
             width={640}
             height={375}
             priority
-            className="absolute left-1/2 top-1/2 w-72 -translate-x-1/2 -translate-y-1/2 lg:w-80"
+            className="absolute left-1/2 top-[56%] w-[22rem] -translate-x-1/2 -translate-y-1/2 lg:w-[25rem]"
           />
 
-          <Float delay={0.1} className="absolute left-0 top-6">
+          {/* top-left cluster: badge + Zoho */}
+          <Float delay={0.1} className="absolute left-[14%] top-[16%]">
             <Badge tint="lavender">Official Zoho Partner</Badge>
           </Float>
-          <Float delay={0.35} duration={5.5} className="absolute left-[5%] bottom-10">
-            <Badge tint="cream">100+ Projects Delivered</Badge>
-          </Float>
-          <Float delay={0.2} duration={6} className="absolute right-0 top-8">
-            <Badge tint="pink">India, US, UK, UAE, Australia</Badge>
-          </Float>
-
-          <Float delay={0.25} className="absolute left-[20%] top-0">
+          <Float delay={0.25} duration={5.5} className="absolute left-[32%] top-[8%]">
             <IntegrationChip type="zoho" />
           </Float>
-          <Float delay={0.45} duration={6} className="absolute left-2 top-[52%]">
-            <IntegrationChip type="meta" />
-          </Float>
-          <Float delay={0.5} duration={5.5} className="absolute right-2 top-[46%]">
-            <IntegrationChip type="odoo" />
-          </Float>
-          <Float delay={0.3} duration={5} className="absolute right-[24%] top-2">
+
+          {/* top-right cluster: spark + badge */}
+          <Float delay={0.3} duration={5} className="absolute right-[34%] top-[6%]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/integrations/spark.svg" alt="Anthropic" className="size-14" />
           </Float>
-          <Float delay={0.55} duration={6.5} className="absolute right-[14%] bottom-6">
+          <Float delay={0.18} duration={6} className="absolute right-[6%] top-[16%]">
+            <Badge tint="pink">India, US, UK, UAE, Australia</Badge>
+          </Float>
+
+          {/* left side */}
+          <Float delay={0.4} duration={5.5} className="absolute left-[10%] bottom-[20%]">
+            <Badge tint="cream">100+ Projects Delivered</Badge>
+          </Float>
+          <Float delay={0.5} duration={6} className="absolute left-[20%] bottom-[6%]">
+            <IntegrationChip type="meta" />
+          </Float>
+
+          {/* right side */}
+          <Float delay={0.45} duration={5} className="absolute right-[12%] top-[46%]">
+            <IntegrationChip type="odoo" />
+          </Float>
+          <Float delay={0.55} duration={6.5} className="absolute right-[26%] bottom-[8%]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/integrations/whatsapp.svg" alt="WhatsApp" className="size-14" />
           </Float>
