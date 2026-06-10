@@ -10,22 +10,22 @@ import { Container } from "@/components/layout/container";
 
 export function Hero() {
   return (
-    <section className="overflow-hidden bg-[var(--color-background-warm)] pb-12 pt-10 sm:pt-16">
+    <section className="overflow-hidden bg-[var(--color-background-warm)] pb-10 pt-8 sm:pt-10">
       <Container>
-        <Stagger onMount className="mx-auto max-w-3xl text-center">
+        <Stagger onMount className="mx-auto max-w-6xl text-center">
           <Stagger.Item>
-            <h1 className="font-mono leading-[1.1] tracking-tight text-[var(--color-text-primary)]">
-              <span className="block text-[clamp(1.6rem,5.5vw,3rem)] font-normal">
+            <h1 className="font-mono leading-[1.08] tracking-tight text-[var(--color-text-primary)]">
+              <span className="block text-[clamp(1.6rem,5vw,3rem)] font-normal">
                 Your Business Systems.
               </span>
-              <span className="mt-1 block text-[clamp(1.9rem,7vw,3.9rem)] font-bold">
+              <span className="mt-1 block text-[clamp(1.9rem,6.2vw,3.85rem)] font-bold lg:whitespace-nowrap">
                 Properly Built and Owned.
               </span>
             </h1>
           </Stagger.Item>
 
           <Stagger.Item>
-            <p className="mx-auto mt-6 max-w-xl text-balance text-base text-[var(--color-text-secondary)] sm:text-lg">
+            <p className="mx-auto mt-5 max-w-[54rem] text-balance text-base text-[var(--color-text-secondary)] sm:text-lg">
               We are a technology partner for growing businesses. Starting with
               Zoho and expanding across your entire stack — we design, build,
               automate, and manage the systems that let you scale without chaos.
@@ -33,7 +33,7 @@ export function Hero() {
           </Stagger.Item>
 
           <Stagger.Item>
-            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
+            <div className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
               <ButtonLink href="#stories" variant="link">
                 See our work
               </ButtonLink>
@@ -46,7 +46,7 @@ export function Hero() {
         </Stagger>
 
         {/* Desktop: large mark centered with floating badges/chips clustered around it */}
-        <div className="relative mx-auto mt-10 hidden h-[460px] max-w-4xl md:block">
+        <div className="relative mx-auto mt-6 hidden h-[420px] max-w-4xl md:block">
           {/* soft glow */}
           <div
             aria-hidden
