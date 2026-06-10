@@ -18,7 +18,7 @@ const LOGOS = {
 
 export function Hero() {
   return (
-    <section className="overflow-hidden bg-[var(--color-background-warm)] pb-10 pt-8 sm:pt-10">
+    <section className="overflow-hidden bg-[var(--color-background-warm)] pb-4 pt-8 sm:pt-10">
       <Container>
         <Stagger onMount className="mx-auto max-w-6xl text-center">
           <Stagger.Item>
@@ -53,12 +53,12 @@ export function Hero() {
           </Stagger.Item>
         </Stagger>
 
-        {/* Desktop: large mark centered with floating badges/chips clustered around it */}
-        <div className="relative mx-auto mt-6 hidden h-[420px] max-w-4xl md:block">
+        {/* Desktop: large mark centered with floating badge+logo pairs around it */}
+        <div className="relative mx-auto mt-4 hidden h-[400px] max-w-5xl md:block">
           {/* soft glow */}
           <div
             aria-hidden
-            className="pointer-events-none absolute left-1/2 top-[56%] size-[26rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-purple/10 blur-3xl"
+            className="pointer-events-none absolute left-1/2 top-1/2 size-[26rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-purple/10 blur-3xl"
           />
           <Image
             src="/graphics/hero-mark.webp"
@@ -66,44 +66,46 @@ export function Hero() {
             width={640}
             height={375}
             priority
-            className="absolute left-1/2 top-[56%] w-[22rem] -translate-x-1/2 -translate-y-1/2 lg:w-[25rem]"
+            className="absolute left-1/2 top-1/2 w-[23rem] -translate-x-1/2 -translate-y-1/2 lg:w-[26rem]"
           />
 
-          {/* top-left cluster: badge + Zoho */}
-          <Float delay={0.1} className="absolute left-[12%] top-[16%]">
-            <Badge tint="lavender">Official Zoho Partner</Badge>
-          </Float>
-          <Float delay={0.25} duration={5.5} className="absolute left-[32%] top-[6%]">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={LOGOS.zoho.src} alt={LOGOS.zoho.alt} className="h-16 w-auto" />
-          </Float>
-
-          {/* top-right cluster: claude + badge */}
-          <Float delay={0.3} duration={5} className="absolute right-[36%] top-[4%]">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={LOGOS.claude.src} alt={LOGOS.claude.alt} className="h-16 w-auto" />
-          </Float>
-          <Float delay={0.18} duration={6} className="absolute right-[6%] top-[16%]">
-            <Badge tint="pink">India, US, UK, UAE, Australia</Badge>
+          {/* top-left: Official Zoho Partner + Zoho (badge left of logo) */}
+          <Float delay={0.12} className="absolute left-[2%] top-[12%]">
+            <div className="flex items-center gap-2">
+              <Badge tint="lavender">Official Zoho Partner</Badge>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={LOGOS.zoho.src} alt={LOGOS.zoho.alt} className="h-20 w-auto" />
+            </div>
           </Float>
 
-          {/* left side */}
-          <Float delay={0.4} duration={5.5} className="absolute left-[8%] bottom-[20%]">
-            <Badge tint="cream">100+ Projects Delivered</Badge>
-          </Float>
-          <Float delay={0.5} duration={6} className="absolute left-[18%] bottom-[4%]">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={LOGOS.meta.src} alt={LOGOS.meta.alt} className="h-16 w-auto" />
+          {/* top-right: Claude + India badge (badge right of logo) */}
+          <Float delay={0.22} duration={5.5} className="absolute right-[2%] top-[10%]">
+            <div className="flex items-center gap-2">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={LOGOS.claude.src} alt={LOGOS.claude.alt} className="h-20 w-auto" />
+              <Badge tint="pink">India, US, UK, UAE, Australia</Badge>
+            </div>
           </Float>
 
-          {/* right side */}
-          <Float delay={0.45} duration={5} className="absolute right-[12%] top-[46%]">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={LOGOS.odoo.src} alt={LOGOS.odoo.alt} className="h-16 w-auto" />
+          {/* lower-left: 100+ Projects Delivered above Meta */}
+          <Float delay={0.34} duration={6} className="absolute left-[4%] bottom-[6%]">
+            <div className="flex flex-col items-start gap-2">
+              <Badge tint="cream">100+ Projects Delivered</Badge>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={LOGOS.meta.src} alt={LOGOS.meta.alt} className="ml-8 h-20 w-auto" />
+            </div>
           </Float>
-          <Float delay={0.55} duration={6.5} className="absolute right-[26%] bottom-[6%]">
+
+          {/* right: odoo (solo) */}
+          <Float delay={0.45} duration={5} className="absolute right-[6%] top-[48%]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={LOGOS.whatsapp.src} alt={LOGOS.whatsapp.alt} className="h-16 w-auto" />
+            <img src={LOGOS.odoo.src} alt={LOGOS.odoo.alt} className="h-20 w-auto" />
+          </Float>
+
+          {/* bottom-right: WhatsApp (solo) */}
+          <Float delay={0.55} duration={6.5} className="absolute right-[26%] bottom-[4%]">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={LOGOS.whatsapp.src} alt={LOGOS.whatsapp.alt} className="h-20 w-auto" />
           </Float>
         </div>
 
@@ -124,15 +126,15 @@ export function Hero() {
           </div>
           <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={LOGOS.zoho.src} alt={LOGOS.zoho.alt} className="h-14 w-auto" />
+            <img src={LOGOS.zoho.src} alt={LOGOS.zoho.alt} className="h-16 w-auto" />
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={LOGOS.meta.src} alt={LOGOS.meta.alt} className="h-14 w-auto" />
+            <img src={LOGOS.meta.src} alt={LOGOS.meta.alt} className="h-16 w-auto" />
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={LOGOS.odoo.src} alt={LOGOS.odoo.alt} className="h-14 w-auto" />
+            <img src={LOGOS.odoo.src} alt={LOGOS.odoo.alt} className="h-16 w-auto" />
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={LOGOS.claude.src} alt={LOGOS.claude.alt} className="h-14 w-auto" />
+            <img src={LOGOS.claude.src} alt={LOGOS.claude.alt} className="h-16 w-auto" />
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={LOGOS.whatsapp.src} alt={LOGOS.whatsapp.alt} className="h-14 w-auto" />
+            <img src={LOGOS.whatsapp.src} alt={LOGOS.whatsapp.alt} className="h-16 w-auto" />
           </div>
         </div>
       </Container>
