@@ -1,30 +1,28 @@
 import Image from "next/image";
-import type { ComponentType, SVGProps } from "react";
 import { Reveal } from "@/components/ui/reveal";
 import { Eyebrow } from "@/components/ui/eyebrow";
-import { ShieldCheck, Grid, Globe, Sprout } from "@/components/ui/icon";
 import { Container } from "@/components/layout/container";
 
 type Point = {
-  icon: ComponentType<SVGProps<SVGSVGElement>>;
+  icon: string;
   text: string;
 };
 
 const POINTS: Point[] = [
   {
-    icon: ShieldCheck,
+    icon: "/icons/zp-partner.svg",
     text: "Official Zoho Partner — verified, trained, and recognized by Zoho",
   },
   {
-    icon: Grid,
+    icon: "/icons/zp-implementations.svg",
     text: "100+ implementations across CRM, Books, Inventory, Analytics, Creator, People, and more",
   },
   {
-    icon: Globe,
+    icon: "/icons/zp-serving.svg",
     text: "Serving clients in India, US, UK, UAE, and Australia",
   },
   {
-    icon: Sprout,
+    icon: "/icons/zp-experience.svg",
     text: "5–7 years of deep Zoho ecosystem experience",
   },
 ];
@@ -50,17 +48,19 @@ export function ZohoPartnership() {
             </p>
 
             <ul className="mt-8 space-y-5">
-              {POINTS.map((point) => {
-                const Icon = point.icon;
-                return (
-                  <li key={point.text} className="flex items-start gap-3.5">
-                    <Icon className="mt-0.5 size-5 shrink-0 text-[var(--color-text-muted)]" />
-                    <span className="max-w-[480px] text-[15px] text-[var(--color-text-secondary)]">
-                      {point.text}
-                    </span>
-                  </li>
-                );
-              })}
+              {POINTS.map((point) => (
+                <li key={point.text} className="flex items-start gap-3.5">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={point.icon}
+                    alt=""
+                    className="mt-px size-6 shrink-0"
+                  />
+                  <span className="max-w-[480px] text-[15px] text-[var(--color-text-secondary)]">
+                    {point.text}
+                  </span>
+                </li>
+              ))}
             </ul>
 
             <p className="mt-8 max-w-[600px] text-[17px] leading-[1.55] text-[var(--color-text-secondary)]">
