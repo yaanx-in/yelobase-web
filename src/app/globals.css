@@ -35,6 +35,17 @@
     ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica,
     Arial, sans-serif;
   --font-display: var(--font-sans);
+
+  /* Motion tokens — concrete values, not brand-dependent.
+     Source: build prompt. Animate only transform/opacity for 60fps. */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-micro: 200ms; /* buttons, links, cards: 150–250ms */
+  --duration-reveal: 400ms; /* section reveals: 300–500ms */
+
+  /* Layout — PLACEHOLDER (replaced from DESIGN.md §4 grid spec) */
+  --container-max: 72rem;
+  --container-gutter: 1.5rem;
+  --section-padding-y: 5rem;
 }
 
 :root {
