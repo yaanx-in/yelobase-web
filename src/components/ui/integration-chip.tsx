@@ -7,30 +7,40 @@ type Integration = "zoho" | "meta" | "odoo";
 
 const MARKS: Record<Integration, ReactNode> = {
   zoho: (
-    <span className="flex items-center gap-1" aria-hidden>
-      <span className="h-4 w-2.5 rounded-[3px] bg-[#e42527]" />
-      <span className="h-4 w-2.5 rounded-[3px] bg-[#089949]" />
-      <span className="h-4 w-2.5 rounded-[3px] bg-[#226db4]" />
-      <span className="h-4 w-2.5 rounded-[3px] bg-[#f9b21d]" />
+    <span className="flex flex-col items-center gap-1" aria-hidden>
+      <svg width="40" height="16" viewBox="0 0 40 16" fill="none">
+        <rect x="0" y="1" width="8" height="14" rx="4" fill="#e42527" />
+        <rect x="10.5" y="1" width="8" height="14" rx="4" fill="#089949" />
+        <rect x="21" y="1" width="8" height="14" rx="4" fill="#226db4" />
+        <rect x="31.5" y="1" width="8" height="14" rx="4" fill="#f9b21d" />
+      </svg>
+      <span className="text-[7px] font-bold tracking-[0.18em] text-[#3a3a3a]">
+        ZOHO
+      </span>
     </span>
   ),
   meta: (
-    <svg width="30" height="20" viewBox="0 0 30 20" fill="none" aria-hidden>
-      <path
-        d="M3 16C3 8.5 5.4 4 8.8 4c2.8 0 4.6 2.6 6.2 5.6C16.6 6.6 18.4 4 21.2 4 24.6 4 27 8.5 27 16"
-        stroke="#0081FB"
-        strokeWidth="3"
-        strokeLinecap="round"
-        fill="none"
-      />
-      <path
-        d="M3 16c0-3 1.4-5 3.4-5 2.6 0 4.4 3 6.1 5.6M27 16c0-3-1.4-5-3.4-5-2.6 0-4.4 3-6.1 5.6"
-        stroke="#0064E1"
-        strokeWidth="3"
-        strokeLinecap="round"
-        fill="none"
-      />
-    </svg>
+    <span className="flex items-center gap-1" aria-hidden>
+      <svg width="22" height="14" viewBox="0 0 22 14" fill="none">
+        <path
+          d="M1.4 11.2C1.4 5.6 3.3 2 6 2c2.1 0 3.6 1.9 5 4.6C12.4 3.9 13.9 2 16 2c2.7 0 4.6 3.6 4.6 9.2"
+          stroke="#0081FB"
+          strokeWidth="2.4"
+          strokeLinecap="round"
+          fill="none"
+        />
+        <path
+          d="M1.4 11.2c0-2.4 1-4 2.5-4 2 0 3.4 2.5 4.8 4.8M20.6 11.2c0-2.4-1-4-2.5-4-2 0-3.4 2.5-4.8 4.8"
+          stroke="#0064E1"
+          strokeWidth="2.4"
+          strokeLinecap="round"
+          fill="none"
+        />
+      </svg>
+      <span className="text-[13px] font-semibold tracking-tight text-[#1c2b33]">
+        Meta
+      </span>
+    </span>
   ),
   odoo: <span className="text-sm font-bold lowercase text-[#714b67]">odoo</span>,
 };
@@ -45,7 +55,7 @@ export function IntegrationChip({
   return (
     <span
       className={cn(
-        "inline-flex size-14 items-center justify-center rounded-2xl bg-white shadow-[0_8px_24px_rgba(18,17,21,0.10)] ring-1 ring-black/5",
+        "inline-flex h-14 min-w-14 items-center justify-center rounded-2xl bg-white px-3 shadow-[0_8px_24px_rgba(18,17,21,0.10)] ring-1 ring-black/5",
         className,
       )}
       title={type}
