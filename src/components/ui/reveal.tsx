@@ -1,7 +1,13 @@
 "use client";
 
-import { motion, useReducedMotion, type Variants } from "framer-motion";
-import type { ReactNode } from "react";
+import {
+  animate,
+  motion,
+  useInView,
+  useReducedMotion,
+  type Variants,
+} from "framer-motion";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 
 // Easing mirrors --ease-out in globals.css. Framer needs the raw bezier array.
 const EASE_OUT = [0.16, 1, 0.3, 1] as const;
@@ -107,6 +113,58 @@ function StaggerItem({
 }
 
 Stagger.Item = StaggerItem;
+
+type CountUpProps = {
+  /** Target value to count to. */
+  to: number;
+  /** Decimal places to show (e.g. 1 → "4.9"). */
+  decimals?: number;
+  prefix?: string;
+  suffix?: string;
+  /** Animation duration in seconds. */
+  duration?: number;
+  className?: string;
+};
+
+/**
+ * Counts from 0 → `to` once when scrolled into view. Instant under
+ * prefers-reduced-motion. Shared across stat sections.
+ */
+export function CountUp({
+  to,
+  decimals = 0,
+  prefix = "",
+  suffix = "",
+  duration = 1.2,
+  className,
+}: CountUpProps) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const inView = useInView(ref, { once: true, margin: "0px 0px -15% 0px" });
+  const reduceMotion = useReducedMotion();
+  const [value, setValue] = useState(0);
+
+  useEffect(() => {
+    if (!inView) return;
+    if (reduceMotion) {
+      setValue(to);
+      return;
+    }
+    const controls = animate(0, to, {
+      duration,
+      ease: EASE_OUT,
+      onUpdate: (v) => setValue(v),
+    });
+    return () => controls.stop();
+  }, [inView, to, duration, reduceMotion]);
+
+  return (
+    <span ref={ref} className={className}>
+      {prefix}
+      {value.toFixed(decimals)}
+      {suffix}
+    </span>
+  );
+}
 
 type FloatProps = {
   children: ReactNode;

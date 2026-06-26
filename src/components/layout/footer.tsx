@@ -3,18 +3,18 @@ import { Container } from "./container";
 import { Mail, Phone, MapPin } from "@/components/ui/icon";
 
 const SERVICES = [
-  { label: "Zoho Automation", href: "#what-we-do" },
-  { label: "AI Agents", href: "#what-we-do" },
-  { label: "Data Migration", href: "#what-we-do" },
-  { label: "Pricing", href: "#" },
+  { label: "Zoho Automation", href: "/zoho-services" },
+  { label: "Golf Academies", href: "/golf" },
+  { label: "AI Agents", href: "/zoho-services" },
+  { label: "Data Migration", href: "/zoho-services" },
 ];
 
 const COMPANY = [
-  { label: "About Us", href: "#why-yelobase" },
-  { label: "Wall of Love", href: "/customer-stories" },
-  { label: "Contact", href: "#footer" },
-  { label: "Privacy Policy", href: "#" },
-  { label: "Terms of Service", href: "#" },
+  { label: "About Us", href: "/about" },
+  { label: "Wall of Love", href: "/wall-of-love" },
+  { label: "Contact", href: "/contact" },
+  { label: "Privacy Policy", href: "/privacy-policy" },
+  { label: "Terms of Service", href: "/terms-of-service" },
 ];
 
 function LinkColumn({

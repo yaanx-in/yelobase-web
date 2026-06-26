@@ -6,16 +6,15 @@ import { usePathname } from "next/navigation";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { Container } from "./container";
 import { Logo } from "@/components/ui/logo";
-import { Button } from "@/components/ui/button";
+import { ButtonLink } from "@/components/ui/button";
 import { Menu, Close } from "@/components/ui/icon";
 
 const NAV_LINKS = [
-  { label: "Services", href: "#what-we-do" },
-  { label: "About", href: "#why-yelobase" },
-  { label: "Case Studies", href: "/customer-stories" },
-  { label: "Industries", href: "#who-we-work-with" },
-  { label: "Blog", href: "#" },
-  { label: "Contact Us", href: "#footer" },
+  { label: "Zoho Services", href: "/zoho-services" },
+  { label: "Golf Academies", href: "/golf" },
+  { label: "About", href: "/about" },
+  { label: "Wall of Love", href: "/wall-of-love" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export function Header() {
@@ -106,7 +105,9 @@ export function Header() {
         </nav>
 
         <div className="hidden lg:block">
-          <Button variant="dark">Book Free Audit</Button>
+          <ButtonLink href="/contact" variant="dark">
+            Book Free Audit
+          </ButtonLink>
         </div>
 
         {/* Mobile toggle */}
@@ -178,9 +179,14 @@ export function Header() {
                   ))}
                 </ul>
               </nav>
-              <Button variant="dark" className="mt-6 w-full" onClick={close}>
+              <ButtonLink
+                href="/contact"
+                variant="dark"
+                className="mt-6 w-full"
+                onClick={close}
+              >
                 Book Free Audit
-              </Button>
+              </ButtonLink>
             </motion.div>
           </motion.div>
         )}
