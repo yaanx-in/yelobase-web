@@ -78,23 +78,16 @@ export function ZohoApplications() {
                     role="tab"
                     aria-selected={selected}
                     onClick={() => setActive(i)}
-                    className="group flex items-center gap-3 border-b border-[var(--color-border-subtle)] py-3 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2"
+                    className="group relative flex items-center gap-3 border-b border-[var(--color-border-subtle)] py-3 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2"
                   >
                     <span
-                      className={`relative text-lg font-semibold transition-colors ${
+                      className={`text-lg font-semibold transition-colors ${
                         selected
                           ? "text-brand-coral-strong"
                           : "text-[var(--color-text-primary)] group-hover:text-brand-coral-strong"
                       }`}
                     >
                       {shortName(item.name)}
-                      {selected && (
-                        <motion.span
-                          aria-hidden
-                          layoutId={reduceMotion ? undefined : "app-underline"}
-                          className="absolute -bottom-1 left-0 h-[2px] w-full rounded-pill bg-brand-coral"
-                        />
-                      )}
                     </span>
                     <span
                       className={`rounded-pill px-2 py-0.5 text-[11px] font-semibold ${
@@ -103,6 +96,13 @@ export function ZohoApplications() {
                     >
                       {item.label}
                     </span>
+                    {selected && (
+                      <motion.span
+                        aria-hidden
+                        layoutId={reduceMotion ? undefined : "app-underline"}
+                        className="absolute inset-x-0 -bottom-px h-[2px] bg-gradient-to-r from-brand-coral via-brand-coral/50 to-transparent"
+                      />
+                    )}
                   </button>
                 );
               })}
@@ -133,18 +133,18 @@ export function ZohoApplications() {
 
                 <div className="p-6 sm:p-8">
                   <p className="text-[var(--color-text-secondary)]">{app.body}</p>
-                  <ul className="mt-5 grid grid-cols-1 gap-x-6 gap-y-2.5 sm:grid-cols-2">
+                  <div className="mt-6 flex flex-wrap gap-3">
                     {app.features.map((f) => (
-                      <li
+                      <span
                         key={f}
-                        className="flex items-center gap-2.5 text-sm text-[var(--color-text-secondary)]"
+                        className="inline-flex items-center gap-2.5 rounded-xl bg-[var(--color-surface)] px-4 py-2.5 text-sm text-[var(--color-text-secondary)]"
                       >
                         <span className={`size-2 shrink-0 rounded-full ${a.dot}`} />
                         {f}
-                      </li>
+                      </span>
                     ))}
-                  </ul>
-                  <ButtonLink href="/contact" variant="dark" size="md" className="mt-7">
+                  </div>
+                  <ButtonLink href="/contact" variant="outline" size="md" className="mt-7">
                     Schedule Now
                     <ArrowRight className="size-4" />
                   </ButtonLink>
