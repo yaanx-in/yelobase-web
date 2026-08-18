@@ -3,10 +3,11 @@ import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { AboutHero } from "@/components/sections/about/hero";
 import { AboutMission } from "@/components/sections/about/mission";
-import { AboutValues } from "@/components/sections/about/values";
+import { AboutTeam } from "@/components/sections/about/team";
 import { AboutTrackRecord } from "@/components/sections/about/track-record";
+import { AboutValues } from "@/components/sections/about/values";
 import { AboutWhyChoose } from "@/components/sections/about/why-choose";
-import { AboutCta } from "@/components/sections/about/cta";
+import { ContactForm } from "@/components/sections/contact/form";
 
 export const metadata: Metadata = {
   title: "About — Yelobase | Your trusted Zoho Partner",
@@ -21,10 +22,11 @@ export default function AboutPage() {
       <main id="main">
         <AboutHero />
         <AboutMission />
-        <AboutValues />
+        <AboutTeam />
         <AboutTrackRecord />
+        <AboutValues />
         <AboutWhyChoose />
-        <AboutCta />
+        <ContactForm />
       </main>
       <Footer />
     </>

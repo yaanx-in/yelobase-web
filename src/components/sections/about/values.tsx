@@ -125,7 +125,7 @@ export function AboutValues() {
             Our Core Values
           </h2>
           <p className="mt-4 leading-relaxed text-[var(--color-text-secondary)]">
-            The principles that guide every decision we make and every solution we build.
+            The principles that guide everything we do.
           </p>
         </motion.div>
 

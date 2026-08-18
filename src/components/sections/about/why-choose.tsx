@@ -1,160 +1,44 @@
 "use client";
 
-import { motion, useReducedMotion, type Variants } from "framer-motion";
-import { ShieldCheck, Bolt, Globe, Check } from "@/components/ui/icon";
+import { useState } from "react";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { ArrowRight, Check } from "@/components/ui/icon";
+import { Eyebrow } from "@/components/ui/eyebrow";
 import { Container } from "@/components/layout/container";
-import type { ComponentType, SVGProps } from "react";
 
 const EASE_OUT = [0.16, 1, 0.3, 1] as const;
 
-type Card = {
-  icon: ComponentType<SVGProps<SVGSVGElement>>;
+type Reason = {
   title: string;
   body: string;
   features: string[];
-  accent: "purple" | "coral" | "teal";
 };
 
-const ACCENT = {
-  purple: {
-    tile: "bg-tint-lavender",
-    icon: "text-brand-purple-strong",
-    ring: "group-hover:border-brand-purple/40",
-    check: "bg-tint-lavender text-brand-purple-strong",
-  },
-  coral: {
-    tile: "bg-tint-pink",
-    icon: "text-brand-coral-strong",
-    ring: "group-hover:border-brand-coral/40",
-    check: "bg-tint-pink text-brand-coral-strong",
-  },
-  teal: {
-    tile: "bg-tint-mint",
-    icon: "text-brand-teal",
-    ring: "group-hover:border-brand-teal/40",
-    check: "bg-tint-mint text-brand-teal",
-  },
-} as const;
-
-const CARDS: Card[] = [
+const REASONS: Reason[] = [
   {
-    icon: ShieldCheck,
-    accent: "purple",
     title: "Enterprise Grade Solutions",
     body: "We build scalable automation solutions that grow with your business, from startups to enterprise organizations.",
-    features: [
-      "Scalable architecture",
-      "Security compliance",
-      "Performance optimization",
-      "24/7 support",
-    ],
+    features: ["Scalable architecture", "Security compliance", "Performance optimization", "24/7 support"],
   },
   {
-    icon: Bolt,
-    accent: "coral",
     title: "Rapid Implementation",
     body: "Our proven methodologies ensure quick deployment without compromising on quality or functionality.",
-    features: [
-      "Agile development",
-      "Quick turnaround",
-      "Minimal downtime",
-      "Seamless migration",
-    ],
+    features: ["Agile development", "Quick turnaround", "Minimal downtime", "Seamless migration"],
   },
   {
-    icon: Globe,
-    accent: "teal",
     title: "Global Expertise",
     body: "Serving clients worldwide with deep understanding of diverse business requirements and regulations.",
-    features: [
-      "Multi timezone support",
-      "Cultural awareness",
-      "Regulatory compliance",
-      "Local best practices",
-    ],
+    features: ["Multi timezone support", "Cultural awareness", "Regulatory compliance", "Local best practices"],
   },
 ];
 
-const gridParent: Variants = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.1 } },
-};
-
-const cardVariant: Variants = {
-  hidden: { opacity: 0, y: 30 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.45, ease: EASE_OUT } },
-};
-
-const featureParent: Variants = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.06, delayChildren: 0.15 } },
-};
-
-const featureItem: Variants = {
-  hidden: { opacity: 0, x: -10 },
-  show: { opacity: 1, x: 0, transition: { duration: 0.32, ease: EASE_OUT } },
-};
-
-function WhyCard({ card }: { card: Card }) {
-  const reduceMotion = useReducedMotion();
-  const a = ACCENT[card.accent];
-  const Icon = card.icon;
-
-  return (
-    <motion.article
-      variants={cardVariant}
-      whileHover={reduceMotion ? undefined : { y: -6 }}
-      transition={{ type: "spring", stiffness: 300, damping: 24 }}
-      className={`group relative flex h-full flex-col overflow-hidden rounded-[24px] border border-[var(--color-border-subtle)] bg-[var(--color-background)] p-8 shadow-sm transition-shadow duration-[var(--duration-micro)] hover:shadow-lg ${a.ring}`}
-    >
-      {/* top sheen on hover */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-brand-purple/40 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-      />
-
-      <span
-        className={`inline-flex size-14 items-center justify-center rounded-2xl ${a.tile} transition-transform duration-[var(--duration-micro)] group-hover:scale-110`}
-      >
-        <Icon className={`size-7 ${a.icon}`} />
-      </span>
-
-      <h3 className="mt-6 text-xl font-semibold text-[var(--color-text-primary)]">
-        {card.title}
-      </h3>
-      <p className="mt-3 leading-relaxed text-[var(--color-text-secondary)]">
-        {card.body}
-      </p>
-
-      <motion.ul
-        variants={featureParent}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, margin: "0px 0px -10% 0px" }}
-        className="mt-6 grid grid-cols-2 gap-x-4 gap-y-3"
-      >
-        {card.features.map((f) => (
-          <motion.li
-            key={f}
-            variants={featureItem}
-            className="flex items-center gap-2 text-sm text-[var(--color-text-secondary)]"
-          >
-            <span
-              className={`inline-flex size-5 shrink-0 items-center justify-center rounded-full ${a.check}`}
-            >
-              <Check className="size-3" />
-            </span>
-            {f}
-          </motion.li>
-        ))}
-      </motion.ul>
-    </motion.article>
-  );
-}
-
 export function AboutWhyChoose() {
+  const [active, setActive] = useState(0);
+  const reduceMotion = useReducedMotion();
+  const reason = REASONS[active];
+
   return (
-    <section className="bg-[var(--color-surface)] py-[var(--section-padding-y)]">
+    <section className="bg-[var(--color-background-warm)] py-[var(--section-padding-y)]">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -163,25 +47,79 @@ export function AboutWhyChoose() {
           transition={{ duration: 0.4, ease: EASE_OUT }}
           className="mx-auto max-w-2xl text-center"
         >
-          <h2 className="text-balance text-3xl font-bold tracking-tight text-[var(--color-text-primary)] sm:text-4xl">
-            Why Businesses Choose YeloBase
+          <Eyebrow color="teal">Why YeloBase</Eyebrow>
+          <h2 className="mt-3 text-balance text-3xl font-bold tracking-tight text-[var(--color-text-primary)] sm:text-4xl">
+            Why choose YeloBase?
           </h2>
           <p className="mt-4 leading-relaxed text-[var(--color-text-secondary)]">
-            From strategy to deployment and beyond — we deliver automation that sticks.
+            Our comprehensive approach to automation and business transformation.
           </p>
         </motion.div>
 
-        <motion.div
-          variants={gridParent}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: "0px 0px -8% 0px" }}
-          className="mt-12 grid gap-6 lg:grid-cols-3"
-        >
-          {CARDS.map((card) => (
-            <WhyCard key={card.title} card={card} />
-          ))}
-        </motion.div>
+        <div className="mt-12 grid gap-8 lg:grid-cols-2 lg:gap-14">
+          {/* Left — selectable list */}
+          <div role="tablist" aria-label="Reasons to choose YeloBase" className="flex flex-col">
+            {REASONS.map((r, i) => {
+              const selected = i === active;
+              return (
+                <button
+                  key={r.title}
+                  role="tab"
+                  aria-selected={selected}
+                  onClick={() => setActive(i)}
+                  className="group flex items-center justify-between gap-4 border-b border-[var(--color-border)] py-5 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2"
+                >
+                  <span
+                    className={`text-xl font-semibold transition-colors ${
+                      selected
+                        ? "text-brand-purple-strong"
+                        : "text-[var(--color-text-primary)] group-hover:text-brand-purple-strong"
+                    }`}
+                  >
+                    {r.title}
+                  </span>
+                  <ArrowRight
+                    className={`size-5 shrink-0 transition-all ${
+                      selected
+                        ? "text-brand-purple-strong opacity-100"
+                        : "text-[var(--color-text-muted)] opacity-0 group-hover:opacity-100"
+                    }`}
+                  />
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Right — active detail */}
+          <div className="rounded-[24px] border border-[var(--color-border-subtle)] bg-[var(--color-background)] p-8 shadow-sm sm:p-10">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={active}
+                initial={reduceMotion ? false : { opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={reduceMotion ? { opacity: 0 } : { opacity: 0, y: -12 }}
+                transition={{ duration: 0.28, ease: EASE_OUT }}
+              >
+                <h3 className="text-xl font-semibold text-[var(--color-text-primary)]">
+                  {reason.title}
+                </h3>
+                <p className="mt-3 leading-relaxed text-[var(--color-text-secondary)]">
+                  {reason.body}
+                </p>
+                <ul className="mt-6 space-y-3">
+                  {reason.features.map((f) => (
+                    <li key={f} className="flex items-center gap-3 text-[var(--color-text-secondary)]">
+                      <span className="inline-flex size-6 shrink-0 items-center justify-center rounded-full bg-tint-lavender">
+                        <Check className="size-3.5 text-brand-purple-strong" />
+                      </span>
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+        </div>
       </Container>
     </section>
   );
