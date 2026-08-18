@@ -1,10 +1,10 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { motion, useReducedMotion, type Variants } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { ChevronDown, ArrowRight } from "@/components/ui/icon";
 import { Container } from "@/components/layout/container";
-import { POSTS, TagRow, AuthorRow, coverClass, type Post } from "./posts";
+import { POSTS, BlogCard } from "./posts";
 
 const EASE_OUT = [0.16, 1, 0.3, 1] as const;
 
@@ -15,26 +15,6 @@ const gridChild: Variants = {
   hidden: { opacity: 0, y: 24 },
   show: { opacity: 1, y: 0, transition: { duration: 0.4, ease: EASE_OUT } },
 };
-
-function BlogCard({ post }: { post: Post }) {
-  const reduceMotion = useReducedMotion();
-  return (
-    <motion.article
-      variants={gridChild}
-      whileHover={reduceMotion ? undefined : { y: -6 }}
-      transition={{ type: "spring", stiffness: 300, damping: 24 }}
-      className="group flex flex-col"
-    >
-      {/* placeholder cover — ponytail: swap with the real article image */}
-      <div className={`aspect-[16/10] w-full rounded-[16px] ${coverClass(post.accent)}`} />
-      <h3 className="mt-4 line-clamp-3 text-lg font-semibold leading-snug text-[var(--color-text-primary)] group-hover:text-brand-coral-strong">
-        {post.title}
-      </h3>
-      <TagRow tags={post.tags} className="mt-3" />
-      <AuthorRow post={post} stacked className="mt-4" />
-    </motion.article>
-  );
-}
 
 export function BlogList() {
   const [category, setCategory] = useState<(typeof CATEGORIES)[number]>("All Blogs");
@@ -81,7 +61,9 @@ export function BlogList() {
           className="mt-10 grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3"
         >
           {filtered.map((post, i) => (
-            <BlogCard key={i} post={post} />
+            <motion.div key={i} variants={gridChild}>
+              <BlogCard post={post} />
+            </motion.div>
           ))}
         </motion.div>
 
