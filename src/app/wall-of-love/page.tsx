@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { WallHero } from "@/components/sections/wall/hero";
-import { WallStats } from "@/components/sections/wall/stats";
 import { WallTestimonials } from "@/components/sections/wall/testimonials";
 import { WallCta } from "@/components/sections/wall/cta";
 
@@ -18,7 +17,6 @@ export default function WallOfLovePage() {
       <Header />
       <main id="main">
         <WallHero />
-        <WallStats />
         <WallTestimonials />
         <WallCta />
       </main>
