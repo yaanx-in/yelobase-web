@@ -106,7 +106,7 @@ const SERVICE_CARDS: ServiceCard[] = [
     badge: "Connectivity",
     accent: "amber",
     icon: Workflow,
-    title: "Integration Solutions",
+    title: "Integration Solution",
     body: "Seamless connections between Zoho apps and third party systems for unified operations.",
     includes: ["API development and integration", "Third party app connections", "Data synchronization setup", "Real time integration monitoring", "Custom connector development"],
   },
@@ -244,7 +244,7 @@ export function ZohoCapabilities() {
   const current = TABS.find((t) => t.key === tab)!;
 
   return (
-    <section className="bg-[var(--color-background-warm)] py-[var(--section-padding-y)]">
+    <section id="capabilities" className="scroll-mt-24 bg-[var(--color-background-warm)] py-[var(--section-padding-y)]">
       <Container>
         {/* Segmented toggle */}
         <LayoutGroup>

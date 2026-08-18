@@ -54,8 +54,8 @@ export function ZohoCta() {
               </p>
             </div>
             <div className="flex shrink-0 flex-col gap-3 sm:flex-row">
-              <ButtonLink href="#applications" variant="outline" size="lg">
-                Explore all Applications
+              <ButtonLink href="#capabilities" variant="outline" size="lg">
+                Explore AI Automations
               </ButtonLink>
               <ButtonLink href="/contact" variant="primary" size="lg">
                 Schedule Free Consultation
