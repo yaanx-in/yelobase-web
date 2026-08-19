@@ -12,7 +12,6 @@ import { Menu, Close } from "@/components/ui/icon";
 const NAV_LINKS = [
   { label: "Zoho Services", href: "/zoho-services" },
   { label: "About", href: "/about" },
-  { label: "Wall of Love", href: "/wall-of-love" },
 ];
 
 export function Header() {
