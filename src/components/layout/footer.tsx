@@ -4,9 +4,9 @@ import { Mail, Phone, MapPin } from "@/components/ui/icon";
 
 const SERVICES = [
   { label: "Zoho Automation", href: "/zoho-services" },
-  { label: "Golf Academies", href: "/golf" },
   { label: "AI Agents", href: "/zoho-services" },
   { label: "Data Migration", href: "/zoho-services" },
+  { label: "Pricing", href: "/zoho-services" },
 ];
 
 const COMPANY = [
