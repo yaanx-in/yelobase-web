@@ -51,10 +51,10 @@ export function Footer() {
       id="footer"
       className="relative overflow-hidden bg-[var(--color-surface-dark)] text-white"
     >
-      <Container className="relative z-10 pb-44 pt-14 sm:pb-52">
+      <Container className="relative z-10 pb-52 pt-14 sm:pb-64">
         {/* Tagline bar */}
-        <div className="rounded-2xl border border-white/10 bg-white/[0.03] px-6 py-5 sm:px-8">
-          <p className="max-w-[1100px] text-sm leading-[1.45] text-white/60">
+        <div className="rounded-2xl border border-white/10 bg-white/[0.03] px-6 py-4 sm:px-8">
+          <p className="text-xs leading-relaxed text-white/55">
             Transforming businesses through intelligent Zoho automation and
             custom AI agents. We help companies streamline operations and enhance
             productivity across all industries.
@@ -96,19 +96,19 @@ export function Footer() {
           The real brand lockup (logo-white.svg) masks a purple→coral gradient. */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 bottom-[-8%] z-0 h-[46%] min-h-[220px]"
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-[200px]"
         style={{
           background:
-            "linear-gradient(90deg, var(--color-brand-purple-strong) 8%, var(--color-brand-purple) 42%, var(--color-brand-coral) 82%)",
-          opacity: 0.35,
+            "linear-gradient(90deg, var(--color-brand-purple-strong) 5%, var(--color-brand-purple) 40%, var(--color-brand-coral) 85%)",
+          opacity: 0.42,
           WebkitMaskImage: "url(/brand/logo-white.svg)",
           maskImage: "url(/brand/logo-white.svg)",
           WebkitMaskRepeat: "no-repeat",
           maskRepeat: "no-repeat",
           WebkitMaskPosition: "center top",
           maskPosition: "center top",
-          WebkitMaskSize: "min(1180px, 92%) auto",
-          maskSize: "min(1180px, 92%) auto",
+          WebkitMaskSize: "min(1120px, 82%) auto",
+          maskSize: "min(1120px, 82%) auto",
         }}
       />
     </footer>
