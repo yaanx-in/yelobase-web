@@ -49,10 +49,20 @@ export function Footer() {
   return (
     <footer
       id="footer"
-      className="bg-[var(--color-surface-dark)] text-white"
+      className="relative overflow-hidden bg-[var(--color-surface-dark)] text-white"
     >
-      <Container className="py-16">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+      <Container className="relative z-10 pb-44 pt-14 sm:pb-52">
+        {/* Tagline bar */}
+        <div className="rounded-2xl border border-white/10 bg-white/[0.03] px-6 py-5 sm:px-8">
+          <p className="max-w-[1100px] text-sm leading-[1.45] text-white/60">
+            Transforming businesses through intelligent Zoho automation and
+            custom AI agents. We help companies streamline operations and enhance
+            productivity across all industries.
+          </p>
+        </div>
+
+        {/* Link + contact columns */}
+        <div className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <LinkColumn heading="Services" links={SERVICES} />
           <LinkColumn heading="Company" links={COMPANY} />
           <div className="lg:col-span-2 lg:justify-self-end">
@@ -80,23 +90,27 @@ export function Footer() {
             </ul>
           </div>
         </div>
-
-        <div className="mt-8 flex flex-col gap-6 rounded-2xl bg-[#050505] px-8 py-8 sm:flex-row sm:items-center sm:gap-12 sm:px-10">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/brand/footer-lockup.svg"
-            alt="Yelobase — Zoho Authorized Partner"
-            width={313}
-            height={56}
-            className="h-11 w-auto shrink-0"
-          />
-          <p className="max-w-[720px] text-sm leading-[1.45] text-white/55">
-            Transforming businesses through intelligent Zoho automation and
-            custom AI agents. We help companies streamline operations and enhance
-            productivity across all industries.
-          </p>
-        </div>
       </Container>
+
+      {/* Oversized Yelobase wordmark, clipped by the footer's bottom edge.
+          The real brand lockup (logo-white.svg) masks a purple→coral gradient. */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 bottom-[-8%] z-0 h-[46%] min-h-[220px]"
+        style={{
+          background:
+            "linear-gradient(90deg, var(--color-brand-purple-strong) 8%, var(--color-brand-purple) 42%, var(--color-brand-coral) 82%)",
+          opacity: 0.35,
+          WebkitMaskImage: "url(/brand/logo-white.svg)",
+          maskImage: "url(/brand/logo-white.svg)",
+          WebkitMaskRepeat: "no-repeat",
+          maskRepeat: "no-repeat",
+          WebkitMaskPosition: "center top",
+          maskPosition: "center top",
+          WebkitMaskSize: "min(1180px, 92%) auto",
+          maskSize: "min(1180px, 92%) auto",
+        }}
+      />
     </footer>
   );
 }
