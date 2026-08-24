@@ -19,7 +19,7 @@ export function AboutMission() {
   return (
     <section className="bg-[var(--color-background-warm)] py-[var(--section-padding-y)]">
       <Container>
-        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+        <div className="grid items-center gap-8 lg:grid-cols-[1fr_1.25fr] lg:gap-8">
           {/* Left — mission copy */}
           <motion.div {...fadeUp}>
             <h2 className="text-balance text-3xl font-bold tracking-tight text-[var(--color-text-primary)] sm:text-4xl">
