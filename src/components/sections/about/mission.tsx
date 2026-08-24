@@ -47,9 +47,8 @@ export function AboutMission() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "0px 0px -10% 0px" }}
             transition={{ duration: 0.45, delay: 0.1, ease: EASE_OUT }}
-            className="relative"
           >
-            <div className="overflow-hidden rounded-[24px] border border-[var(--color-border-subtle)] shadow-lg">
+            <div className="overflow-hidden rounded-[24px] border border-[var(--color-surface-dark)]">
               <Image
                 src="/graphics/about/mission.webp"
                 alt="The YeloBase team collaborating"
@@ -58,10 +57,6 @@ export function AboutMission() {
                 className="h-auto w-full"
               />
             </div>
-            <div
-              aria-hidden
-              className="pointer-events-none absolute -bottom-4 -right-4 -z-10 size-40 rounded-full bg-brand-coral/15 blur-2xl"
-            />
           </motion.div>
         </div>
       </Container>

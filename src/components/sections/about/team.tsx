@@ -58,7 +58,7 @@ export function AboutTeam() {
             <motion.article
               key={i}
               variants={cardVariant}
-              className="overflow-hidden rounded-[20px] border border-[var(--color-border-subtle)] bg-[var(--color-background)] shadow-sm"
+              className="overflow-hidden rounded-[20px] border border-[var(--color-surface-dark)] bg-[var(--color-background)]"
             >
               <div
                 className={`relative aspect-square w-full ${
