@@ -171,7 +171,7 @@ function StatCardView({ card }: { card: StatCard }) {
       variants={gridChild}
       className="flex h-full flex-col rounded-[24px] border border-[var(--color-border-subtle)] bg-[var(--color-background)] p-8 shadow-sm"
     >
-      <span className={`inline-flex w-fit rounded-md px-2.5 py-1 text-[11px] font-semibold ${a.solidPill}`}>
+      <span className={`inline-flex w-fit rounded-[5px] px-2.5 py-1 text-[11px] font-semibold ${a.solidPill}`}>
         {card.badge}
       </span>
 
@@ -204,7 +204,7 @@ function ServiceCardView({ card }: { card: ServiceCard }) {
       className="flex h-full items-start gap-6 rounded-[24px] border border-[var(--color-border-subtle)] bg-[var(--color-background)] p-8 shadow-sm"
     >
       <div className="min-w-0 flex-1">
-        <span className={`rounded-pill px-2.5 py-1 text-[11px] font-semibold ${a.pill}`}>
+        <span className={`rounded-[5px] px-2.5 py-1 text-[11px] font-semibold ${a.pill}`}>
           {card.badge}
         </span>
         <h3 className="mt-4 text-lg font-semibold text-[var(--color-text-primary)]">{card.title}</h3>
