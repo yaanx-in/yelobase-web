@@ -13,31 +13,31 @@ export function ZohoCta() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <section className="bg-[var(--color-background-warm)] pb-20">
+    <section className="bg-[var(--color-background-warm)] pb-24 pt-8">
       <Container>
         <motion.div
           initial={reduceMotion ? false : { opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "0px 0px -10% 0px" }}
           transition={{ duration: 0.45, ease: EASE_OUT }}
-          className="relative overflow-hidden rounded-[24px] bg-[var(--color-surface)] px-7 py-12 ring-1 ring-[var(--color-border)] sm:px-14 lg:py-14"
+          className="relative rounded-[24px] bg-[#d9d9d9] px-7 py-12 sm:px-14 lg:py-14"
         >
-          {/* confetti decor */}
+          {/* 3D decor objects peeking out of the corners */}
           <Image
-            src="/decor/bolt.svg"
+            src="/graphics/zoho/cta-chalk.webp"
             alt=""
             aria-hidden
-            width={40}
-            height={40}
-            className="pointer-events-none absolute left-8 top-6 size-8 opacity-40 sm:size-10"
+            width={146}
+            height={116}
+            className="pointer-events-none absolute -top-6 left-8 w-16 -rotate-[8deg] sm:w-20"
           />
           <Image
-            src="/decor/bolt.svg"
+            src="/graphics/zoho/cta-ring.webp"
             alt=""
             aria-hidden
-            width={48}
-            height={48}
-            className="pointer-events-none absolute -bottom-2 right-10 size-10 rotate-180 opacity-30 sm:size-12"
+            width={114}
+            height={128}
+            className="pointer-events-none absolute -bottom-6 right-10 w-12 sm:w-14"
           />
 
           <div className="relative z-10 flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
@@ -45,8 +45,9 @@ export function ZohoCta() {
               <Eyebrow color="teal" className="tracking-[0.3em]">
                 Get Started
               </Eyebrow>
-              <h2 className="mt-4 font-mono text-[clamp(1.8rem,4vw,2.6rem)] font-semibold leading-[1.1] tracking-tight text-[var(--color-text-primary)]">
-                Ready to Optimize Your Zoho Investment?
+              <h2 className="mt-4 font-mono text-[clamp(1.5rem,3vw,2.15rem)] font-semibold leading-[1.12] tracking-tight text-[var(--color-text-primary)]">
+                Ready to Optimize
+                <br /> Your Zoho Investment?
               </h2>
               <p className="mt-4 text-[var(--color-text-secondary)]">
                 Get a free consultation and discover how we can transform your business
@@ -54,7 +55,7 @@ export function ZohoCta() {
               </p>
             </div>
             <div className="flex shrink-0 flex-col gap-3 sm:flex-row">
-              <ButtonLink href="#capabilities" variant="outline" size="lg">
+              <ButtonLink href="#capabilities" variant="outline" size="lg" className="bg-[var(--color-background)]">
                 Explore AI Automations
               </ButtonLink>
               <ButtonLink href="/contact" variant="primary" size="lg">

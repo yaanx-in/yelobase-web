@@ -11,7 +11,7 @@ export function ZohoHero() {
   return (
     <section className="relative bg-[var(--color-background-warm)] pb-16 pt-12 sm:pt-16">
       <Container className="relative">
-        <Stagger onMount className="mx-auto max-w-4xl text-center">
+        <Stagger onMount className="mx-auto max-w-5xl text-center">
           <Stagger.Item>
             <Eyebrow color="teal" className="tracking-[0.3em]">
               Zoho Services
@@ -19,7 +19,7 @@ export function ZohoHero() {
           </Stagger.Item>
 
           <Stagger.Item>
-            <h1 className="mt-4 font-mono text-[clamp(1.9rem,5.2vw,3.5rem)] font-bold leading-[1.08] tracking-tight text-[var(--color-text-primary)]">
+            <h1 className="mt-4 font-mono text-[clamp(1.7rem,4.4vw,2.9rem)] font-bold leading-[1.1] tracking-tight text-[var(--color-text-primary)]">
               Zoho Is Powerful.
               <br className="hidden sm:block" /> Most Businesses Use 20% of It.
             </h1>
