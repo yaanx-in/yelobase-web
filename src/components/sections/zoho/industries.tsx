@@ -2,7 +2,6 @@
 
 import type { ComponentType, SVGProps } from "react";
 import { motion, useReducedMotion, type Variants } from "framer-motion";
-import { Eyebrow } from "@/components/ui/eyebrow";
 import { Container } from "@/components/layout/container";
 import {
   ShoppingBag,
@@ -90,9 +89,8 @@ export function ZohoIndustries() {
           transition={{ duration: 0.4, ease: EASE_OUT }}
           className="mx-auto max-w-2xl text-center"
         >
-          <Eyebrow color="teal">Industries We Serve</Eyebrow>
-          <h2 className="mt-3 text-balance text-3xl font-bold tracking-tight text-[var(--color-text-primary)] sm:text-4xl">
-            Tailored to how your sector works
+          <h2 className="text-balance text-3xl font-bold tracking-tight text-[var(--color-text-primary)] sm:text-4xl">
+            Industries We Serve
           </h2>
           <p className="mt-4 text-[var(--color-text-secondary)]">
             Tailored Zoho solutions for businesses across all sectors.
