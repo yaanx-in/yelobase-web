@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { Eyebrow } from "@/components/ui/eyebrow";
 import { ButtonLink } from "@/components/ui/button";
 import { Container } from "@/components/layout/container";
 import { ArrowRight } from "@/components/ui/icon";
@@ -60,8 +59,7 @@ export function ZohoApplications() {
         <div className="grid gap-10 lg:grid-cols-[minmax(0,24rem)_1fr] lg:gap-14">
           {/* Left: heading + app list */}
           <div>
-            <Eyebrow color="teal">Zoho Ecosystem</Eyebrow>
-            <h2 className="mt-3 text-balance text-3xl font-bold tracking-tight text-[var(--color-text-primary)] sm:text-4xl">
+            <h2 className="text-balance text-3xl font-bold tracking-tight text-[var(--color-text-primary)] sm:text-4xl">
               Zoho Applications We Specialize In
             </h2>
             <p className="mt-4 text-[var(--color-text-secondary)]">
