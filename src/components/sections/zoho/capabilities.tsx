@@ -17,17 +17,17 @@ import {
   type Variants,
 } from "framer-motion";
 import { Container } from "@/components/layout/container";
-import { Plug, Terminal, Database, Layers, Bolt, Workflow, Sprout } from "@/components/ui/icon";
+import { Layers, Bolt, Workflow, Sprout } from "@/components/ui/icon";
 
 const EASE_OUT = [0.16, 1, 0.3, 1] as const;
 
 type Accent = "purple" | "coral" | "teal" | "amber";
 
-const ACCENT: Record<Accent, { tile: string; icon: string; pill: string; dot: string }> = {
-  purple: { tile: "bg-tint-lavender", icon: "text-brand-purple-strong", pill: "bg-tint-lavender text-brand-purple-strong", dot: "bg-brand-purple-strong" },
-  coral: { tile: "bg-tint-pink", icon: "text-brand-coral-strong", pill: "bg-tint-pink-soft text-brand-coral-strong", dot: "bg-brand-coral-strong" },
-  teal: { tile: "bg-tint-mint", icon: "text-brand-teal", pill: "bg-tint-mint text-brand-teal", dot: "bg-brand-teal" },
-  amber: { tile: "bg-tint-cream", icon: "text-[#8a6a12]", pill: "bg-tint-cream text-[#8a6a12]", dot: "bg-[#8a6a12]" },
+const ACCENT: Record<Accent, { tile: string; icon: string; pill: string; solidPill: string; dot: string }> = {
+  purple: { tile: "bg-tint-lavender", icon: "text-brand-purple-strong", pill: "bg-tint-lavender text-brand-purple-strong", solidPill: "bg-brand-purple text-white", dot: "bg-brand-purple-strong" },
+  coral: { tile: "bg-tint-pink", icon: "text-brand-coral-strong", pill: "bg-tint-pink-soft text-brand-coral-strong", solidPill: "bg-brand-coral text-white", dot: "bg-brand-coral-strong" },
+  teal: { tile: "bg-tint-mint", icon: "text-brand-teal", pill: "bg-tint-mint text-brand-teal", solidPill: "bg-brand-teal text-white", dot: "bg-brand-teal" },
+  amber: { tile: "bg-tint-cream", icon: "text-[#8a6a12]", pill: "bg-tint-cream text-[#8a6a12]", solidPill: "bg-[#f9b21d] text-white", dot: "bg-[#8a6a12]" },
 };
 
 type StatCard = {
@@ -120,9 +120,6 @@ const SERVICE_CARDS: ServiceCard[] = [
   },
 ];
 
-// icon per stat card (decorative, echoes the integration kicker)
-const STAT_ICONS: ComponentType<SVGProps<SVGSVGElement>>[] = [Plug, Terminal, Database];
-
 const TABS = [
   { key: "integrations", label: "Custom Integrations & Automations", subline: "Bespoke integrations and automations built for your unique business" },
   { key: "services", label: "Our Zoho Services", subline: "End-to-end Zoho solutions from initial setup to ongoing optimization" },
@@ -173,21 +170,16 @@ function IncludesList({ items, dot }: { items: string[]; dot: string }) {
   );
 }
 
-function StatCardView({ card, icon: Icon }: { card: StatCard; icon: ComponentType<SVGProps<SVGSVGElement>> }) {
+function StatCardView({ card }: { card: StatCard }) {
   const a = ACCENT[card.accent];
   return (
     <motion.article
       variants={gridChild}
       className="flex h-full flex-col rounded-[24px] border border-[var(--color-border-subtle)] bg-[var(--color-background)] p-8 shadow-sm"
     >
-      <div className="flex items-center justify-between">
-        <span className={`rounded-pill px-2.5 py-1 text-[11px] font-semibold ${a.pill}`}>
-          {card.badge}
-        </span>
-        <span className={`inline-flex size-9 items-center justify-center rounded-xl ${a.tile}`}>
-          <Icon className={`size-5 ${a.icon}`} />
-        </span>
-      </div>
+      <span className={`inline-flex w-fit rounded-md px-2.5 py-1 text-[11px] font-semibold ${a.solidPill}`}>
+        {card.badge}
+      </span>
 
       <p className="mt-6 flex items-baseline gap-2">
         <span className="font-mono text-3xl font-bold tracking-tight text-[var(--color-text-primary)]">
@@ -300,9 +292,7 @@ export function ZohoCapabilities() {
               }`}
             >
               {tab === "integrations"
-                ? STAT_CARDS.map((c, i) => (
-                    <StatCardView key={c.title} card={c} icon={STAT_ICONS[i]} />
-                  ))
+                ? STAT_CARDS.map((c) => <StatCardView key={c.title} card={c} />)
                 : SERVICE_CARDS.map((c) => <ServiceCardView key={c.title} card={c} />)}
             </motion.div>
           </motion.div>
