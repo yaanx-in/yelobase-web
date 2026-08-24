@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { ArrowRight, Check } from "@/components/ui/icon";
+import { ArrowRightCircle, Check } from "@/components/ui/icon";
 import { Container } from "@/components/layout/container";
 
 const EASE_OUT = [0.16, 1, 0.3, 1] as const;
@@ -68,7 +68,7 @@ export function AboutWhyChoose() {
                   className="group flex items-center justify-between gap-4 border-b border-[var(--color-border)] py-5 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2"
                 >
                   <span
-                    className={`text-xl font-semibold transition-colors ${
+                    className={`text-xl font-medium transition-colors ${
                       selected
                         ? "text-brand-purple-strong"
                         : "text-[var(--color-text-primary)] group-hover:text-brand-purple-strong"
@@ -76,8 +76,8 @@ export function AboutWhyChoose() {
                   >
                     {r.title}
                   </span>
-                  <ArrowRight
-                    className={`size-5 shrink-0 transition-all ${
+                  <ArrowRightCircle
+                    className={`size-6 shrink-0 transition-all ${
                       selected
                         ? "text-brand-purple-strong opacity-100"
                         : "text-[var(--color-text-muted)] opacity-0 group-hover:opacity-100"

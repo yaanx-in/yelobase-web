@@ -546,6 +546,16 @@ export function Lock(props: IconProps) {
   );
 }
 
+export function ArrowRightCircle(props: IconProps) {
+  return (
+    <svg {...base(props)}>
+      <circle cx="12" cy="12" r="10" />
+      <path d="m12 16 4-4-4-4" />
+      <path d="M8 12h8" />
+    </svg>
+  );
+}
+
 export function Lightbulb(props: IconProps) {
   return (
     <svg {...base(props)}>
