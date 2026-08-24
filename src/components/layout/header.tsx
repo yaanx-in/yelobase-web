@@ -88,16 +88,24 @@ export function Header() {
         {/* Desktop nav */}
         <nav aria-label="Primary" className="hidden lg:block">
           <ul className="flex items-center gap-8">
-            {NAV_LINKS.map((link) => (
-              <li key={link.label}>
-                <Link
-                  href={link.href}
-                  className="font-mono text-sm text-[var(--color-text-secondary)] transition-colors duration-[var(--duration-micro)] hover:text-[var(--color-text-primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2 rounded-sm"
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
+            {NAV_LINKS.map((link) => {
+              const active = pathname === link.href || pathname.startsWith(link.href + "/");
+              return (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    aria-current={active ? "page" : undefined}
+                    className={`font-mono text-sm font-medium transition-colors duration-[var(--duration-micro)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2 rounded-sm ${
+                      active
+                        ? "text-brand-coral"
+                        : "text-[var(--color-text-primary)] hover:text-brand-coral"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </nav>
 
