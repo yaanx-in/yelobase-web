@@ -48,13 +48,13 @@ export function AboutMission() {
             viewport={{ once: true, margin: "0px 0px -10% 0px" }}
             transition={{ duration: 0.45, delay: 0.1, ease: EASE_OUT }}
           >
-            <div className="overflow-hidden rounded-[24px] border border-[var(--color-surface-dark)]">
+            <div className="relative aspect-[3/2] overflow-hidden rounded-[24px] border border-[var(--color-surface-dark)]">
               <Image
                 src="/graphics/about/mission.webp"
                 alt="The YeloBase team collaborating"
-                width={1200}
-                height={752}
-                className="h-auto w-full"
+                fill
+                sizes="(min-width: 1024px) 640px, 100vw"
+                className="object-cover"
               />
             </div>
           </motion.div>
