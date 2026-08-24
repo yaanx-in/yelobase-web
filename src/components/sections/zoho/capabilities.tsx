@@ -1,12 +1,7 @@
 "use client";
 
-import {
-  useEffect,
-  useRef,
-  useState,
-  type ComponentType,
-  type SVGProps,
-} from "react";
+import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 import {
   AnimatePresence,
   LayoutGroup,
@@ -17,7 +12,6 @@ import {
   type Variants,
 } from "framer-motion";
 import { Container } from "@/components/layout/container";
-import { Layers, Bolt, Workflow, Sprout } from "@/components/ui/icon";
 
 const EASE_OUT = [0.16, 1, 0.3, 1] as const;
 
@@ -79,7 +73,7 @@ const STAT_CARDS: StatCard[] = [
 type ServiceCard = {
   badge: string;
   accent: Accent;
-  icon: ComponentType<SVGProps<SVGSVGElement>>;
+  illustration: string;
   title: string;
   body: string;
   includes: string[];
@@ -89,7 +83,7 @@ const SERVICE_CARDS: ServiceCard[] = [
   {
     badge: "Foundation",
     accent: "purple",
-    icon: Layers,
+    illustration: "/graphics/zoho/services/impl.webp",
     title: "Zoho Implementation",
     body: "Complete setup and configuration of Zoho applications tailored to your business needs.",
     includes: ["Initial consultation and needs analysis", "Application setup and configuration", "Data migration from existing systems", "User training and documentation", "Go-live support and optimization"],
@@ -97,7 +91,7 @@ const SERVICE_CARDS: ServiceCard[] = [
   {
     badge: "Efficiency",
     accent: "coral",
-    icon: Bolt,
+    illustration: "/graphics/zoho/services/automation.webp",
     title: "Custom Automation",
     body: "Intelligent workflows and automations to eliminate manual tasks and boost efficiency.",
     includes: ["Workflow design and implementation", "Business process automation", "Email and notification automation", "Approval processes and escalations", "Custom function development"],
@@ -105,7 +99,7 @@ const SERVICE_CARDS: ServiceCard[] = [
   {
     badge: "Connectivity",
     accent: "amber",
-    icon: Workflow,
+    illustration: "/graphics/zoho/services/integration.webp",
     title: "Integration Solution",
     body: "Seamless connections between Zoho apps and third party systems for unified operations.",
     includes: ["API development and integration", "Third party app connections", "Data synchronization setup", "Real time integration monitoring", "Custom connector development"],
@@ -113,7 +107,7 @@ const SERVICE_CARDS: ServiceCard[] = [
   {
     badge: "Growth",
     accent: "teal",
-    icon: Sprout,
+    illustration: "/graphics/zoho/services/support.webp",
     title: "Ongoing Support",
     body: "Continuous optimization and support to ensure your Zoho investment delivers maximum ROI.",
     includes: ["24/7 technical support", "Regular system optimization", "User training and workshops", "Performance monitoring", "Feature updates and enhancements"],
@@ -204,7 +198,6 @@ function StatCardView({ card }: { card: StatCard }) {
 
 function ServiceCardView({ card }: { card: ServiceCard }) {
   const a = ACCENT[card.accent];
-  const Icon = card.icon;
   return (
     <motion.article
       variants={gridChild}
@@ -221,11 +214,13 @@ function ServiceCardView({ card }: { card: ServiceCard }) {
         </p>
         <IncludesList items={card.includes} dot={a.dot} />
       </div>
-      <span
-        className={`hidden size-24 shrink-0 items-center justify-center rounded-3xl sm:inline-flex ${a.tile}`}
-      >
-        <Icon className={`size-10 ${a.icon}`} />
-      </span>
+      <Image
+        src={card.illustration}
+        alt=""
+        width={167}
+        height={167}
+        className="hidden size-24 shrink-0 sm:block"
+      />
     </motion.article>
   );
 }
