@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { ButtonLink } from "@/components/ui/button";
 import { Container } from "@/components/layout/container";
@@ -49,14 +49,28 @@ const shortName = (name: string) => name.replace(/^Zoho\s+/, "");
 
 export function ZohoApplications() {
   const [active, setActive] = useState(0);
+  const [paused, setPaused] = useState(false);
   const reduceMotion = useReducedMotion();
   const app = APPS[active];
   const a = ACCENT[app.accent];
 
+  // Auto-advance through the apps; pause on hover/focus or reduced motion.
+  useEffect(() => {
+    if (reduceMotion || paused) return;
+    const id = setInterval(() => setActive((p) => (p + 1) % APPS.length), 3200);
+    return () => clearInterval(id);
+  }, [reduceMotion, paused]);
+
   return (
     <section id="applications" className="scroll-mt-24 bg-[var(--color-background)] py-[var(--section-padding-y)]">
       <Container>
-        <div className="grid gap-10 lg:grid-cols-[minmax(0,24rem)_1fr] lg:gap-14">
+        <div
+          className="grid gap-10 lg:grid-cols-[minmax(0,24rem)_1fr] lg:gap-14"
+          onMouseEnter={() => setPaused(true)}
+          onMouseLeave={() => setPaused(false)}
+          onFocusCapture={() => setPaused(true)}
+          onBlurCapture={() => setPaused(false)}
+        >
           {/* Left: heading + app list */}
           <div>
             <h2 className="text-balance text-3xl font-bold tracking-tight text-[var(--color-text-primary)] sm:text-4xl">
@@ -79,10 +93,10 @@ export function ZohoApplications() {
                     className="group relative flex items-center gap-3 border-b border-[var(--color-border-subtle)] py-3 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2"
                   >
                     <span
-                      className={`text-lg font-semibold transition-colors ${
+                      className={`text-lg transition-colors ${
                         selected
-                          ? "text-brand-coral-strong"
-                          : "text-[var(--color-text-primary)] group-hover:text-brand-coral-strong"
+                          ? "font-bold text-[var(--color-text-primary)]"
+                          : "font-medium text-[var(--color-text-muted)] group-hover:text-[var(--color-text-primary)]"
                       }`}
                     >
                       {shortName(item.name)}
