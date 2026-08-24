@@ -17,7 +17,7 @@ const fadeUp = {
 
 export function AboutMission() {
   return (
-    <section className="bg-[var(--color-background)] py-[var(--section-padding-y)]">
+    <section className="bg-[var(--color-background-warm)] py-[var(--section-padding-y)]">
       <Container>
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
           {/* Left — mission copy */}

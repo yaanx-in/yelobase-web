@@ -36,7 +36,7 @@ export function AboutTrackRecord() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <section className="bg-[var(--color-background)] py-[var(--section-padding-y)]">
+    <section className="bg-[var(--color-background-warm)] py-[var(--section-padding-y)]">
       <Container>
         <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-14">
           {/* Left — dark "what sets us apart" card */}
