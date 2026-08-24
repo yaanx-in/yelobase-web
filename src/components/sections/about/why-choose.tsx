@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { ArrowRight, Check } from "@/components/ui/icon";
-import { Eyebrow } from "@/components/ui/eyebrow";
 import { Container } from "@/components/layout/container";
 
 const EASE_OUT = [0.16, 1, 0.3, 1] as const;
@@ -47,8 +46,7 @@ export function AboutWhyChoose() {
           transition={{ duration: 0.4, ease: EASE_OUT }}
           className="mx-auto max-w-2xl text-center"
         >
-          <Eyebrow color="teal">Why YeloBase</Eyebrow>
-          <h2 className="mt-3 text-balance text-3xl font-bold tracking-tight text-[var(--color-text-primary)] sm:text-4xl">
+          <h2 className="text-balance text-3xl font-bold tracking-tight text-[var(--color-text-primary)] sm:text-4xl">
             Why choose YeloBase?
           </h2>
           <p className="mt-4 leading-relaxed text-[var(--color-text-secondary)]">

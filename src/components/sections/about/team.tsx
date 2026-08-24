@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { motion, type Variants } from "framer-motion";
-import { Eyebrow } from "@/components/ui/eyebrow";
 import { Container } from "@/components/layout/container";
 
 const EASE_OUT = [0.16, 1, 0.3, 1] as const;
@@ -40,12 +39,11 @@ export function AboutTeam() {
           transition={{ duration: 0.4, ease: EASE_OUT }}
           className="mx-auto max-w-2xl text-center"
         >
-          <Eyebrow color="teal">Our People</Eyebrow>
-          <h2 className="mt-3 text-balance text-3xl font-bold tracking-tight text-[var(--color-text-primary)] sm:text-4xl">
-            Meet the Team
+          <h2 className="text-balance text-3xl font-bold tracking-tight text-[var(--color-text-primary)] sm:text-4xl">
+            Our Core Values
           </h2>
           <p className="mt-4 leading-relaxed text-[var(--color-text-secondary)]">
-            The people behind your automation.
+            The principles that guide everything we do
           </p>
         </motion.div>
 
@@ -62,7 +60,11 @@ export function AboutTeam() {
               variants={cardVariant}
               className="overflow-hidden rounded-[20px] border border-[var(--color-border-subtle)] bg-[var(--color-background)] shadow-sm"
             >
-              <div className="relative aspect-square w-full bg-tint-lavender">
+              <div
+                className={`relative aspect-square w-full ${
+                  i % 2 === 0 ? "bg-[#cfc3ff]" : "bg-tint-pink-soft"
+                }`}
+              >
                 <Image
                   src={m.photo}
                   alt={m.role}

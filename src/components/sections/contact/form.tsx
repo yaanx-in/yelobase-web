@@ -336,8 +336,10 @@ function SuccessState() {
   );
 }
 
-export function ContactForm() {
-  const reduceMotion = useReducedMotion();
+// The message form itself (state + validation + fields + success), with no
+// outer card or heading — so it can be dropped into any layout (the centered
+// ContactForm below, or the two-column AboutContact).
+export function MessageForm() {
   const [values, setValues] = useState<FormValues>(INITIAL);
   const [errors, setErrors] = useState<FormErrors>({});
   const [submitted, setSubmitted] = useState(false);
@@ -348,7 +350,6 @@ export function ContactForm() {
     ) => {
       const { name, value } = e.target;
       setValues((prev) => ({ ...prev, [name]: value }));
-      // Clear the error for this field as the user types
       if (errors[name as keyof FormValues]) {
         setErrors((prev) => ({ ...prev, [name]: undefined }));
       }
@@ -361,16 +362,107 @@ export function ContactForm() {
     const errs = validate(values);
     if (Object.keys(errs).length > 0) {
       setErrors(errs);
-      // Focus first errored field
       const firstKey = Object.keys(errs)[0];
-      const el = document.getElementById(firstKey);
-      el?.focus();
+      document.getElementById(firstKey)?.focus();
       return;
     }
-    // Open mailto as graceful fallback
     window.location.href = buildMailto(values);
     setSubmitted(true);
   };
+
+  return (
+    <AnimatePresence mode="wait">
+      {submitted ? (
+        <SuccessState key="success" />
+      ) : (
+        <motion.form
+          key="form"
+          onSubmit={handleSubmit}
+          noValidate
+          initial={{ opacity: 1 }}
+          exit={{ opacity: 0, y: -12 }}
+          transition={{ duration: 0.25, ease: EASE_OUT }}
+          className="grid gap-5 sm:grid-cols-2"
+        >
+          <FormInput
+            id="firstName"
+            label="First Name"
+            value={values.firstName}
+            onChange={handleChange}
+            error={errors.firstName}
+            required
+            autoComplete="given-name"
+          />
+          <FormInput
+            id="lastName"
+            label="Last Name"
+            value={values.lastName}
+            onChange={handleChange}
+            error={errors.lastName}
+            required
+            autoComplete="family-name"
+          />
+          <FormInput
+            id="email"
+            label="Work Email"
+            type="email"
+            value={values.email}
+            onChange={handleChange}
+            error={errors.email}
+            required
+            autoComplete="work email"
+          />
+          <FormInput
+            id="company"
+            label="Company"
+            value={values.company}
+            onChange={handleChange}
+            error={errors.company}
+            required
+            autoComplete="organization"
+          />
+          <FormInput
+            id="phone"
+            label="Phone"
+            type="tel"
+            value={values.phone}
+            onChange={handleChange}
+            error={errors.phone}
+            autoComplete="tel"
+          />
+          <div className="hidden sm:block" aria-hidden />
+          <FormSelect
+            id="service"
+            label="What can we help with?"
+            value={values.service}
+            onChange={handleChange}
+            error={errors.service}
+          />
+          <FormTextarea
+            id="message"
+            label="Tell us about your project"
+            value={values.message}
+            onChange={handleChange}
+            error={errors.message}
+          />
+
+          <div className="sm:col-span-2">
+            <Button type="submit" variant="primary" size="lg" className="w-full sm:w-auto">
+              <Send className="size-4" />
+              Send Message
+            </Button>
+            <p className="mt-4 text-xs text-[var(--color-text-muted)] leading-relaxed">
+              No spam. No cold pitches. Just a real reply from our team.
+            </p>
+          </div>
+        </motion.form>
+      )}
+    </AnimatePresence>
+  );
+}
+
+export function ContactForm() {
+  const reduceMotion = useReducedMotion();
 
   return (
     <section
@@ -403,99 +495,7 @@ export function ContactForm() {
             transition={{ duration: 0.45, delay: 0.1, ease: EASE_OUT }}
             className="mt-10 rounded-[24px] border border-[var(--color-border-subtle)] bg-[var(--color-background)] px-7 py-8 shadow-sm sm:px-10 sm:py-10"
           >
-            <AnimatePresence mode="wait">
-              {submitted ? (
-                <SuccessState key="success" />
-              ) : (
-                <motion.form
-                  key="form"
-                  onSubmit={handleSubmit}
-                  noValidate
-                  initial={{ opacity: 1 }}
-                  exit={{ opacity: 0, y: -12 }}
-                  transition={{ duration: 0.25, ease: EASE_OUT }}
-                  className="grid gap-5 sm:grid-cols-2"
-                >
-                  <FormInput
-                    id="firstName"
-                    label="First Name"
-                    value={values.firstName}
-                    onChange={handleChange}
-                    error={errors.firstName}
-                    required
-                    autoComplete="given-name"
-                  />
-                  <FormInput
-                    id="lastName"
-                    label="Last Name"
-                    value={values.lastName}
-                    onChange={handleChange}
-                    error={errors.lastName}
-                    required
-                    autoComplete="family-name"
-                  />
-                  <FormInput
-                    id="email"
-                    label="Work Email"
-                    type="email"
-                    value={values.email}
-                    onChange={handleChange}
-                    error={errors.email}
-                    required
-                    autoComplete="work email"
-                  />
-                  <FormInput
-                    id="company"
-                    label="Company"
-                    value={values.company}
-                    onChange={handleChange}
-                    error={errors.company}
-                    required
-                    autoComplete="organization"
-                  />
-                  <FormInput
-                    id="phone"
-                    label="Phone"
-                    type="tel"
-                    value={values.phone}
-                    onChange={handleChange}
-                    error={errors.phone}
-                    autoComplete="tel"
-                  />
-                  <div className="hidden sm:block" aria-hidden />
-                  <FormSelect
-                    id="service"
-                    label="What can we help with?"
-                    value={values.service}
-                    onChange={handleChange}
-                    error={errors.service}
-                  />
-                  <FormTextarea
-                    id="message"
-                    label="Tell us about your project"
-                    value={values.message}
-                    onChange={handleChange}
-                    error={errors.message}
-                  />
-
-                  {/* Submit row */}
-                  <div className="sm:col-span-2">
-                    <Button
-                      type="submit"
-                      variant="primary"
-                      size="lg"
-                      className="w-full sm:w-auto"
-                    >
-                      <Send className="size-4" />
-                      Send Message
-                    </Button>
-                    <p className="mt-4 text-xs text-[var(--color-text-muted)] leading-relaxed">
-                      No spam. No cold pitches. Just a real reply from our team.
-                    </p>
-                  </div>
-                </motion.form>
-              )}
-            </AnimatePresence>
+            <MessageForm />
           </motion.div>
         </div>
       </Container>

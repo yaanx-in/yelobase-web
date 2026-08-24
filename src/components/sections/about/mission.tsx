@@ -4,7 +4,6 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { ButtonLink } from "@/components/ui/button";
 import { ArrowRight } from "@/components/ui/icon";
-import { Eyebrow } from "@/components/ui/eyebrow";
 import { Container } from "@/components/layout/container";
 
 const EASE_OUT = [0.16, 1, 0.3, 1] as const;
@@ -23,8 +22,7 @@ export function AboutMission() {
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
           {/* Left — mission copy */}
           <motion.div {...fadeUp}>
-            <Eyebrow color="teal">Our Purpose</Eyebrow>
-            <h2 className="mt-3 text-balance text-3xl font-bold tracking-tight text-[var(--color-text-primary)] sm:text-4xl">
+            <h2 className="text-balance text-3xl font-bold tracking-tight text-[var(--color-text-primary)] sm:text-4xl">
               Our Mission
             </h2>
             <p className="mt-5 leading-relaxed text-[var(--color-text-secondary)]">
