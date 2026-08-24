@@ -6,22 +6,22 @@ const TRAITS = [
   {
     title: "Scaling Team",
     body: "5–50+ users, growing fast with Zoho.",
-    accent: "#8a6bff",
+    accent: "#CFC3FF",
   },
   {
     title: "Beyond Spreadsheets",
     body: "Manual tools no longer cut it.",
-    accent: "#ff7070",
+    accent: "#FFCECE",
   },
   {
     title: "Run, Not Support",
     body: "Need a system that drives operations.",
-    accent: "#21b293",
+    accent: "#CCF4EC",
   },
   {
     title: "Partner, Not Headache",
     body: "No tech team — just results.",
-    accent: "#f9b21d",
+    accent: "#FFEABF",
   },
 ];
 
@@ -58,7 +58,7 @@ export function WhoWeWorkWith() {
                 >
                   <span
                     aria-hidden
-                    className="absolute left-7 top-1/2 h-[70px] w-[3px] -translate-y-1/2 rounded-full"
+                    className="absolute left-7 top-1/2 h-[78px] w-1 -translate-y-1/2 rounded-[2px]"
                     style={{ backgroundColor: t.accent }}
                   />
                   <h3 className="text-[15px] font-bold text-[var(--color-text-primary)]">
