@@ -62,15 +62,17 @@ export function AboutTeam() {
             >
               <div
                 className={`relative aspect-square w-full ${
-                  i % 2 === 0 ? "bg-[#cfc3ff]" : "bg-tint-pink-soft"
+                  (i % 5) % 2 === 0 ? "bg-[#cfc3ff]" : "bg-[#ffcece]"
                 }`}
               >
+                {/* Transparent cutout on a tinted card — the tint shows around the
+                    subject, matching the Figma framing. */}
                 <Image
                   src={m.photo}
                   alt={m.role}
                   fill
                   sizes="(min-width:1024px) 20vw, (min-width:640px) 33vw, 50vw"
-                  className="object-cover"
+                  className="scale-[0.82] object-contain object-bottom"
                 />
               </div>
               <div className="px-3 py-4 text-center">
