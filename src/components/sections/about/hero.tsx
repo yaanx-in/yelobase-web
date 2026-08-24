@@ -1,45 +1,12 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
 import { Stagger } from "@/components/ui/reveal";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { Container } from "@/components/layout/container";
 
-/** Slowly drifting blurred brand orbs behind the hero. */
-function Orbs() {
-  const reduceMotion = useReducedMotion();
-  const drift = (x: number[], y: number[]) =>
-    reduceMotion
-      ? {}
-      : {
-          animate: { x, y },
-          transition: {
-            duration: 18,
-            repeat: Infinity,
-            repeatType: "mirror" as const,
-            ease: "easeInOut" as const,
-          },
-        };
-
-  return (
-    <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
-      <motion.div
-        className="absolute -left-24 top-[-12%] size-[34rem] rounded-full bg-brand-purple/15 blur-3xl"
-        {...drift([0, 40, 0], [0, 30, 0])}
-      />
-      <motion.div
-        className="absolute -right-32 top-[6%] size-[30rem] rounded-full bg-brand-coral/15 blur-3xl"
-        {...drift([0, -50, 0], [0, 24, 0])}
-      />
-    </div>
-  );
-}
-
 export function AboutHero() {
   return (
-    <section className="relative overflow-hidden bg-[var(--color-background-warm)] pb-14 pt-12 sm:pt-16">
-      <Orbs />
-
+    <section className="relative bg-[var(--color-background-warm)] pb-14 pt-12 sm:pt-16">
       <Container className="relative">
         <Stagger onMount className="mx-auto max-w-3xl text-center">
           <Stagger.Item>

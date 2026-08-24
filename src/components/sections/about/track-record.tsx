@@ -45,14 +45,8 @@ export function AboutTrackRecord() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "0px 0px -10% 0px" }}
             transition={{ duration: 0.45, ease: EASE_OUT }}
-            className="relative overflow-hidden rounded-[24px] bg-[var(--color-surface-dark)] p-8 shadow-xl sm:p-10"
+            className="relative overflow-hidden rounded-[24px] bg-[var(--color-surface-dark)] p-8 sm:p-10"
           >
-            <motion.div
-              aria-hidden
-              className="pointer-events-none absolute -left-16 -top-16 size-56 rounded-full bg-brand-purple/25 blur-3xl"
-              animate={reduceMotion ? undefined : { x: [0, 24, 0], y: [0, 16, 0] }}
-              transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
-            />
             <h2 className="relative text-2xl font-bold tracking-tight text-white sm:text-3xl">
               What Sets Us Apart
             </h2>
