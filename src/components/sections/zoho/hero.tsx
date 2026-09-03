@@ -19,14 +19,15 @@ export function ZohoHero() {
           </Stagger.Item>
 
           <Stagger.Item>
-            <h1 className="mt-4 font-mono text-[clamp(1.7rem,4.4vw,2.9rem)] font-bold leading-[1.1] tracking-tight text-[var(--color-text-primary)]">
+            <h1 className="mt-4 font-mono text-[clamp(1.7rem,4.4vw,2.9rem)] font-normal leading-[1.1] tracking-tight text-[var(--color-text-primary)]">
               Zoho Is Powerful.
-              <br className="hidden sm:block" /> Most Businesses Use 20% of It.
+              <br className="hidden sm:block" />{" "}
+              <span className="font-bold">Most Businesses Use 20% of It.</span>
             </h1>
           </Stagger.Item>
 
           <Stagger.Item>
-            <p className="mx-auto mt-6 max-w-2xl text-balance text-base text-[var(--color-text-secondary)] sm:text-lg">
+            <p className="mx-auto mt-6 max-w-4xl text-balance text-base text-[var(--color-text-secondary)] sm:text-lg">
               As a Certified Zoho Authorized Partner with 10+ years of experience, we
               unlock the other 80% through implementation, automation, and deep
               integration built around how you work.
