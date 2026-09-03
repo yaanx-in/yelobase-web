@@ -44,6 +44,7 @@
 
   /* ---- Radius (from Figma rx values) ---- */
   --radius-xs: 2px;
+  --radius-2xs: 4px;
   --radius-sm: 8px;
   --radius-md: 24px;
   --radius-pill: 9999px;
