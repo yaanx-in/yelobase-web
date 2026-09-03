@@ -124,3 +124,13 @@ body {
     scroll-behavior: auto !important;
   }
 }
+
+/* Auto-advance progress bar (Zoho applications list active underline). */
+@keyframes app-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}

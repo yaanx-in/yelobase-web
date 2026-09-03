@@ -6,6 +6,7 @@ import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { ButtonLink } from "@/components/ui/button";
 import { Container } from "@/components/layout/container";
 import { ArrowRight } from "@/components/ui/icon";
+import { cn } from "@/lib/utils";
 
 type Accent = "purple" | "coral" | "teal" | "amber";
 
@@ -109,10 +110,13 @@ export function ZohoApplications() {
                       {item.label}
                     </span>
                     {selected && (
-                      <motion.span
+                      <span
                         aria-hidden
-                        layoutId={reduceMotion ? undefined : "app-underline"}
-                        className="absolute inset-x-0 -bottom-px h-[2px] bg-gradient-to-r from-brand-coral via-brand-coral/50 to-transparent"
+                        className={cn(
+                          "absolute inset-x-0 -bottom-px h-[2px] origin-left rounded-full bg-brand-coral",
+                          "motion-safe:animate-[app-progress_3200ms_linear_forwards]",
+                          paused && "[animation-play-state:paused]",
+                        )}
                       />
                     )}
                   </button>
