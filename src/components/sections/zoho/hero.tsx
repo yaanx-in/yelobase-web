@@ -57,28 +57,6 @@ export function ZohoHero() {
               className="mx-auto mt-8 h-auto w-full max-w-[656px]"
             />
           </Stagger.Item>
-
-          {/* Trust strip: partner badge + reassurance */}
-          <Stagger.Item>
-            <div className="mx-auto mt-8 flex max-w-2xl flex-col items-center justify-center gap-3 rounded-xl border border-[var(--color-border-subtle)] bg-[var(--color-background)] px-4 py-3 shadow-sm sm:flex-row">
-              <span className="inline-flex shrink-0 items-center gap-2">
-                <Image
-                  src="/integrations/zoho.svg"
-                  alt="Zoho"
-                  width={20}
-                  height={20}
-                  className="size-5"
-                />
-                <span className="whitespace-nowrap text-xs font-semibold text-[var(--color-text-primary)]">
-                  Zoho Authorized Partner
-                </span>
-              </span>
-              <p className="text-xs leading-relaxed text-[var(--color-text-muted)] sm:text-left">
-                No credit card required. If it&rsquo;s not the right fit, you pay nothing.
-                Sign up includes free consultation and setup assistance from YeloBase.
-              </p>
-            </div>
-          </Stagger.Item>
         </Stagger>
       </Container>
     </section>
