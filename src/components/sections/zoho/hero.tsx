@@ -47,6 +47,17 @@ export function ZohoHero() {
             </div>
           </Stagger.Item>
 
+          <Stagger.Item>
+            <Image
+              src="/graphics/zoho/assessment-strip.svg"
+              alt="Zoho Authorized Partner — no credit card required, free consultation and setup assistance"
+              width={656}
+              height={72}
+              unoptimized
+              className="mx-auto mt-8 h-auto w-full max-w-[656px]"
+            />
+          </Stagger.Item>
+
           {/* Trust strip: partner badge + reassurance */}
           <Stagger.Item>
             <div className="mx-auto mt-8 flex max-w-2xl flex-col items-center justify-center gap-3 rounded-xl border border-[var(--color-border-subtle)] bg-[var(--color-background)] px-4 py-3 shadow-sm sm:flex-row">

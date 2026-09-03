@@ -83,7 +83,7 @@ const SERVICE_CARDS: ServiceCard[] = [
   {
     badge: "Foundation",
     accent: "purple",
-    illustration: "/graphics/zoho/services/impl.webp",
+    illustration: "/graphics/zoho/services/service-1.svg",
     title: "Zoho Implementation",
     body: "Complete setup and configuration of Zoho applications tailored to your business needs.",
     includes: ["Initial consultation and needs analysis", "Application setup and configuration", "Data migration from existing systems", "User training and documentation", "Go-live support and optimization"],
@@ -91,7 +91,7 @@ const SERVICE_CARDS: ServiceCard[] = [
   {
     badge: "Efficiency",
     accent: "coral",
-    illustration: "/graphics/zoho/services/automation.webp",
+    illustration: "/graphics/zoho/services/service-2.svg",
     title: "Custom Automation",
     body: "Intelligent workflows and automations to eliminate manual tasks and boost efficiency.",
     includes: ["Workflow design and implementation", "Business process automation", "Email and notification automation", "Approval processes and escalations", "Custom function development"],
@@ -99,7 +99,7 @@ const SERVICE_CARDS: ServiceCard[] = [
   {
     badge: "Connectivity",
     accent: "amber",
-    illustration: "/graphics/zoho/services/integration.webp",
+    illustration: "/graphics/zoho/services/service-3.svg",
     title: "Integration Solution",
     body: "Seamless connections between Zoho apps and third party systems for unified operations.",
     includes: ["API development and integration", "Third party app connections", "Data synchronization setup", "Real time integration monitoring", "Custom connector development"],
@@ -107,7 +107,7 @@ const SERVICE_CARDS: ServiceCard[] = [
   {
     badge: "Growth",
     accent: "teal",
-    illustration: "/graphics/zoho/services/support.webp",
+    illustration: "/graphics/zoho/services/service-4.svg",
     title: "Ongoing Support",
     body: "Continuous optimization and support to ensure your Zoho investment delivers maximum ROI.",
     includes: ["24/7 technical support", "Regular system optimization", "User training and workshops", "Performance monitoring", "Feature updates and enhancements"],
@@ -187,8 +187,8 @@ function StatCardView({ card }: { card: StatCard }) {
       <h3 className="mt-4 text-lg font-semibold text-[var(--color-text-primary)]">{card.title}</h3>
       <p className="mt-2 text-sm leading-relaxed text-[var(--color-text-secondary)]">{card.body}</p>
 
-      <div className="my-6 border-t border-[var(--color-border-subtle)]" />
-      <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--color-text-muted)]">
+      <div className="my-6 border-t border-[var(--color-border)]" />
+      <p className="mb-3 text-sm font-semibold uppercase text-[var(--color-text-secondary)]">
         Includes
       </p>
       <IncludesList items={card.includes} dot={a.dot} />
@@ -209,7 +209,7 @@ function ServiceCardView({ card }: { card: ServiceCard }) {
         </span>
         <h3 className="mt-4 text-lg font-semibold text-[var(--color-text-primary)]">{card.title}</h3>
         <p className="mt-2 text-sm leading-relaxed text-[var(--color-text-secondary)]">{card.body}</p>
-        <p className="mb-3 mt-6 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--color-text-muted)]">
+        <p className="mb-3 mt-6 text-sm font-semibold uppercase text-[var(--color-text-secondary)]">
           What&rsquo;s included
         </p>
         <IncludesList items={card.includes} dot={a.dot} />
@@ -219,7 +219,8 @@ function ServiceCardView({ card }: { card: ServiceCard }) {
         alt=""
         width={167}
         height={167}
-        className="hidden size-24 shrink-0 sm:block"
+        unoptimized
+        className="hidden size-40 shrink-0 sm:block"
       />
     </motion.article>
   );
