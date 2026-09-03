@@ -17,7 +17,7 @@ const YELOBASE = [
 
 export function WhyYelobase() {
   return (
-    <section id="why-yelobase" className="bg-[var(--color-tint-pink)] py-12">
+    <section id="why-yelobase" className="bg-[var(--color-tint-pink)] py-8">
       <Container>
         <Reveal className="mx-auto max-w-3xl text-center">
           <Eyebrow color="teal">Why Yelobase?</Eyebrow>

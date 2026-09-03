@@ -26,7 +26,7 @@ const STATS = [
 
 export function Proof() {
   return (
-    <section className="bg-[var(--color-background-warm)] py-14">
+    <section className="bg-[var(--color-background-warm)] py-10">
       <Container>
         <Reveal className="mx-auto max-w-2xl text-center">
           <Eyebrow color="teal">Proof</Eyebrow>

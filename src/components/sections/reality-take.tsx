@@ -102,7 +102,7 @@ export function RealityTake() {
     <motion.section
       ref={ref}
       style={reduceMotion ? { background: "#161318" } : { background }}
-      className="relative overflow-x-clip pt-[var(--section-padding-y)] pb-12"
+      className="relative overflow-x-clip pt-[var(--section-padding-y)] pb-8"
     >
       {/* subtle grid texture */}
       <div

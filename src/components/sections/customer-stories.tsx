@@ -42,7 +42,7 @@ export function CustomerStories() {
   return (
     <section
       id="stories"
-      className="bg-[var(--color-background-warm)] py-16"
+      className="bg-[var(--color-background-warm)] py-12"
     >
       <Container>
         <Reveal className="mx-auto max-w-2xl text-center">
@@ -107,7 +107,11 @@ export function CustomerStories() {
         </Reveal>
 
         <Reveal delay={0.15} className="mt-8 text-center">
-          <ButtonLink href="/customer-stories" variant="outline">
+          <ButtonLink
+            href="/customer-stories"
+            variant="outline"
+            className="bg-[var(--color-background)]"
+          >
             View All Success Stories
             <ArrowRight className="size-4" />
           </ButtonLink>

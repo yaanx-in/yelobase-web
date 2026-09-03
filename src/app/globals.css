@@ -72,7 +72,7 @@
   /* ---- Layout / grid (DESIGN.md §4) ---- */
   --container-max: 1200px;
   --container-gutter: 1rem; /* mobile; scales up via media queries below */
-  --section-padding-y: clamp(4rem, 8vw, 7.5rem);
+  --section-padding-y: clamp(3rem, 6vw, 5.5rem);
 }
 
 /* Container gutter scales up with viewport (capped by --container-max). */

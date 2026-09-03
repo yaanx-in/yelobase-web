@@ -29,7 +29,7 @@ const POINTS: Point[] = [
 
 export function ZohoPartnership() {
   return (
-    <section className="bg-[var(--color-background-warm)] py-16 sm:py-20">
+    <section className="bg-[var(--color-background-warm)] py-12 sm:py-14">
       <Container>
         <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-10">
           <Reveal>

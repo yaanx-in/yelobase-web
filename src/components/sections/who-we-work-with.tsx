@@ -29,7 +29,7 @@ export function WhoWeWorkWith() {
   return (
     <section
       id="who-we-work-with"
-      className="bg-[var(--color-background-warm)] py-14"
+      className="bg-[var(--color-background-warm)] py-10"
     >
       <Container>
         <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-16">

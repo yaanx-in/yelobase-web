@@ -6,7 +6,7 @@ import { Container } from "@/components/layout/container";
 
 export function FinalCta() {
   return (
-    <section className="bg-[var(--color-background-warm)] py-16">
+    <section className="bg-[var(--color-background-warm)] py-12">
       <Container>
         <Reveal>
           <div className="relative">
