@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Container } from "./container";
 import { Mail, Phone, MapPin } from "@/components/ui/icon";
 
@@ -92,25 +93,20 @@ export function Footer() {
         </div>
       </Container>
 
-      {/* Oversized Yelobase wordmark, clipped by the footer's bottom edge.
-          The real brand lockup (logo-white.svg) masks a purple→coral gradient. */}
+      {/* Oversized Yelobase wordmark at the bottom, clipped by the footer edge. */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-[200px]"
-        style={{
-          background:
-            "linear-gradient(90deg, var(--color-brand-purple-strong) 5%, var(--color-brand-purple) 40%, var(--color-brand-coral) 85%)",
-          opacity: 0.42,
-          WebkitMaskImage: "url(/brand/logo-white.svg)",
-          maskImage: "url(/brand/logo-white.svg)",
-          WebkitMaskRepeat: "no-repeat",
-          maskRepeat: "no-repeat",
-          WebkitMaskPosition: "center top",
-          maskPosition: "center top",
-          WebkitMaskSize: "min(1120px, 82%) auto",
-          maskSize: "min(1120px, 82%) auto",
-        }}
-      />
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-0 flex justify-center px-4"
+      >
+        <Image
+          src="/graphics/footer-wordmark.svg"
+          alt=""
+          width={1402}
+          height={258}
+          unoptimized
+          className="h-auto w-full max-w-[1200px]"
+        />
+      </div>
     </footer>
   );
 }
