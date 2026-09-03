@@ -235,7 +235,7 @@ export function ZohoCapabilities() {
       <Container>
         {/* Segmented toggle */}
         <LayoutGroup>
-          <div className="mx-auto flex w-fit items-center gap-1 rounded-pill border border-[var(--color-border)] bg-[var(--color-background)] p-1">
+          <div className="mx-auto flex w-fit items-center gap-1 rounded-[var(--radius-sm)] border border-[var(--color-border)] bg-[var(--color-background)] p-1">
             {TABS.map((t) => {
               const selected = t.key === tab;
               return (
@@ -243,7 +243,7 @@ export function ZohoCapabilities() {
                   key={t.key}
                   onClick={() => setTab(t.key)}
                   aria-pressed={selected}
-                  className={`relative rounded-pill px-4 py-2 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2 ${
+                  className={`relative rounded-[var(--radius-2xs)] px-4 py-2 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2 ${
                     selected ? "text-white" : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]"
                   }`}
                 >
@@ -251,7 +251,7 @@ export function ZohoCapabilities() {
                     <motion.span
                       aria-hidden
                       layoutId={reduceMotion ? undefined : "cap-pill"}
-                      className="absolute inset-0 z-0 rounded-pill bg-[var(--color-surface-dark)]"
+                      className="absolute inset-0 z-0 rounded-[var(--radius-2xs)] bg-[var(--color-surface-dark)]"
                       transition={{ type: "spring", stiffness: 400, damping: 32 }}
                     />
                   )}

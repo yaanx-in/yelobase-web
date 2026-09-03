@@ -19,10 +19,10 @@ export function ZohoHero() {
           </Stagger.Item>
 
           <Stagger.Item>
-            <h1 className="mt-4 font-mono text-[clamp(1.7rem,4.4vw,2.9rem)] font-normal leading-[1.1] tracking-tight text-[var(--color-text-primary)]">
+            <h1 className="mt-4 font-mono text-[clamp(1.7rem,4.4vw,2.9rem)] font-bold leading-[1.1] tracking-tight text-[var(--color-text-primary)]">
               Zoho Is Powerful.
               <br className="hidden sm:block" />{" "}
-              <span className="font-bold">Most Businesses Use 20% of It.</span>
+              <span className="font-normal">Most Businesses Use 20% of It.</span>
             </h1>
           </Stagger.Item>
 
