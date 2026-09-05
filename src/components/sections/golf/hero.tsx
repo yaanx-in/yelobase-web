@@ -26,20 +26,22 @@ export function GolfHero() {
       <div className="relative isolate overflow-hidden">
         {/* Background photo */}
         <Image
-          src="/graphics/golf/hero-golf-course.png"
+          src="/graphics/golf/hero-golf-course.svg"
           alt=""
           fill
           priority
+          unoptimized
           sizes="100vw"
-          className="-z-10 object-cover object-bottom"
+          className="-z-10 object-cover object-center"
         />
-        {/* Purple gradient overlay: strong (left) → light (right), per Figma 1348:985. */}
+        {/* Subtle dark scrim on the left for text legibility, fading right so the
+            course photo stays visible (per Figma 1348:985). */}
         <div
           aria-hidden
           className="absolute inset-0 -z-10"
           style={{
             background:
-              "linear-gradient(to left, rgba(47,29,128,0.12), rgba(47,29,128,0.6))",
+              "linear-gradient(to right, rgba(20,16,40,0.6), rgba(20,16,40,0.25) 45%, rgba(20,16,40,0) 70%)",
           }}
         />
 
