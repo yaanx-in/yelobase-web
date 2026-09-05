@@ -66,51 +66,42 @@ export function Hero() {
             width={640}
             height={375}
             priority
-            className="absolute left-1/2 top-1/2 w-[23rem] -translate-x-1/2 -translate-y-1/2 lg:w-[26rem]"
+            className="absolute left-[49%] top-1/2 w-[23rem] -translate-x-1/2 -translate-y-1/2 lg:w-[26rem]"
           />
 
-          {/* top-left: Zoho logo with Official Zoho Partner badge */}
-          <Float delay={0.12} className="absolute left-[8%] top-[10%]">
-            <div className="flex items-center gap-2">
-              <Badge tint="lavender">Official Zoho Partner</Badge>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={LOGOS.zoho.src} alt={LOGOS.zoho.alt} className="h-20 w-auto" />
-            </div>
+          {/* Floating cards + badges — positioned per Figma coordinates. */}
+          <Float delay={0.12} className="absolute left-[12.4%] top-[10.3%]">
+            <Badge tint="lavender">Official Zoho Partner</Badge>
           </Float>
-
-          {/* top-right: Claude logo with India badge to its right */}
-          <Float delay={0.2} duration={5.5} className="absolute right-[2%] top-[8%]">
-            <div className="flex items-center gap-2">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={LOGOS.claude.src} alt={LOGOS.claude.alt} className="h-20 w-auto" />
-              <Badge tint="pink">India, US, UK, UAE, Australia</Badge>
-            </div>
-          </Float>
-
-          {/* Meta below Zoho, with 100+ badge stuck to its top-left corner */}
-          <Float delay={0.4} duration={6} className="absolute left-[24%] bottom-[10%]">
-            <div className="relative w-max">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={LOGOS.meta.src} alt={LOGOS.meta.alt} className="h-20 w-auto" />
-              <Badge
-                tint="cream"
-                className="absolute -left-[172px] -top-[26px] whitespace-nowrap"
-              >
-                100+ Projects Delivered
-              </Badge>
-            </div>
-          </Float>
-
-          {/* odoo (solo) */}
-          <Float delay={0.45} duration={5} className="absolute right-[10%] top-[46%]">
+          <Float delay={0.16} className="absolute left-[30.3%] top-[10.3%]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={LOGOS.odoo.src} alt={LOGOS.odoo.alt} className="h-20 w-auto" />
+            <img src={LOGOS.zoho.src} alt={LOGOS.zoho.alt} className="w-[68px]" />
           </Float>
 
-          {/* WhatsApp (solo) */}
-          <Float delay={0.55} duration={6.5} className="absolute right-[24%] bottom-[8%]">
+          <Float delay={0.2} duration={5.5} className="absolute left-[64.9%] top-[6%]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={LOGOS.whatsapp.src} alt={LOGOS.whatsapp.alt} className="h-20 w-auto" />
+            <img src={LOGOS.claude.src} alt={LOGOS.claude.alt} className="w-[66px]" />
+          </Float>
+          <Float delay={0.24} duration={5.5} className="absolute left-[73%] top-[7%]">
+            <Badge tint="pink">India, US, UK, UAE, Australia</Badge>
+          </Float>
+
+          <Float delay={0.45} duration={5} className="absolute left-[78.6%] top-[29.6%]">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={LOGOS.odoo.src} alt={LOGOS.odoo.alt} className="w-[61px]" />
+          </Float>
+
+          <Float delay={0.34} duration={6} className="absolute left-[3.1%] top-[45%]">
+            <Badge tint="cream">100+ Projects Delivered</Badge>
+          </Float>
+          <Float delay={0.4} duration={6} className="absolute left-[22.4%] top-[55.3%]">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={LOGOS.meta.src} alt={LOGOS.meta.alt} className="w-[78px]" />
+          </Float>
+
+          <Float delay={0.55} duration={6.5} className="absolute left-[67.8%] top-[62%]">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={LOGOS.whatsapp.src} alt={LOGOS.whatsapp.alt} className="w-[78px]" />
           </Float>
         </div>
 
