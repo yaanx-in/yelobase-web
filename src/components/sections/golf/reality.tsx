@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { Container } from "@/components/layout/container";
-import { AlertCircle, Check } from "@/components/ui/icon";
+import { ErrorCircle, CheckCircle } from "@/components/ui/icon";
 import { cn } from "@/lib/utils";
 
 const EASE_OUT = [0.16, 1, 0.3, 1] as const;
@@ -163,7 +163,7 @@ export function GolfReality() {
                 : "bg-[#fafafa] text-[#252b37] hover:bg-[var(--color-surface)]",
             )}
           >
-            <AlertCircle className="size-4" />
+            <ErrorCircle className="size-5" />
             Problem
           </button>
           <button
@@ -180,7 +180,7 @@ export function GolfReality() {
                 : "bg-[#fafafa] text-[#252b37] hover:bg-[var(--color-surface)]",
             )}
           >
-            <Check className="size-4" />
+            <CheckCircle className="size-5" />
             What we Build
           </button>
         </div>

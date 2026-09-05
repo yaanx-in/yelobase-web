@@ -34,14 +34,14 @@ export function GolfHero() {
           sizes="100vw"
           className="-z-10 object-cover object-center"
         />
-        {/* Subtle dark scrim on the left for text legibility, fading right so the
-            course photo stays visible (per Figma 1348:985). */}
+        {/* Purple gradient overlay: strong (left) → lighter (right), per Figma
+            1348:985 (Rectangle 34625151, linear ~60%). */}
         <div
           aria-hidden
           className="absolute inset-0 -z-10"
           style={{
             background:
-              "linear-gradient(to right, rgba(20,16,40,0.6), rgba(20,16,40,0.25) 45%, rgba(20,16,40,0) 70%)",
+              "linear-gradient(to right, rgba(47,29,128,0.72), rgba(47,29,128,0.45) 45%, rgba(47,29,128,0.28) 100%)",
           }}
         />
 
@@ -79,14 +79,15 @@ export function GolfHero() {
         </Container>
       </div>
 
-      {/* Stats bar, overlapping the hero bottom edge (Figma 1348:1046). */}
+      {/* Stats bar, centered and overlapping the hero image bottom edge
+          (Figma 1348:1046 — 718px wide, straddles the image edge). */}
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4, ease: EASE_OUT }}
-          className="-mt-8 flex flex-col items-start justify-between gap-6 rounded-2xl bg-tint-pink px-6 py-6 shadow-md sm:flex-row sm:items-center sm:px-9"
+          className="relative z-10 mx-auto -mt-10 flex max-w-[720px] flex-col items-start justify-between gap-6 rounded-2xl bg-tint-pink px-6 py-5 shadow-md sm:flex-row sm:items-center sm:px-9"
         >
           {STATS.map((stat) => (
             <div key={stat.label} className="flex items-end gap-2">
