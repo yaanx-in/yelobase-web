@@ -78,11 +78,11 @@ export function GolfProcess() {
               {i < STEPS.length - 1 && (
                 <span
                   aria-hidden
-                  className="absolute left-full top-[45px] hidden h-px w-11 bg-brand-coral/30 lg:block"
+                  className="absolute left-full top-1/2 hidden h-px w-11 -translate-y-1/2 bg-brand-coral/30 lg:block"
                 />
               )}
               <div className="flex h-full flex-col rounded-2xl border border-[var(--color-border-subtle)] bg-white p-6 shadow-sm">
-                <span className="grid size-[42px] shrink-0 place-items-center rounded-full bg-tint-lavender text-base font-semibold text-brand-purple">
+                <span className="grid size-[42px] shrink-0 place-items-center rounded-full bg-[var(--color-surface)] text-base font-semibold text-brand-purple">
                   {step.n}
                 </span>
                 <h3 className="mt-6 text-lg font-semibold text-[var(--color-text-primary)]">
