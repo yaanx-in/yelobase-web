@@ -1,9 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import { Stagger, CountUp } from "@/components/ui/reveal";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { Container } from "@/components/layout/container";
+import { LogoMarquee } from "@/components/ui/logo-marquee";
 
 type Stat = { to: number; decimals?: number; suffix?: string; label: string };
 
@@ -57,15 +57,9 @@ export function WallHero() {
             </dl>
           </Stagger.Item>
 
-          {/* Client logo strip */}
+          {/* Client logo strip — same marquee as the home page */}
           <Stagger.Item>
-            <Image
-              src="/graphics/trusted-logos.webp"
-              alt="Logos of companies we've delivered for"
-              width={1082}
-              height={64}
-              className="mx-auto mt-10 h-auto w-full max-w-3xl opacity-70"
-            />
+            <LogoMarquee className="mt-10" />
           </Stagger.Item>
         </Stagger>
       </Container>
