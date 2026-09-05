@@ -93,19 +93,22 @@ export function Footer() {
         </div>
       </Container>
 
-      {/* Oversized Yelobase wordmark at the bottom, clipped by the footer edge. */}
+      {/* Oversized Yelobase wordmark at the bottom, aligned to the content
+          container edges, clipped by the footer edge. */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 bottom-0 z-0 flex justify-center px-4"
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-0"
       >
-        <Image
-          src="/graphics/footer-wordmark.svg"
-          alt=""
-          width={1402}
-          height={258}
-          unoptimized
-          className="h-auto w-full max-w-[1200px]"
-        />
+        <Container>
+          <Image
+            src="/graphics/footer-wordmark.svg"
+            alt=""
+            width={1402}
+            height={258}
+            unoptimized
+            className="h-auto w-full"
+          />
+        </Container>
       </div>
     </footer>
   );
