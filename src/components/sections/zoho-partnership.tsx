@@ -72,10 +72,11 @@ export function ZohoPartnership() {
 
           <Reveal delay={0.1}>
             <Image
-              src="/graphics/zoho-partnership.webp"
+              src="/graphics/zoho-partnership.svg"
               alt="Yelobase as an Official Zoho Authorized Partner"
-              width={840}
-              height={663}
+              width={449}
+              height={263}
+              unoptimized
               className="mx-auto h-auto w-full max-w-[480px] lg:justify-self-end"
             />
           </Reveal>
