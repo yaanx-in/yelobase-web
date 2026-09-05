@@ -90,11 +90,11 @@ export function GolfHero() {
           className="relative z-10 mx-auto -mt-10 flex max-w-[718px] flex-col items-start justify-between gap-6 rounded-2xl bg-tint-pink px-6 py-6 shadow-[0_2px_4px_0_rgba(32,29,35,0.12)] sm:flex-row sm:items-center sm:px-9"
         >
           {STATS.map((stat) => (
-            <div key={stat.label} className="flex items-end gap-2">
-              <span className="text-[clamp(1.75rem,4vw,2.25rem)] font-semibold leading-[1.1] tracking-[-0.03em] text-[var(--color-text-primary)]">
+            <div key={stat.label} className="flex items-center gap-2">
+              <span className="text-[clamp(1.75rem,4vw,2.25rem)] font-semibold leading-none tracking-[-0.03em] text-[var(--color-text-primary)]">
                 {stat.value}
               </span>
-              <span className="pb-0.5 text-sm text-[var(--color-text-secondary)]">
+              <span className="text-sm text-[var(--color-text-secondary)]">
                 {stat.label}
               </span>
             </div>
