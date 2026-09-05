@@ -2,13 +2,12 @@ import type { Metadata } from "next";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { GolfHero } from "@/components/sections/golf/hero";
-import { GolfCaseStudy } from "@/components/sections/golf/case-study";
-import { GolfAboutAcademy } from "@/components/sections/golf/about-academy";
 import { GolfReality } from "@/components/sections/golf/reality";
-import { GolfWhatWeBuild } from "@/components/sections/golf/what-we-build";
-import { GolfWhyYelobase } from "@/components/sections/golf/why-yelobase";
-import { GolfFaq } from "@/components/sections/golf/faq";
+import { GolfProcess } from "@/components/sections/golf/process";
+import { GolfResults } from "@/components/sections/golf/results";
+import { GolfTestimonials } from "@/components/sections/golf/testimonials";
 import { GolfCta } from "@/components/sections/golf/cta";
+import { GolfFaq } from "@/components/sections/golf/faq";
 
 export const metadata: Metadata = {
   title:
@@ -23,13 +22,12 @@ export default function GolfPage() {
       <Header />
       <main id="main">
         <GolfHero />
-        <GolfCaseStudy />
-        <GolfAboutAcademy />
         <GolfReality />
-        <GolfWhatWeBuild />
-        <GolfWhyYelobase />
-        <GolfFaq />
+        <GolfProcess />
+        <GolfResults />
+        <GolfTestimonials />
         <GolfCta />
+        <GolfFaq />
       </main>
       <Footer />
     </>
