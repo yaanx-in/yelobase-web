@@ -111,7 +111,7 @@ export function Footer() {
           <Image
             src="/graphics/footer-wordmark.svg"
             alt=""
-            width={1402}
+            width={1143}
             height={258}
             unoptimized
             className="h-auto w-full"
