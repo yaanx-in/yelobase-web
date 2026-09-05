@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useId, useMemo, useRef, useState } from "react";
 import {
   AnimatePresence,
@@ -8,7 +9,7 @@ import {
   useReducedMotion,
 } from "framer-motion";
 import { Container } from "@/components/layout/container";
-import { Star } from "@/components/ui/icon";
+import { Star, Quote, MapPin } from "@/components/ui/icon";
 
 const EASE_OUT = [0.16, 1, 0.3, 1] as const;
 
@@ -184,11 +185,51 @@ const TESTIMONIALS: Testimonial[] = [
   },
 ];
 
+/** Per-category cover gradient + matching avatar-monogram tint. */
+const STYLE: Record<CardCategory, { cover: string; chip: string }> = {
+  "Zoho Services": {
+    cover: "from-brand-purple to-brand-purple-strong",
+    chip: "bg-tint-lavender text-brand-purple-strong",
+  },
+  "AI Agent": {
+    cover: "from-brand-coral to-brand-coral-strong",
+    chip: "bg-tint-pink-soft text-brand-coral-strong",
+  },
+  Automation: {
+    cover: "from-brand-teal to-brand-teal-bright",
+    chip: "bg-tint-mint text-brand-teal",
+  },
+  "Custom Development": {
+    cover: "from-[var(--color-surface-dark)] to-[var(--color-surface-dark-3)]",
+    chip: "bg-tint-cream text-[#8a6a12]",
+  },
+};
+
+/** Real client photos we have on hand; everyone else gets a monogram. */
+const AVATARS: Record<string, string> = {
+  "Sam O'Neile": "/avatars/sam.webp",
+  "Mr Edgar": "/avatars/edgar.webp",
+  Lena: "/avatars/lena.webp",
+};
+
+const HONORIFICS = new Set(["mr", "mrs", "ms", "miss", "dr"]);
+
+function initials(name: string) {
+  const words = name
+    .replace(/\./g, "")
+    .split(/\s+/)
+    .filter((w) => !HONORIFICS.has(w.toLowerCase()));
+  return words
+    .slice(0, 2)
+    .map((w) => w[0]?.toUpperCase() ?? "")
+    .join("");
+}
+
 function StarRow() {
   return (
-    <span className="flex items-center gap-0.5" aria-label="Rated 5 out of 5">
+    <span className="flex items-center gap-0.5" aria-label="Rated 5.0 out of 5">
       {Array.from({ length: 5 }).map((_, i) => (
-        <Star key={i} aria-hidden className="size-4 fill-[#f5b301] text-[#f5b301]" />
+        <Star key={i} aria-hidden className="size-4 fill-brand-coral text-brand-coral" />
       ))}
     </span>
   );
@@ -196,6 +237,9 @@ function StarRow() {
 
 function TestimonialCard({ t }: { t: Testimonial }) {
   const reduceMotion = useReducedMotion();
+  const style = STYLE[t.category];
+  const avatar = AVATARS[t.author];
+  const coverLabel = t.company || t.author;
 
   return (
     <motion.article
@@ -205,43 +249,59 @@ function TestimonialCard({ t }: { t: Testimonial }) {
       exit={reduceMotion ? { opacity: 0 } : { opacity: 0, scale: 0.96 }}
       transition={{ duration: 0.4, ease: EASE_OUT }}
       whileHover={reduceMotion ? undefined : { y: -6 }}
-      className="group mb-6 flex break-inside-avoid flex-col rounded-2xl border border-[var(--color-border-subtle)] bg-[var(--color-background)] p-6 shadow-sm transition-shadow duration-[var(--duration-micro)] hover:shadow-lg"
+      className="group mb-6 flex break-inside-avoid flex-col overflow-hidden rounded-[24px] border border-[var(--color-border-subtle)] bg-[var(--color-background)] shadow-sm transition-shadow duration-[var(--duration-micro)] hover:shadow-lg"
     >
-      {/* Top row: rating + source wordmark */}
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <StarRow />
-          <span className="text-sm font-semibold text-[var(--color-text-primary)]">
-            5/5.0
-          </span>
+      {/* Brand cover */}
+      <div
+        className={`relative flex h-40 items-center justify-center bg-gradient-to-br ${style.cover} px-6`}
+      >
+        <Quote
+          aria-hidden
+          className="absolute right-4 top-4 size-12 text-white/15"
+        />
+        <p className="text-balance text-center font-mono text-xl font-bold leading-tight text-white">
+          {coverLabel}
+        </p>
+      </div>
+
+      {/* Body */}
+      <div className="flex flex-1 flex-col p-7">
+        <StarRow />
+        <p className="mt-4 text-sm leading-relaxed text-[var(--color-text-secondary)]">
+          {t.quote}
+        </p>
+
+        <div className="mt-6 flex items-center gap-4 border-t border-[var(--color-border-subtle)] pt-5">
+          {avatar ? (
+            <Image
+              src={avatar}
+              alt={t.author}
+              width={48}
+              height={48}
+              className="size-12 shrink-0 rounded-2xl object-cover"
+            />
+          ) : (
+            <span
+              aria-hidden
+              className={`inline-flex size-12 shrink-0 items-center justify-center rounded-2xl text-sm font-bold ${style.chip}`}
+            >
+              {initials(t.author)}
+            </span>
+          )}
+          <div className="min-w-0">
+            <p className="truncate font-semibold text-[var(--color-text-primary)]">
+              {t.author}
+            </p>
+            <p className="mt-0.5 flex flex-wrap items-center gap-x-1.5 text-sm text-[var(--color-text-muted)]">
+              {t.company && <span className="truncate">{t.company}</span>}
+              {t.company && <span aria-hidden>·</span>}
+              <span className="inline-flex items-center gap-1">
+                <MapPin aria-hidden className="size-3.5" />
+                {t.country}
+              </span>
+            </p>
+          </div>
         </div>
-        {/* ponytail: text stand-in for the Upwork logo pending the real asset */}
-        <span className="font-bold lowercase tracking-tight text-[var(--color-text-muted)]">
-          upwork
-        </span>
-      </div>
-
-      <h3 className="mt-4 text-base font-semibold text-[var(--color-brand-purple-strong)]">
-        {t.title}
-      </h3>
-      <p className="mt-1 text-sm text-[var(--color-text-muted)]">{t.dateRange}</p>
-
-      <p className="mt-4 italic leading-relaxed text-[var(--color-text-secondary)]">
-        &ldquo;{t.quote}&rdquo;
-      </p>
-
-      <div className="mt-5 border-t border-[var(--color-border-subtle)] pt-5 text-sm">
-        <p className="font-bold text-[var(--color-text-primary)]">{t.author}</p>
-        {t.company && (
-          <p className="text-[var(--color-text-secondary)]">{t.company}</p>
-        )}
-        <p className="text-[var(--color-text-muted)]">{t.country}</p>
-      </div>
-
-      <div>
-        <span className="mt-4 inline-block rounded-[var(--radius-sm)] bg-tint-lavender px-3 py-1 text-xs font-semibold text-[var(--color-brand-purple-strong)]">
-          {t.category}
-        </span>
       </div>
     </motion.article>
   );
