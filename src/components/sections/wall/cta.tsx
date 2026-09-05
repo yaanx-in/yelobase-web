@@ -20,27 +20,27 @@ export function WallCta() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "0px 0px -10% 0px" }}
           transition={{ duration: 0.45, ease: EASE_OUT }}
-          className="relative rounded-[24px] bg-[var(--color-surface)] px-7 py-12 ring-1 ring-[var(--color-border)] sm:px-14 lg:py-14"
+          className="relative rounded-[24px] bg-[#d9d9d9] px-7 py-12 sm:px-14 lg:py-14"
         >
           {/* Corner decor — cylinder (top-left) + coin (bottom-right), straddling
-              the card edges, per Figma (Group 62533 / Group 62534). */}
+              the card edges, per Figma. */}
           <Image
             src="/decor/cta-cylinder.svg"
-            alt=""
-            aria-hidden
-            width={57}
-            height={64}
-            unoptimized
-            className="pointer-events-none absolute -top-6 left-6 h-auto w-[46px] sm:left-8 sm:w-[57px]"
-          />
-          <Image
-            src="/decor/cta-coin.svg"
             alt=""
             aria-hidden
             width={73}
             height={58}
             unoptimized
-            className="pointer-events-none absolute -bottom-6 right-8 h-auto w-[58px] sm:right-12 sm:w-[73px]"
+            className="pointer-events-none absolute -top-6 left-6 h-auto w-[58px] sm:left-8 sm:w-[73px]"
+          />
+          <Image
+            src="/decor/cta-coin.svg"
+            alt=""
+            aria-hidden
+            width={57}
+            height={64}
+            unoptimized
+            className="pointer-events-none absolute -bottom-6 right-8 h-auto w-[46px] sm:right-12 sm:w-[57px]"
           />
 
           <div className="relative z-10 flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
