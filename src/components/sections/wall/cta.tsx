@@ -20,24 +20,27 @@ export function WallCta() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "0px 0px -10% 0px" }}
           transition={{ duration: 0.45, ease: EASE_OUT }}
-          className="relative overflow-hidden rounded-[24px] bg-[var(--color-surface)] px-7 py-12 ring-1 ring-[var(--color-border)] sm:px-14 lg:py-14"
+          className="relative rounded-[24px] bg-[var(--color-surface)] px-7 py-12 ring-1 ring-[var(--color-border)] sm:px-14 lg:py-14"
         >
-          {/* confetti decor */}
+          {/* Corner decor — cylinder (top-left) + coin (bottom-right), straddling
+              the card edges, per Figma (Group 62533 / Group 62534). */}
           <Image
-            src="/decor/bolt.svg"
+            src="/decor/cta-cylinder.svg"
             alt=""
             aria-hidden
-            width={40}
-            height={40}
-            className="pointer-events-none absolute left-8 top-6 size-8 opacity-40 sm:size-10"
+            width={57}
+            height={64}
+            unoptimized
+            className="pointer-events-none absolute -top-6 left-6 h-auto w-[46px] sm:left-8 sm:w-[57px]"
           />
           <Image
-            src="/decor/bolt.svg"
+            src="/decor/cta-coin.svg"
             alt=""
             aria-hidden
-            width={48}
-            height={48}
-            className="pointer-events-none absolute -bottom-2 right-10 size-10 rotate-180 opacity-30 sm:size-12"
+            width={73}
+            height={58}
+            unoptimized
+            className="pointer-events-none absolute -bottom-6 right-8 h-auto w-[58px] sm:right-12 sm:w-[73px]"
           />
 
           <div className="relative z-10 flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">

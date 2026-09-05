@@ -16,7 +16,7 @@ const EASE_OUT = [0.16, 1, 0.3, 1] as const;
 const CATEGORIES = [
   "All",
   "Zoho Services",
-  "AI Agents",
+  "AI Agent",
   "Automation",
   "Custom Development",
 ] as const;
@@ -148,7 +148,7 @@ const TESTIMONIALS: Testimonial[] = [
     author: "Sarah Mitchell",
     company: "TechFlow Solutions",
     location: "Canada",
-    category: "AI Agents",
+    category: "AI Agent",
   },
   {
     rating: 5.0,
@@ -157,7 +157,7 @@ const TESTIMONIALS: Testimonial[] = [
     author: "Marcus Rodriguez",
     company: "Growth Dynamics",
     location: "Spain",
-    category: "AI Agents",
+    category: "AI Agent",
   },
   {
     rating: 5.0,
@@ -166,7 +166,7 @@ const TESTIMONIALS: Testimonial[] = [
     author: "Emma Chen",
     company: "Digital Marketing Pro",
     location: "Singapore",
-    category: "AI Agents",
+    category: "AI Agent",
   },
 ];
 
@@ -176,7 +176,7 @@ const STYLE: Record<CardCategory, { cover: string; chip: string }> = {
     cover: "from-brand-purple to-brand-purple-strong",
     chip: "bg-tint-lavender text-brand-purple-strong",
   },
-  "AI Agents": {
+  "AI Agent": {
     cover: "from-brand-coral to-brand-coral-strong",
     chip: "bg-tint-pink-soft text-brand-coral-strong",
   },
@@ -325,7 +325,7 @@ export function WallTestimonials() {
             role="tablist"
             aria-label="Filter testimonials by category"
             onKeyDown={onKeyDown}
-            className="mx-auto flex max-w-3xl flex-wrap items-center justify-center gap-2 rounded-pill bg-[var(--color-surface)] p-1.5"
+            className="mx-auto flex w-fit max-w-full flex-wrap items-center justify-center gap-1 rounded-[var(--radius-sm)] border border-[var(--color-border)] bg-[var(--color-surface)] p-1.5 shadow-sm"
           >
             {CATEGORIES.map((cat, i) => {
               const selected = cat === active;
@@ -340,7 +340,7 @@ export function WallTestimonials() {
                   aria-selected={selected}
                   tabIndex={selected ? 0 : -1}
                   onClick={() => setActive(cat)}
-                  className={`relative rounded-pill px-4 py-2 text-sm font-medium transition-colors duration-[var(--duration-micro)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2 ${
+                  className={`relative rounded-[var(--radius-sm)] px-4 py-2 text-sm font-medium transition-colors duration-[var(--duration-micro)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2 ${
                     selected
                       ? "text-white"
                       : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]"
@@ -350,7 +350,7 @@ export function WallTestimonials() {
                     <motion.span
                       aria-hidden
                       layoutId={reduceMotion ? undefined : `${baseId}-pill`}
-                      className="absolute inset-0 z-0 rounded-pill bg-[var(--color-surface-dark)]"
+                      className="absolute inset-0 z-0 rounded-[var(--radius-sm)] bg-[var(--color-surface-dark)]"
                       transition={{ type: "spring", stiffness: 400, damping: 32 }}
                     />
                   )}
