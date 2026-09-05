@@ -1,17 +1,11 @@
 "use client";
 
+import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { Container } from "@/components/layout/container";
 import { MessageForm } from "@/components/sections/contact/form";
 import { ButtonLink } from "@/components/ui/button";
-import {
-  Mail,
-  Phone,
-  MapPin,
-  Clock,
-  Calendar,
-  MessageSquare,
-} from "@/components/ui/icon";
+import { Mail, Phone, MapPin, Clock, Calendar } from "@/components/ui/icon";
 import type { ComponentType, SVGProps } from "react";
 
 const EASE_OUT = [0.16, 1, 0.3, 1] as const;
@@ -148,9 +142,13 @@ export function AboutContact() {
             className="rounded-[24px] border border-[var(--color-border-subtle)] bg-[var(--color-background)] px-6 py-7 shadow-sm sm:px-8 sm:py-8 lg:col-span-3"
           >
             <div className="mb-6 flex items-center gap-3">
-              <span className="inline-flex size-11 items-center justify-center rounded-2xl bg-black/[0.05]">
-                <MessageSquare className="size-5 text-[var(--color-text-primary)]" />
-              </span>
+              <Image
+                src="/graphics/about/message.svg"
+                alt=""
+                width={44}
+                height={44}
+                className="size-11"
+              />
               <div>
                 <h3 className="text-lg font-bold tracking-tight text-[var(--color-text-primary)]">
                   Send us a message
