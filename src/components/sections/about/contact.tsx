@@ -70,7 +70,7 @@ export function AboutContact() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <section id="contact" className="bg-[var(--color-background-warm)] py-[var(--section-padding-y)]">
+    <section id="contact" className="scroll-mt-24 bg-[var(--color-background-warm)] py-[var(--section-padding-y)]">
       <Container>
         {/* Heading */}
         <motion.div
