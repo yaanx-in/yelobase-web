@@ -108,13 +108,16 @@ export function Footer() {
         className="pointer-events-none absolute inset-x-0 bottom-0 z-0"
       >
         <Container>
+          {/* Scaled up so the artwork (which has ~9% transparent padding each
+              side) fills the container edge-to-edge; overflow is transparent
+              and clipped by the footer. */}
           <Image
             src="/graphics/footer-wordmark.svg"
             alt=""
-            width={1143}
+            width={1402}
             height={258}
             unoptimized
-            className="h-auto w-full"
+            className="relative left-1/2 h-auto w-[122%] max-w-none -translate-x-1/2"
           />
         </Container>
       </div>
