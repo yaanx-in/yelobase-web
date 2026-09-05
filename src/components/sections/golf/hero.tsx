@@ -87,7 +87,7 @@ export function GolfHero() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4, ease: EASE_OUT }}
-          className="relative z-10 mx-auto -mt-10 flex max-w-[720px] flex-col items-start justify-between gap-6 rounded-2xl bg-tint-pink px-6 py-5 shadow-md sm:flex-row sm:items-center sm:px-9"
+          className="relative z-10 mx-auto -mt-10 flex max-w-[718px] flex-col items-start justify-between gap-6 rounded-2xl bg-tint-pink px-6 py-6 shadow-[0_2px_4px_0_rgba(32,29,35,0.12)] sm:flex-row sm:items-center sm:px-9"
         >
           {STATS.map((stat) => (
             <div key={stat.label} className="flex items-end gap-2">
