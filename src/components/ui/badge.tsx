@@ -21,7 +21,7 @@ export function Badge({ children, tint = "lavender", className }: BadgeProps) {
   return (
     <span
       className={cn(
-        "inline-flex items-center gap-2 rounded-[var(--radius-2xs)] px-3.5 py-1.5 text-xs font-medium whitespace-nowrap shadow-sm",
+        "inline-flex items-center gap-2 rounded-[var(--radius-sm)] px-3.5 py-1.5 text-xs font-medium whitespace-nowrap shadow-sm",
         tints[tint],
         className,
       )}
