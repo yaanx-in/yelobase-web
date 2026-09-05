@@ -447,11 +447,11 @@ export function MessageForm() {
           />
 
           <div className="sm:col-span-2">
-            <Button type="submit" variant="primary" size="lg" className="w-full sm:w-auto">
+            <Button type="submit" variant="primary" size="lg" className="w-full">
               <Send className="size-4" />
               Send Message
             </Button>
-            <p className="mt-4 text-xs text-[var(--color-text-muted)] leading-relaxed">
+            <p className="mt-4 text-center text-xs text-[var(--color-text-muted)] leading-relaxed">
               No spam. No cold pitches. Just a real reply from our team.
             </p>
           </div>
