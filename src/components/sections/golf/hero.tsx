@@ -32,7 +32,7 @@ export function GolfHero() {
           priority
           unoptimized
           sizes="100vw"
-          className="-z-10 object-cover object-center"
+          className="-z-10 object-cover object-bottom"
         />
         {/* Purple gradient overlay: strong (left) → lighter (right), per Figma
             1348:985 (Rectangle 34625151, linear ~60%). */}
@@ -45,7 +45,7 @@ export function GolfHero() {
           }}
         />
 
-        <Container className="py-20 sm:py-28 lg:py-32">
+        <Container className="pt-20 pb-40 sm:pt-24 sm:pb-48 lg:pt-28 lg:pb-56">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
@@ -66,7 +66,7 @@ export function GolfHero() {
                 href="#from-frustration-to-flow"
                 variant="outline"
                 size="lg"
-                className="border-[#f9f5ff] bg-[#f9f5ff] text-[#5333c7] hover:bg-[#f9f5ff]/90"
+                className="border-[#f9f5ff] bg-[#f9f5ff] !text-[#5333c7] hover:bg-[#f9f5ff]/90"
               >
                 What&apos;s included?
               </ButtonLink>
