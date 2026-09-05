@@ -18,6 +18,7 @@ const NAV_LINKS: NavItem[] = [
     label: "Industry Solutions",
     children: [{ label: "Golf Academy", href: "/golf" }],
   },
+  { label: "Wall of Love", href: "/wall-of-love" },
   { label: "Who are we", href: "/about" },
 ];
 
