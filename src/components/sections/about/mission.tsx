@@ -35,7 +35,7 @@ export function AboutMission() {
               business processes to deliver automation solutions that not only work
               flawlessly but also scale with your growth.
             </p>
-            <ButtonLink href="/contact" variant="primary" size="lg" className="mt-8">
+            <ButtonLink href="/about#contact" variant="primary" size="lg" className="mt-8">
               Work with Us
               <ArrowRight className="size-4" />
             </ButtonLink>
