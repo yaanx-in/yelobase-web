@@ -41,7 +41,7 @@ export function GolfHero() {
           className="absolute inset-0 -z-10"
           style={{
             background:
-              "linear-gradient(to right, rgba(47,29,128,0.72), rgba(47,29,128,0.45) 45%, rgba(47,29,128,0.28) 100%)",
+              "linear-gradient(to right, rgba(47,29,128,0.78) 0%, rgba(47,29,128,0.45) 32%, rgba(47,29,128,0) 62%)",
           }}
         />
 
