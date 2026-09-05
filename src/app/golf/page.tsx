@@ -5,7 +5,7 @@ import { GolfHero } from "@/components/sections/golf/hero";
 import { GolfReality } from "@/components/sections/golf/reality";
 import { GolfProcess } from "@/components/sections/golf/process";
 import { GolfResults } from "@/components/sections/golf/results";
-import { GolfTestimonials } from "@/components/sections/golf/testimonials";
+import { CustomerStories } from "@/components/sections/customer-stories";
 import { GolfCta } from "@/components/sections/golf/cta";
 import { GolfFaq } from "@/components/sections/golf/faq";
 
@@ -25,7 +25,7 @@ export default function GolfPage() {
         <GolfReality />
         <GolfProcess />
         <GolfResults />
-        <GolfTestimonials />
+        <CustomerStories />
         <GolfCta />
         <GolfFaq />
       </main>
