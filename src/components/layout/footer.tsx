@@ -54,7 +54,15 @@ export function Footer() {
     >
       <Container className="relative z-10 pb-52 pt-14 sm:pb-64">
         {/* Tagline bar */}
-        <div className="rounded-2xl border border-white/10 bg-white/[0.03] px-6 py-4 sm:px-8">
+        <div className="flex flex-col items-start gap-4 rounded-2xl border border-white/10 bg-white/[0.03] px-6 py-4 sm:flex-row sm:items-center sm:gap-6 sm:px-8">
+          <Image
+            src="/graphics/zoho-authorized-partner-badge.svg"
+            alt="Zoho Authorized Partner"
+            width={142}
+            height={40}
+            unoptimized
+            className="h-10 w-auto shrink-0"
+          />
           <p className="text-xs leading-relaxed text-white/55">
             Transforming businesses through intelligent Zoho automation and
             custom AI agents. We help companies streamline operations and enhance
