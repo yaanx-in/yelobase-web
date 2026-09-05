@@ -56,7 +56,7 @@ export function WhatWeDo() {
   return (
     <section
       id="what-we-do"
-      className="bg-[var(--color-background)] py-[var(--section-padding-y)]"
+      className="bg-[var(--color-background-warm)] py-[var(--section-padding-y)]"
     >
       <Container>
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] lg:gap-16">
