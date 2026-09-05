@@ -82,7 +82,7 @@ export function GolfProcess() {
                 />
               )}
               <div className="flex h-full flex-col rounded-2xl border border-[var(--color-border-subtle)] bg-white p-6 shadow-sm">
-                <span className="grid size-[42px] shrink-0 place-items-center rounded-full bg-[var(--color-surface)] text-base font-semibold text-brand-purple">
+                <span className="grid size-[42px] shrink-0 place-items-center rounded-full bg-[var(--color-surface)] text-2xl font-semibold leading-[1.1] text-brand-purple">
                   {step.n}
                 </span>
                 <h3 className="mt-6 text-lg font-semibold text-[var(--color-text-primary)]">
