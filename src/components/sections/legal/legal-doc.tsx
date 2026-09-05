@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 import { Stagger, Reveal } from "@/components/ui/reveal";
 import { Container } from "@/components/layout/container";
 import { Lock, FileText, Mail, Phone, Check, ArrowRight, ChevronDown } from "@/components/ui/icon";
@@ -53,33 +53,9 @@ function HeroBand({
   icon: "lock" | "file";
   lastUpdated: string;
 }) {
-  const reduceMotion = useReducedMotion();
-
   return (
-    <section className="relative overflow-hidden bg-[var(--color-background-warm)] pb-12 pt-8">
-      {/* Ambient orbs */}
-      <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
-        <motion.div
-          className="absolute -left-20 -top-16 size-[22rem] rounded-full bg-brand-purple/10 blur-3xl"
-          animate={
-            reduceMotion
-              ? undefined
-              : { x: [0, 30, 0], y: [0, 20, 0] }
-          }
-          transition={{ duration: 20, repeat: Infinity, repeatType: "mirror", ease: "easeInOut" }}
-        />
-        <motion.div
-          className="absolute -bottom-20 -right-12 size-[18rem] rounded-full bg-brand-teal/10 blur-3xl"
-          animate={
-            reduceMotion
-              ? undefined
-              : { x: [0, -24, 0], y: [0, -16, 0] }
-          }
-          transition={{ duration: 18, repeat: Infinity, repeatType: "mirror", ease: "easeInOut" }}
-        />
-      </div>
-
-      <Container className="relative">
+    <section className="bg-[var(--color-background-warm)] pb-12 pt-8">
+      <Container>
         <Stagger onMount className="flex flex-col items-start gap-4">
           {/* Back to home */}
           <Stagger.Item>

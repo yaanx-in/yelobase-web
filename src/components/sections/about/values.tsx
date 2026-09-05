@@ -1,38 +1,37 @@
 "use client";
 
+import Image from "next/image";
 import { motion, useReducedMotion, type Variants } from "framer-motion";
-import { Bolt, Lightbulb, Handshake, Award } from "@/components/ui/icon";
 import { Container } from "@/components/layout/container";
-import type { ComponentType, SVGProps } from "react";
 
 const EASE_OUT = [0.16, 1, 0.3, 1] as const;
 
 type Value = {
   title: string;
   body: string;
-  icon: ComponentType<SVGProps<SVGSVGElement>>;
+  icon: string;
 };
 
 const VALUES: Value[] = [
   {
     title: "Results Driven",
     body: "We focus on delivering measurable outcomes that directly impact your business growth and efficiency.",
-    icon: Bolt,
+    icon: "/graphics/about/values/results.svg",
   },
   {
     title: "Innovation First",
     body: "We stay ahead of technology trends to provide cutting edge solutions that give you a competitive advantage.",
-    icon: Lightbulb,
+    icon: "/graphics/about/values/innovation.svg",
   },
   {
     title: "Partnership Approach",
     body: "We work as an extension of your team, understanding your unique challenges and building lasting relationships.",
-    icon: Handshake,
+    icon: "/graphics/about/values/partnership.svg",
   },
   {
     title: "Excellence Standard",
     body: "We maintain the highest standards in everything we do, from code quality to customer service.",
-    icon: Award,
+    icon: "/graphics/about/values/excellence.svg",
   },
 ];
 
@@ -48,7 +47,6 @@ const cardVariant: Variants = {
 
 function ValueCard({ value }: { value: Value }) {
   const reduceMotion = useReducedMotion();
-  const Icon = value.icon;
 
   return (
     <motion.article
@@ -57,9 +55,13 @@ function ValueCard({ value }: { value: Value }) {
       transition={{ type: "spring", stiffness: 300, damping: 24 }}
       className="group flex h-full flex-col rounded-[24px] border border-[var(--color-border-subtle)] bg-[var(--color-background)] p-7 shadow-sm transition-shadow duration-[var(--duration-micro)] hover:shadow-lg"
     >
-      <span className="inline-flex size-12 items-center justify-center rounded-full bg-black/[0.05] transition-transform duration-[var(--duration-micro)] group-hover:scale-110">
-        <Icon className="size-[22px] text-[var(--color-text-primary)]" />
-      </span>
+      <Image
+        src={value.icon}
+        alt=""
+        width={42}
+        height={42}
+        className="size-[42px] transition-transform duration-[var(--duration-micro)] group-hover:scale-110"
+      />
 
       <h3 className="mt-5 text-xl font-semibold text-[var(--color-text-primary)]">
         {value.title}
