@@ -6,7 +6,6 @@ import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { ButtonLink } from "@/components/ui/button";
 import { Container } from "@/components/layout/container";
 import { ArrowRight } from "@/components/ui/icon";
-import { cn } from "@/lib/utils";
 
 type Accent = "purple" | "coral" | "teal" | "amber";
 
@@ -50,28 +49,22 @@ const shortName = (name: string) => name.replace(/^Zoho\s+/, "");
 
 export function ZohoApplications() {
   const [active, setActive] = useState(0);
-  const [paused, setPaused] = useState(false);
   const reduceMotion = useReducedMotion();
   const app = APPS[active];
   const a = ACCENT[app.accent];
 
-  // Auto-advance through the apps; pause on hover/focus or reduced motion.
+  // Auto-advance: restart the timer on every selection (auto OR click) so the
+  // progress bar stays in sync and a click never leaves it stuck.
   useEffect(() => {
-    if (reduceMotion || paused) return;
-    const id = setInterval(() => setActive((p) => (p + 1) % APPS.length), 3200);
-    return () => clearInterval(id);
-  }, [reduceMotion, paused]);
+    if (reduceMotion) return;
+    const id = setTimeout(() => setActive((p) => (p + 1) % APPS.length), 3200);
+    return () => clearTimeout(id);
+  }, [active, reduceMotion]);
 
   return (
     <section id="applications" className="scroll-mt-24 bg-[var(--color-background)] py-[var(--section-padding-y)]">
       <Container>
-        <div
-          className="grid gap-10 lg:grid-cols-[minmax(0,24rem)_1fr] lg:gap-14"
-          onMouseEnter={() => setPaused(true)}
-          onMouseLeave={() => setPaused(false)}
-          onFocusCapture={() => setPaused(true)}
-          onBlurCapture={() => setPaused(false)}
-        >
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,24rem)_1fr] lg:gap-14">
           {/* Left: heading + app list */}
           <div>
             <h2 className="text-balance text-3xl font-bold tracking-tight text-[var(--color-text-primary)] sm:text-4xl">
@@ -111,12 +104,9 @@ export function ZohoApplications() {
                     </span>
                     {selected && (
                       <span
+                        key={active}
                         aria-hidden
-                        className={cn(
-                          "absolute inset-x-0 -bottom-px h-[2px] origin-left rounded-full bg-brand-coral",
-                          "motion-safe:animate-[app-progress_3200ms_linear_forwards]",
-                          paused && "[animation-play-state:paused]",
-                        )}
+                        className="absolute inset-x-0 -bottom-px h-[2px] origin-left rounded-full bg-brand-coral motion-safe:animate-[app-progress_3200ms_linear_forwards]"
                       />
                     )}
                   </button>
