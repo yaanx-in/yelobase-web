@@ -77,10 +77,11 @@ export function GolfResults() {
             className="overflow-hidden rounded-2xl"
           >
             <Image
-              src="/graphics/golf/results-golfer.png"
+              src="/graphics/golf/results-golfer.svg"
               alt="A golfer taking a swing on the course at dusk"
-              width={848}
-              height={565}
+              width={553}
+              height={374}
+              unoptimized
               sizes="(min-width: 1024px) 560px, 100vw"
               className="h-full w-full object-cover"
             />
