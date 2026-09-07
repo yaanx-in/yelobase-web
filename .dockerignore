@@ -1,0 +1,30 @@
+# Dependencies & build output (reinstalled/rebuilt inside the image)
+node_modules
+.next
+out
+build
+coverage
+
+# VCS & tooling
+.git
+.gitignore
+.github
+.vscode
+.idea
+
+# Docker
+Dockerfile
+.dockerignore
+
+# Vercel / local env
+.vercel
+.env
+.env*.local
+
+# Logs & OS cruft
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+.DS_Store
+*.tsbuildinfo
