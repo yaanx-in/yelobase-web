@@ -11,7 +11,7 @@ type Point = {
 const POINTS: Point[] = [
   {
     icon: "/icons/zp-partner.svg",
-    text: "Official Zoho Partner — verified, trained, and recognized by Zoho",
+    text: "Official Zoho Partner verified, trained, and recognized by Zoho",
   },
   {
     icon: "/icons/zp-implementations.svg",
@@ -65,7 +65,7 @@ export function ZohoPartnership() {
 
             <p className="mt-8 max-w-[600px] text-[17px] leading-[1.55] text-[var(--color-text-secondary)]">
               Zoho is where we start. As your business grows, we grow the
-              architecture with it — adding integrations, third-party tools, and
+              architecture with it adding integrations, third-party tools, and
               AI layers as you need them.
             </p>
           </Reveal>

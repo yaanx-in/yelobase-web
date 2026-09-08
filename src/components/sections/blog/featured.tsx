@@ -18,7 +18,7 @@ export function BlogFeatured() {
           transition={{ duration: 0.45, ease: EASE_OUT }}
           className="group relative grid overflow-hidden rounded-[24px] border border-[var(--color-border-subtle)] shadow-sm transition-shadow hover:shadow-lg md:grid-cols-[minmax(0,40%)_1fr]"
         >
-          {/* placeholder cover — ponytail: swap with the real article image */}
+          {/* placeholder cover ponytail: swap with the real article image */}
           <div className="relative min-h-[220px] bg-gradient-to-br from-[var(--color-surface-dark)] via-brand-purple-strong to-brand-coral" />
 
           <div className="bg-tint-lavender p-8 sm:p-10">

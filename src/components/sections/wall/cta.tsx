@@ -22,7 +22,7 @@ export function WallCta() {
           transition={{ duration: 0.45, ease: EASE_OUT }}
           className="relative rounded-[24px] bg-[#d9d9d9] px-7 py-12 sm:px-14 lg:py-14"
         >
-          {/* Corner decor — cylinder (top-left) + coin (bottom-right), straddling
+          {/* Corner decor cylinder (top-left) + coin (bottom-right), straddling
               the card edges, per Figma. */}
           <Image
             src="/decor/cta-cylinder.svg"

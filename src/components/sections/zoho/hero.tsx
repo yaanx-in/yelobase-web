@@ -56,7 +56,7 @@ export function ZohoHero() {
           <Stagger.Item>
             <Image
               src="/graphics/zoho/assessment-strip.svg"
-              alt="Zoho Authorized Partner — no credit card required, free consultation and setup assistance"
+              alt="Zoho Authorized Partner no credit card required, free consultation and setup assistance"
               width={656}
               height={72}
               unoptimized

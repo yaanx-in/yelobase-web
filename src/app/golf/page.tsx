@@ -11,7 +11,7 @@ import { GolfFaq } from "@/components/sections/golf/faq";
 
 export const metadata: Metadata = {
   title:
-    "Golf Academy Automation — Yelobase | Run Your Academy, Not Your Spreadsheets",
+    "Golf Academy Automation Yelobase | Run Your Academy, Not Your Spreadsheets",
   description:
     "We automate bookings, billing, and operations for golf academies using Zoho and Golf Manager so your coaches spend their time on the course, not in admin. Official Zoho Partner. Book a free demo.",
 };

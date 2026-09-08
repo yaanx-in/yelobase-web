@@ -86,7 +86,7 @@ export function ContactProcess() {
           viewport={{ once: true, margin: "0px 0px -8% 0px" }}
           className="relative mt-14 grid gap-6 sm:grid-cols-3 sm:gap-8"
         >
-          {/* Connecting lines between steps — desktop only */}
+          {/* Connecting lines between steps desktop only */}
           <div
             aria-hidden
             className="pointer-events-none absolute inset-x-0 top-[2.75rem] hidden sm:block"

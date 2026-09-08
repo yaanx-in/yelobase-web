@@ -9,7 +9,7 @@ import { Eyebrow } from "@/components/ui/eyebrow";
 import { STORY_STATS } from "@/lib/testimonials";
 
 export const metadata: Metadata = {
-  title: "Customer Stories — Yelobase",
+  title: "Customer Stories Yelobase",
   description:
     "Real reviews from real Yelobase clients. Every project delivered, every client earned.",
 };

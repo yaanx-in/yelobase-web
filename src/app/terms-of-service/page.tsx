@@ -4,7 +4,7 @@ import { Footer } from "@/components/layout/footer";
 import { LegalDoc } from "@/components/sections/legal/legal-doc";
 
 export const metadata: Metadata = {
-  title: "Terms of Service — Yelobase",
+  title: "Terms of Service Yelobase",
   description:
     "Read the terms and conditions governing your use of Yelobase's business automation and Zoho implementation services.",
 };

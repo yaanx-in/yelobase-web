@@ -11,7 +11,7 @@ type ContainerProps = {
 /**
  * The single shared layout shell. Max-width and horizontal gutters come from
  * the --container-* tokens (DESIGN.md §4) so every section aligns to one grid.
- * Never set one-off horizontal paddings on sections — wrap them in <Container>.
+ * Never set one-off horizontal paddings on sections wrap them in <Container>.
  */
 export function Container({ children, className, as }: ContainerProps) {
   const Tag = as ?? "div";

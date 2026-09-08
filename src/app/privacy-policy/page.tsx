@@ -4,7 +4,7 @@ import { Footer } from "@/components/layout/footer";
 import { LegalDoc } from "@/components/sections/legal/legal-doc";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — Yelobase",
+  title: "Privacy Policy Yelobase",
   description:
     "Learn how Yelobase collects, uses, and protects your personal information when you use our business automation services.",
 };

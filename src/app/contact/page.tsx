@@ -7,9 +7,9 @@ import { ContactForm } from "@/components/sections/contact/form";
 import { ContactFaq } from "@/components/sections/contact/faq";
 
 export const metadata: Metadata = {
-  title: "Contact — Yelobase | Let's build something worth talking about",
+  title: "Contact Yelobase | Let's build something worth talking about",
   description:
-    "Tell us what you're working on. We'll tell you exactly how we'd help, and what it would cost. Book a free 30-minute strategy call or send us a message — we reply within 24 hours.",
+    "Tell us what you're working on. We'll tell you exactly how we'd help, and what it would cost. Book a free 30-minute strategy call or send us a message we reply within 24 hours.",
 };
 
 export default function ContactPage() {

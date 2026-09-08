@@ -13,9 +13,9 @@ const fieldClass =
 const labelClass = "text-sm font-medium text-[var(--color-text-primary)]";
 
 /**
- * "Get started — Book your free systems audit" (Figma 1416:1110 / 1416:1210).
+ * "Get started Book your free systems audit" (Figma 1416:1110 / 1416:1210).
  * A contact form card. (The task brief described an "image card with a button";
- * the rendered design at this node is the audit contact form — built to match
+ * the rendered design at this node is the audit contact form built to match
  * the screenshot.)
  */
 export function GolfCta() {

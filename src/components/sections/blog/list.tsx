@@ -67,7 +67,7 @@ export function BlogList() {
           ))}
         </motion.div>
 
-        {/* Pagination — ponytail: presentational until posts are paginated from a CMS/MDX source */}
+        {/* Pagination ponytail: presentational until posts are paginated from a CMS/MDX source */}
         <nav aria-label="Pagination" className="mt-14 flex items-center justify-center gap-2">
           <button
             aria-label="Previous page"

@@ -33,7 +33,7 @@ const CARD_TITLE = "The Impact of Technology on the Workplace: How Technology is
 const TAGS = ["Technology", "AI", "Innovation"];
 const ACCENTS: Post["accent"][] = ["purple", "coral", "teal", "amber"];
 
-// ponytail: placeholder posts — swap title/tags/author/date/cover/slug with real content (or wire to MDX/CMS).
+// ponytail: placeholder posts swap title/tags/author/date/cover/slug with real content (or wire to MDX/CMS).
 // All placeholder cards link to the one real article below until more are added.
 const ARTICLE_SLUG = "the-future-of-remote-work";
 
@@ -139,7 +139,7 @@ export const ARTICLES: Article[] = [
       { t: "h3", text: "Conclusion" },
       {
         t: "p",
-        text: "Remote work is no longer simply a temporary solution—it's an evolving way of working that continues to reshape industries worldwide.",
+        text: "Remote work is no longer simply a temporary solutionit's an evolving way of working that continues to reshape industries worldwide.",
       },
       {
         t: "p",
@@ -227,7 +227,7 @@ export function AuthorRow({
   );
 }
 
-/** Blog card — links to the article. CSS hover keeps it server-renderable. */
+/** Blog card links to the article. CSS hover keeps it server-renderable. */
 export function BlogCard({ post }: { post: Post }) {
   return (
     <Link href={`/blog/${post.slug}`} className="group flex flex-col focus-visible:outline-none">

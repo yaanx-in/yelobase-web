@@ -14,13 +14,13 @@ const EASE_OUT = [0.16, 1, 0.3, 1] as const;
 
 type Faq = { q: string; a: string };
 
-// ponytail: answer copy for items 2-5 is reconstructed on-brand — the source
+// ponytail: answer copy for items 2-5 is reconstructed on-brand the source
 // screenshot wasn't legible at body size and Figma MCP was rate-limited. The
 // questions and the first (expanded) answer are read from the design.
 const FAQS: Faq[] = [
   {
     q: "Do we have to switch to a new platform?",
-    a: "Most academies manage their operations across a patchwork of WhatsApp groups, spreadsheets, and manual reminders. We don't force a rip-and-replace — we integrate with or migrate from what you already use, and only replace a tool when doing so genuinely simplifies your operation.",
+    a: "Most academies manage their operations across a patchwork of WhatsApp groups, spreadsheets, and manual reminders. We don't force a rip-and-replace we integrate with or migrate from what you already use, and only replace a tool when doing so genuinely simplifies your operation.",
   },
   {
     q: "How long does a typical implementation take?",

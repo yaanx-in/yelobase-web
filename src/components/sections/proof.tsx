@@ -16,7 +16,7 @@ const STATS = [
   {
     value: "6 weeks",
     label:
-      "From chaos to operational clarity — a typical implementation timeline for SMBs.",
+      "From chaos to operational clarity a typical implementation timeline for SMBs.",
     image: "/graphics/hourglass.webp",
     imgW: 420,
     imgH: 437,
@@ -60,13 +60,13 @@ export function Proof() {
               </div>
             ))}
 
-            {/* Dark highlight stat — coral number, avatar cluster, white CTA */}
+            {/* Dark highlight stat coral number, avatar cluster, white CTA */}
             <div className="relative h-[400px] overflow-hidden rounded-2xl bg-gradient-to-br from-[#2b2b2d] to-[#100f12] p-6 text-white shadow-sm">
               <p className="font-mono text-[2.6rem] font-bold leading-none tracking-tight text-brand-coral">
                 100%
               </p>
               <p className="mt-3 max-w-[230px] text-[15px] leading-[1.3] text-white/85">
-                user adoption in 3 weeks, consistently — because we build for
+                user adoption in 3 weeks, consistently because we build for
                 people, not demos
               </p>
 

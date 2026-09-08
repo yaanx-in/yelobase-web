@@ -158,7 +158,7 @@ export function ContactHero() {
     <section className="relative overflow-hidden bg-[var(--color-background-warm)] pb-16 pt-12 sm:pt-16">
       <Orbs />
 
-      {/* floating chips — desktop only */}
+      {/* floating chips desktop only */}
       <div className="pointer-events-none absolute inset-0 hidden lg:block">
         <Container className="relative h-full">
           {CHIPS.map((c) => (

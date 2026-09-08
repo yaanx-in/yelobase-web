@@ -57,7 +57,7 @@ export function WallHero() {
             </dl>
           </Stagger.Item>
 
-          {/* Client logo strip — same marquee as the home page */}
+          {/* Client logo strip same marquee as the home page */}
           <Stagger.Item>
             <LogoMarquee className="mt-10" />
           </Stagger.Item>

@@ -36,7 +36,7 @@ export function Hero() {
           <Stagger.Item>
             <p className="mx-auto mt-5 max-w-[54rem] text-balance text-base text-[var(--color-text-secondary)] sm:text-lg">
               We are a technology partner for growing businesses. Starting with
-              Zoho and expanding across your entire stack — we design, build,
+              Zoho and expanding across your entire stack we design, build,
               automate, and manage the systems that let you scale without chaos.
             </p>
           </Stagger.Item>
@@ -70,7 +70,7 @@ export function Hero() {
             className="absolute left-[49%] top-1/2 w-[23rem] -translate-x-1/2 -translate-y-1/2 lg:w-[26rem]"
           />
 
-          {/* Floating cards + badges — positioned per Figma coordinates. */}
+          {/* Floating cards + badges positioned per Figma coordinates. */}
           <Float delay={0.12} className="absolute left-[12.4%] top-[10.3%]">
             <Badge tint="lavender">Official Zoho Partner</Badge>
           </Float>

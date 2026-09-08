@@ -51,7 +51,7 @@ const SOLUTION: Panel = {
   tag: "WHAT WE BUILD",
   heading: ["One connected system.", "Everything runs itself."],
   intro:
-    "We replace the patchwork with a single automated operation built on Zoho and Golf Manager — so bookings, billing, and follow-ups happen without you lifting a finger.",
+    "We replace the patchwork with a single automated operation built on Zoho and Golf Manager so bookings, billing, and follow-ups happen without you lifting a finger.",
   items: [
     {
       title: "Bookings that manage themselves",
@@ -63,7 +63,7 @@ const SOLUTION: Panel = {
     },
     {
       title: "Full visibility on every student",
-      body: "One central record of lesson history, progress notes, and communication — accessible to every instructor, all in one place.",
+      body: "One central record of lesson history, progress notes, and communication accessible to every instructor, all in one place.",
     },
     {
       title: "Early warnings on drop-offs",

@@ -5,7 +5,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { Container } from "@/components/layout/container";
 import { MessageForm } from "@/components/sections/contact/form";
 import { ButtonLink } from "@/components/ui/button";
-import { Mail, Phone, MapPin, Clock, Calendar } from "@/components/ui/icon";
+import { Mail, Phone, Clock, Calendar } from "@/components/ui/icon";
 import type { ComponentType, SVGProps } from "react";
 
 const EASE_OUT = [0.16, 1, 0.3, 1] as const;
@@ -20,7 +20,6 @@ type Info = {
 const INFO: Info[] = [
   { icon: Mail, label: "Email", value: "solutions@yelobase.com", href: "mailto:solutions@yelobase.com" },
   { icon: Phone, label: "Phone", value: "+91 9551714690", href: "tel:+919551714690" },
-  { icon: MapPin, label: "We serve", value: "USA · UK · UAE · India" },
   { icon: Clock, label: "Response time", value: "Within 24 hours" },
 ];
 
@@ -84,7 +83,7 @@ export function AboutContact() {
         </motion.div>
 
         <div className="mt-14 grid gap-8 lg:grid-cols-5 lg:gap-10">
-          {/* Left — info + prefer a call + what happens next */}
+          {/* Left info + prefer a call + what happens next */}
           <div className="space-y-4 lg:col-span-2">
             {INFO.map((info) => (
               <InfoCard key={info.label} info={info} />
@@ -133,7 +132,7 @@ export function AboutContact() {
             </div>
           </div>
 
-          {/* Right — message form card */}
+          {/* Right message form card */}
           <motion.div
             initial={reduceMotion ? false : { opacity: 0, y: 28 }}
             whileInView={{ opacity: 1, y: 0 }}

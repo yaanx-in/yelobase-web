@@ -25,7 +25,7 @@ export function WhyYelobase() {
             We&rsquo;re not your vendor. We&rsquo;re your technology partner
           </h2>
           <p className="mt-2 text-[var(--color-text-secondary)]">
-            There&rsquo;s a difference — and it matters more than you&rsquo;d
+            There&rsquo;s a difference and it matters more than you&rsquo;d
             think.
           </p>
         </Reveal>
@@ -73,7 +73,7 @@ export function WhyYelobase() {
               ))}
             </div>
 
-            {/* Yelobase Partner — overlaps the table on desktop, stacks on mobile */}
+            {/* Yelobase Partner overlaps the table on desktop, stacks on mobile */}
             <div className="relative z-[3] mt-5 overflow-hidden rounded-xl shadow-2xl lg:absolute lg:left-[635px] lg:top-[-24px] lg:mt-0 lg:w-[300px]">
               <div className="flex items-center gap-2 bg-brand-coral px-5 py-[22px]">
                 {/* eslint-disable-next-line @next/next/no-img-element */}

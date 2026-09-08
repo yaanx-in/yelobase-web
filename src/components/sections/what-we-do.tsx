@@ -16,7 +16,7 @@ type Service = {
 };
 
 // Only the Zoho card's body was fully legible in Figma; the other bodies are
-// extrapolated to match its tone (flagged to the user — confirm exact copy).
+// extrapolated to match its tone (flagged to the user confirm exact copy).
 const SERVICES: Service[] = [
   {
     title: "Zoho Implementation",
@@ -29,14 +29,14 @@ const SERVICES: Service[] = [
     title: "End-to-End Automation",
     tag: "Efficiency",
     icon: "/icons/end-to-end.svg",
-    body: "We connect your tools and automate the busywork — notifications, approvals, follow-ups, and reports that run themselves.",
+    body: "We connect your tools and automate the busywork notifications, approvals, follow-ups, and reports that run themselves.",
     back: "bg-tint-mint",
   },
   {
     title: "Managed Services Retainer",
     tag: "Partnership",
     icon: "/icons/managed-services.svg",
-    body: "We stay on as your technology arm — monitoring, improving, and scaling your systems month after month.",
+    body: "We stay on as your technology arm monitoring, improving, and scaling your systems month after month.",
     back: "bg-tint-cream",
   },
   {
@@ -47,7 +47,7 @@ const SERVICES: Service[] = [
         <Sparkles className="size-8 text-[#3a3a3a]" />
       </span>
     ),
-    body: "AI agents that handle support, data entry, and follow-ups — trained on your processes to work alongside your team.",
+    body: "AI agents that handle support, data entry, and follow-ups trained on your processes to work alongside your team.",
     back: "bg-tint-pink",
   },
 ];
@@ -68,7 +68,7 @@ export function WhatWeDo() {
             </h2>
             <p className="mt-5 text-[var(--color-text-secondary)]">
               Most Zoho partners implement and disappear. We don&rsquo;t. We
-              become your technology arm — designing your systems, automating
+              become your technology arm designing your systems, automating
               your operations, and staying on as the team that keeps everything
               running.
             </p>

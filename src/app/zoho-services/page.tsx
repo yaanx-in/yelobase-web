@@ -8,9 +8,9 @@ import { ZohoIndustries } from "@/components/sections/zoho/industries";
 import { ZohoCta } from "@/components/sections/zoho/cta";
 
 export const metadata: Metadata = {
-  title: "Zoho Services — Yelobase | Official Zoho Authorized Partner",
+  title: "Zoho Services Yelobase | Official Zoho Authorized Partner",
   description:
-    "Zoho is powerful — most businesses use 20% of it. As a Certified Zoho Authorized Partner with 10+ years of experience, Yelobase unlocks the other 80% through implementation, automation, and deep integration built around how you work.",
+    "Zoho is powerful most businesses use 20% of it. As a Certified Zoho Authorized Partner with 10+ years of experience, Yelobase unlocks the other 80% through implementation, automation, and deep integration built around how you work.",
 };
 
 export default function ZohoServicesPage() {

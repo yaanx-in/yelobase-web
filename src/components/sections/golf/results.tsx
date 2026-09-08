@@ -25,7 +25,7 @@ const child: Variants = {
 };
 
 /**
- * "Results — What a golf academy looks like after automation" (Figma 1416:633).
+ * "Results What a golf academy looks like after automation" (Figma 1416:633).
  * Left: four stat rows with a hairline divider. Right: a golfer photo card.
  */
 export function GolfResults() {

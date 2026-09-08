@@ -59,7 +59,7 @@ function validate(values: FormValues): FormErrors {
 
 function buildMailto(values: FormValues): string {
   const subject = encodeURIComponent(
-    `[Yelobase Inquiry] ${values.service || "General"} — ${values.firstName} ${values.lastName}`
+    `[Yelobase Inquiry] ${values.service || "General"} ${values.firstName} ${values.lastName}`
   );
   const lines = [
     `Name: ${values.firstName} ${values.lastName}`,
@@ -326,7 +326,7 @@ function SuccessState() {
         <Check className="size-8 text-brand-teal" />
       </motion.span>
       <h3 className="mt-6 text-2xl font-bold tracking-tight text-[var(--color-text-primary)]">
-        Thanks — your message is on its way.
+        Thanks your message is on its way.
       </h3>
       <p className="mt-3 max-w-sm text-[var(--color-text-secondary)] leading-relaxed">
         We&rsquo;ll reply within 24 hours. Keep an eye on your inbox at{" "}
@@ -337,7 +337,7 @@ function SuccessState() {
 }
 
 // The message form itself (state + validation + fields + success), with no
-// outer card or heading — so it can be dropped into any layout (the centered
+// outer card or heading so it can be dropped into any layout (the centered
 // ContactForm below, or the two-column AboutContact).
 export function MessageForm() {
   const [values, setValues] = useState<FormValues>(INITIAL);

@@ -20,7 +20,7 @@ export function AboutMission() {
     <section className="bg-[var(--color-background-warm)] py-[var(--section-padding-y)]">
       <Container>
         <div className="grid items-center gap-8 lg:grid-cols-[1fr_1.25fr] lg:gap-8">
-          {/* Left — mission copy */}
+          {/* Left mission copy */}
           <motion.div {...fadeUp}>
             <h2 className="text-balance text-3xl font-bold tracking-tight text-[var(--color-text-primary)] sm:text-4xl">
               Our Mission
@@ -41,7 +41,7 @@ export function AboutMission() {
             </ButtonLink>
           </motion.div>
 
-          {/* Right — team photo */}
+          {/* Right team photo */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}

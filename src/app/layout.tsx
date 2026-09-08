@@ -4,7 +4,7 @@ import { Inter, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { BookAuditModal } from "@/components/ui/book-audit";
 
-// Fonts confirmed from Figma: IBM Plex Mono (display — hero & CTAs),
+// Fonts confirmed from Figma: IBM Plex Mono (display hero & CTAs),
 // IBM Plex Sans (headings), Inter (body). Components reference the
 // --font-mono / --font-heading / --font-sans tokens only.
 const inter = Inter({
@@ -28,7 +28,7 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Yelobase — Your Business Systems, Properly Built and Owned",
+  title: "Yelobase Your Business Systems, Properly Built and Owned",
   description:
     "Yelobase is a technology partner and Official Zoho Authorized Partner. We design, build, automate, and manage the business systems that let you scale without chaos.",
 };

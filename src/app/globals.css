@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 /*
- * Design tokens — Tailwind CSS v4 @theme.
+ * Design tokens Tailwind CSS v4 @theme.
  * Mirrored from docs/DESIGN.md (synced from Figma SVG export, 2026-06-10).
  * Source of truth: docs/DESIGN.md → this file → components.
  *
  * ⚠️ Pending confirmation (see DESIGN.md §9): exact font families, coral-button
  * text contrast, shadow values, icon library. Font vars below are fed by
- * next/font in layout.tsx (Space Mono + Inter, inferred — swap when confirmed).
+ * next/font in layout.tsx (Space Mono + Inter, inferred swap when confirmed).
  */
 @theme {
   /* ---- Color: neutrals & text ---- */
@@ -49,7 +49,7 @@
   --radius-md: 24px;
   --radius-pill: 9999px;
 
-  /* ---- Elevation (⚠️ proposed — confirm; baked as blurs in export) ---- */
+  /* ---- Elevation (⚠️ proposed confirm; baked as blurs in export) ---- */
   --shadow-sm: 0 1px 2px rgba(18, 17, 21, 0.06);
   --shadow-md: 0 8px 24px rgba(18, 17, 21, 0.08);
   --shadow-lg: 0 24px 48px rgba(18, 17, 21, 0.1);

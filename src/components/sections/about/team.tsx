@@ -8,7 +8,7 @@ const EASE_OUT = [0.16, 1, 0.3, 1] as const;
 
 type Member = { name: string; role: string; photo: string };
 
-// ponytail: placeholder team — swap `name`/`role`/`photo` with the real roster.
+// ponytail: placeholder team swap `name`/`role`/`photo` with the real roster.
 const TEAM: Member[] = [
   { name: "Team Member", role: "Founder & CEO", photo: "/graphics/about/team-1.webp" },
   { name: "Team Member", role: "Chief Technology Officer", photo: "/graphics/about/team-2.webp" },
@@ -65,7 +65,7 @@ export function AboutTeam() {
                   (i % 5) % 2 === 0 ? "bg-[#cfc3ff]" : "bg-[#ffcece]"
                 }`}
               >
-                {/* Transparent cutout on a tinted card — the tint shows around the
+                {/* Transparent cutout on a tinted card the tint shows around the
                     subject, matching the Figma framing. */}
                 <Image
                   src={m.photo}

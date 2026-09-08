@@ -20,7 +20,7 @@ const TRAITS = [
   },
   {
     title: "Partner, Not Headache",
-    body: "No tech team — just results.",
+    body: "No tech team just results.",
     accent: "#FFEABF",
   },
 ];
@@ -39,12 +39,12 @@ export function WhoWeWorkWith() {
               Who we work with
             </h2>
             <p className="mt-4 max-w-[500px] text-base leading-[1.5] text-[var(--color-text-secondary)]">
-              Yelobase is built for businesses that are already operational — and
+              Yelobase is built for businesses that are already operational and
               ready to systematize.
             </p>
             <p className="mt-6 max-w-[500px] text-base leading-[1.5] text-[var(--color-text-secondary)]">
               We work with founders, operations heads, and finance leads across
-              professional services, trading, manufacturing, and SaaS companies —
+              professional services, trading, manufacturing, and SaaS companies 
               globally.
             </p>
           </Reveal>

@@ -58,7 +58,7 @@ export function GolfHero() {
               <br className="hidden sm:block" /> It should run on systems too.
             </h1>
             <p className="mt-4 max-w-xl text-base leading-6 text-white">
-              Yelobase builds custom automation for golf academies — from lesson
+              Yelobase builds custom automation for golf academies from lesson
               bookings and billing to student follow-ups and performance
               tracking. All connected. All automatic.
             </p>
@@ -81,7 +81,7 @@ export function GolfHero() {
       </div>
 
       {/* Stats bar, centered and overlapping the hero image bottom edge
-          (Figma 1348:1046 — 718px wide, straddles the image edge). */}
+          (Figma 1348:1046 718px wide, straddles the image edge). */}
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 20 }}

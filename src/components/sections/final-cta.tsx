@@ -36,7 +36,7 @@ export function FinalCta() {
                   <p className="mt-4 max-w-[640px] text-white/70">
                     Book a free Systems Audit. We&rsquo;ll look at your current
                     setup, identify the biggest gaps, and tell you exactly what
-                    we&rsquo;d do — no obligation.
+                    we&rsquo;d do no obligation.
                   </p>
                 </div>
                 <div className="shrink-0">

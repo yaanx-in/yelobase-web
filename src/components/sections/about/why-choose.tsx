@@ -55,7 +55,7 @@ export function AboutWhyChoose() {
         </motion.div>
 
         <div className="mt-12 grid gap-8 lg:grid-cols-2 lg:gap-14">
-          {/* Left — selectable list */}
+          {/* Left selectable list */}
           <div role="tablist" aria-label="Reasons to choose YeloBase" className="flex flex-col">
             {REASONS.map((r, i) => {
               const selected = i === active;
@@ -88,7 +88,7 @@ export function AboutWhyChoose() {
             })}
           </div>
 
-          {/* Right — active detail */}
+          {/* Right active detail */}
           <div className="rounded-[24px] border border-[var(--color-border-subtle)] bg-[var(--color-background)] p-8 shadow-sm sm:p-10">
             <AnimatePresence mode="wait">
               <motion.div

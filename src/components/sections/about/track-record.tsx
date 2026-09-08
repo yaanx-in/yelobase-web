@@ -39,7 +39,7 @@ export function AboutTrackRecord() {
     <section className="bg-[var(--color-background-warm)] py-[var(--section-padding-y)]">
       <Container>
         <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-14">
-          {/* Left — dark "what sets us apart" card */}
+          {/* Left dark "what sets us apart" card */}
           <motion.div
             initial={reduceMotion ? false : { opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -68,7 +68,7 @@ export function AboutTrackRecord() {
             </motion.ul>
           </motion.div>
 
-          {/* Right — stat list */}
+          {/* Right stat list */}
           <motion.dl
             variants={listParent}
             initial="hidden"

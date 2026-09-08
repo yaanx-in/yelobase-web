@@ -45,7 +45,7 @@ const child: Variants = {
 };
 
 /**
- * "The process — From scattered to systematic in 4 steps" (Figma 1416:632).
+ * "The process From scattered to systematic in 4 steps" (Figma 1416:632).
  * Four numbered cards, each with a circular badge, joined by connector lines.
  */
 export function GolfProcess() {

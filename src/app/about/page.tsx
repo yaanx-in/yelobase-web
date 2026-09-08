@@ -9,7 +9,7 @@ import { AboutWhyChoose } from "@/components/sections/about/why-choose";
 import { AboutContact } from "@/components/sections/about/contact";
 
 export const metadata: Metadata = {
-  title: "About — Yelobase | Your trusted Zoho Partner",
+  title: "About Yelobase | Your trusted Zoho Partner",
   description:
     "We're passionate about transforming businesses through intelligent automation. With 10+ years of Zoho expertise and 100+ projects completed, YeloBase helps companies streamline operations and accelerate growth through custom automation and AI agent development.",
 };

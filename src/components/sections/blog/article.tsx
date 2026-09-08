@@ -117,7 +117,7 @@ export function BlogArticle({ article }: { article: Article }) {
           transition={{ duration: 0.45, ease: EASE_OUT }}
           className="grid gap-8 lg:grid-cols-2 lg:items-center"
         >
-          {/* placeholder cover — ponytail: swap with the real article image */}
+          {/* placeholder cover ponytail: swap with the real article image */}
           <div className={`aspect-[4/3] w-full rounded-[20px] ${coverClass(article.accent)}`} />
           <div>
             <h1 className="text-balance text-3xl font-bold leading-tight tracking-tight text-[var(--color-text-primary)] sm:text-4xl">

@@ -12,7 +12,7 @@ import { Eyebrow } from "@/components/ui/eyebrow";
 import { AlertCircle, Check } from "@/components/ui/icon";
 
 // Visible-in-Figma copy is used verbatim; a couple of parallel bullets are
-// extrapolated to match (flagged to the user — confirm exact list copy).
+// extrapolated to match (flagged to the user confirm exact list copy).
 const PROBLEMS = [
   "Invoices get delayed because no one was notified.",
   "You can't see real cash flow without opening five files.",
@@ -57,7 +57,7 @@ function SolutionCard() {
         This isn&rsquo;t a tool issue, it&rsquo;s a system issue.
       </h2>
       <p className="mt-3 text-white/70">
-        Most companies have the tools — what they lack is a system that connects
+        Most companies have the tools what they lack is a system that connects
         and scales. That&rsquo;s where we come in.
       </p>
       <ul className="mt-6 space-y-3">
@@ -125,7 +125,7 @@ export function RealityTake() {
           </div>
         ) : (
           <div ref={stackRef} className="mx-auto max-w-3xl">
-            {/* Problem card — pins, then recedes behind the rising solution card */}
+            {/* Problem card pins, then recedes behind the rising solution card */}
             <motion.div
               style={{ scale: problemScale, y: problemY }}
               className="sticky top-[14vh] z-10 origin-top"
@@ -141,7 +141,7 @@ export function RealityTake() {
               </div>
             </motion.div>
 
-            {/* Solution card — rises up and stacks over the problem card */}
+            {/* Solution card rises up and stacks over the problem card */}
             <div className="sticky top-[20vh] z-20 mt-10 sm:mt-14">
               <SolutionCard />
             </div>

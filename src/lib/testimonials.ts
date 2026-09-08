@@ -15,7 +15,7 @@ export type Testimonial = {
 };
 
 // Only these three reviews are real (from Figma). We do NOT fabricate extra
-// testimonials to fill the grid — the Figma mock duplicated these as
+// testimonials to fill the grid the Figma mock duplicated these as
 // placeholders. Add more here as real reviews come in.
 export const TESTIMONIALS: Testimonial[] = [
   {
@@ -29,7 +29,7 @@ export const TESTIMONIALS: Testimonial[] = [
   },
   {
     quote:
-      "I was greatly surprised — this was my first project with Yelobase and they delivered and completed the project perfectly.",
+      "I was greatly surprised this was my first project with Yelobase and they delivered and completed the project perfectly.",
     name: "Mr Edgar",
     company: "StatWorks",
     location: "Mexico",

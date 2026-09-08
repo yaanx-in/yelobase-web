@@ -7,9 +7,9 @@ import { BlogList } from "@/components/sections/blog/list";
 import { WallCta } from "@/components/sections/wall/cta";
 
 export const metadata: Metadata = {
-  title: "Blog — Yelobase | Insights, trends & best practices",
+  title: "Blog Yelobase | Insights, trends & best practices",
   description:
-    "The Yelobase blog — insights, trends, and best practices on Zoho, automation, AI agents, and running a more efficient business.",
+    "The Yelobase blog insights, trends, and best practices on Zoho, automation, AI agents, and running a more efficient business.",
 };
 
 export default function BlogPage() {
