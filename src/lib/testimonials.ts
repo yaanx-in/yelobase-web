@@ -26,7 +26,6 @@ export const TESTIMONIALS: Testimonial[] = [
     location: "Australia",
     rating: 5,
     category: "Zoho Services",
-    image: "/avatars/sam.webp",
   },
   {
     quote:
@@ -36,7 +35,6 @@ export const TESTIMONIALS: Testimonial[] = [
     location: "Mexico",
     rating: 4,
     category: "Custom Development",
-    image: "/avatars/edgar.webp",
   },
   {
     quote:
@@ -46,7 +44,6 @@ export const TESTIMONIALS: Testimonial[] = [
     location: "USA",
     rating: 5,
     category: "Automation",
-    image: "/avatars/lena.webp",
   },
 ];
 

@@ -75,7 +75,7 @@ export function BookAuditModal() {
         window.Bookings?.inlineEmbed({
           url: BOOKING_URL,
           parent: "#book-audit-container",
-          height: "600px",
+          height: "700px",
         });
       })
       .catch(console.error);
@@ -98,7 +98,7 @@ export function BookAuditModal() {
       onClick={() => setOpen(false)}
     >
       <div
-        className="relative w-full max-w-2xl rounded-2xl bg-white p-4 shadow-xl"
+        className="relative max-h-[90vh] w-full max-w-5xl overflow-y-auto rounded-2xl bg-white p-4 shadow-xl"
         onClick={(e) => e.stopPropagation()}
       >
         <button

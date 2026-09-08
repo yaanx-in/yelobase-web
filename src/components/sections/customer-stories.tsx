@@ -1,24 +1,44 @@
-import Image from "next/image";
 import { Reveal } from "@/components/ui/reveal";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { ButtonLink } from "@/components/ui/button";
 import { Stars } from "@/components/ui/testimonial-card";
 import { Quote, ArrowRight } from "@/components/ui/icon";
 import { Container } from "@/components/layout/container";
-import { TESTIMONIALS, STORY_STATS, type Testimonial } from "@/lib/testimonials";
+import {
+  TESTIMONIALS,
+  STORY_STATS,
+  type Testimonial,
+  type TestimonialCategory,
+} from "@/lib/testimonials";
+
+const CHIP: Record<TestimonialCategory, string> = {
+  "Zoho Services": "bg-tint-lavender text-brand-purple-strong",
+  "AI Agent": "bg-tint-pink-soft text-brand-coral-strong",
+  Automation: "bg-tint-mint text-brand-teal",
+  "Custom Development": "bg-tint-cream text-[#8a6a12]",
+};
+
+const HONORIFICS = new Set(["mr", "mrs", "ms", "miss", "dr"]);
+
+function initials(name: string) {
+  return name
+    .replace(/\./g, "")
+    .split(/\s+/)
+    .filter((w) => !HONORIFICS.has(w.toLowerCase()))
+    .slice(0, 2)
+    .map((w) => w[0]?.toUpperCase() ?? "")
+    .join("");
+}
 
 function Author({ t, dark = false }: { t: Testimonial; dark?: boolean }) {
   return (
     <div className="mt-6 flex items-center gap-3">
-      {t.image && (
-        <Image
-          src={t.image}
-          alt={t.name}
-          width={80}
-          height={80}
-          className="size-[68px] rounded-xl object-cover"
-        />
-      )}
+      <span
+        aria-hidden
+        className={`inline-flex size-[68px] shrink-0 items-center justify-center rounded-xl text-lg font-bold ${CHIP[t.category]}`}
+      >
+        {initials(t.name)}
+      </span>
       <div className="leading-tight">
         <p
           className={`text-[15px] font-bold ${dark ? "text-white" : "text-[var(--color-text-primary)]"}`}
@@ -108,7 +128,7 @@ export function CustomerStories() {
 
         <Reveal delay={0.15} className="mt-8 text-center">
           <ButtonLink
-            href="/customer-stories"
+            href="/wall-of-love"
             variant="outline"
             className="bg-[var(--color-background)]"
           >
