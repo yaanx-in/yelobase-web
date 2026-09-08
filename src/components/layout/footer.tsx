@@ -79,10 +79,10 @@ export function Footer() {
             <ul className="space-y-3 text-sm text-white/80">
               <li>
                 <a
-                  href="mailto:soulutions@yelobase.com"
+                  href="mailto:solutions@yelobase.com"
                   className="inline-flex items-center gap-2.5 hover:text-white"
                 >
-                  <Mail className="size-4 text-white/50" /> soulutions@yelobase.com
+                  <Mail className="size-4 text-white/50" /> solutions@yelobase.com
                 </a>
               </li>
               <li>

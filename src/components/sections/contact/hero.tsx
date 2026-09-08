@@ -37,8 +37,8 @@ const CONTACT_INFO: ContactInfo[] = [
   {
     icon: Mail,
     label: "Email us",
-    value: "soulutions@yelobase.com",
-    href: "mailto:soulutions@yelobase.com",
+    value: "solutions@yelobase.com",
+    href: "mailto:solutions@yelobase.com",
     tileColor: "bg-tint-lavender",
     iconColor: "text-brand-purple-strong",
   },
@@ -225,7 +225,7 @@ export function ContactHero() {
             Book a free 30 minute session directly in our calendar. No prep needed.
           </p>
           <ButtonLink
-            href="mailto:soulutions@yelobase.com"
+            href="mailto:solutions@yelobase.com"
             variant="primary"
             size="lg"
             className="mt-5"
