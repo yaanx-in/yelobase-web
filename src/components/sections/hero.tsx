@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import { Stagger, Float } from "@/components/ui/reveal";
-import { Button, ButtonLink } from "@/components/ui/button";
+import { ButtonLink } from "@/components/ui/button";
+import { BookAuditButton } from "@/components/ui/book-audit";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight } from "@/components/ui/icon";
 import { Container } from "@/components/layout/container";
@@ -45,10 +46,10 @@ export function Hero() {
               <ButtonLink href="#stories" variant="link">
                 See our work
               </ButtonLink>
-              <Button variant="primary" size="lg">
+              <BookAuditButton variant="primary" size="lg">
                 Book Free Audit
                 <ArrowRight className="size-4" />
-              </Button>
+              </BookAuditButton>
             </div>
           </Stagger.Item>
         </Stagger>

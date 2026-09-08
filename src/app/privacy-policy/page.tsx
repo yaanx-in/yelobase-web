@@ -107,7 +107,7 @@ const SECTIONS = [
 ];
 
 const CONTACT = {
-  email: "hello@yelobase.com",
+  email: "soulutions@yelobase.com",
   phone: "+91 9551714690",
 };
 

@@ -1,6 +1,6 @@
 import { Reveal } from "@/components/ui/reveal";
 import { Eyebrow } from "@/components/ui/eyebrow";
-import { Button } from "@/components/ui/button";
+import { BookAuditButton } from "@/components/ui/book-audit";
 import { ArrowRight } from "@/components/ui/icon";
 import { Container } from "@/components/layout/container";
 
@@ -40,10 +40,10 @@ export function FinalCta() {
                   </p>
                 </div>
                 <div className="shrink-0">
-                  <Button variant="primary" size="lg">
+                  <BookAuditButton variant="primary" size="lg">
                     Book Free Audit
                     <ArrowRight className="size-4" />
-                  </Button>
+                  </BookAuditButton>
                 </div>
               </div>
             </div>

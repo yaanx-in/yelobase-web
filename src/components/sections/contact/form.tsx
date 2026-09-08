@@ -74,7 +74,7 @@ function buildMailto(values: FormValues): string {
     .filter((l) => l !== null)
     .join("\n");
   const body = encodeURIComponent(lines);
-  return `mailto:hello@yelobase.com?subject=${subject}&body=${body}`;
+  return `mailto:soulutions@yelobase.com?subject=${subject}&body=${body}`;
 }
 
 // Shared input ring class
@@ -330,7 +330,7 @@ function SuccessState() {
       </h3>
       <p className="mt-3 max-w-sm text-[var(--color-text-secondary)] leading-relaxed">
         We&rsquo;ll reply within 24 hours. Keep an eye on your inbox at{" "}
-        <span className="font-medium text-[var(--color-text-primary)]">hello@yelobase.com</span>.
+        <span className="font-medium text-[var(--color-text-primary)]">soulutions@yelobase.com</span>.
       </p>
     </motion.div>
   );

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ButtonLink } from "@/components/ui/button";
+import { BookAuditButton } from "@/components/ui/book-audit";
 import { ArrowRight } from "@/components/ui/icon";
 import { Container } from "@/components/layout/container";
 
@@ -70,10 +71,10 @@ export function GolfHero() {
               >
                 What&apos;s included?
               </ButtonLink>
-              <ButtonLink href="#book-audit" variant="primary" size="lg">
+              <BookAuditButton variant="primary" size="lg">
                 Book Free Audit
                 <ArrowRight className="size-4" />
-              </ButtonLink>
+              </BookAuditButton>
             </div>
           </motion.div>
         </Container>

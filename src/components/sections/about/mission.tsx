@@ -36,7 +36,7 @@ export function AboutMission() {
               flawlessly but also scale with your growth.
             </p>
             <ButtonLink href="/about#contact" variant="primary" size="lg" className="mt-8">
-              CTA
+              Talk with Us
               <ArrowRight className="size-4" />
             </ButtonLink>
           </motion.div>

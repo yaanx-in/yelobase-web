@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useId, useMemo, useRef, useState } from "react";
 import {
   AnimatePresence,
@@ -205,13 +204,6 @@ const STYLE: Record<CardCategory, { cover: string; chip: string }> = {
   },
 };
 
-/** Real client photos we have on hand; everyone else gets a monogram. */
-const AVATARS: Record<string, string> = {
-  "Sam O'Neile": "/avatars/sam.webp",
-  "Mr Edgar": "/avatars/edgar.webp",
-  Lena: "/avatars/lena.webp",
-};
-
 const HONORIFICS = new Set(["mr", "mrs", "ms", "miss", "dr"]);
 
 function initials(name: string) {
@@ -238,7 +230,6 @@ function StarRow() {
 function TestimonialCard({ t }: { t: Testimonial }) {
   const reduceMotion = useReducedMotion();
   const style = STYLE[t.category];
-  const avatar = AVATARS[t.author];
   const coverLabel = t.company || t.author;
 
   return (
@@ -272,22 +263,12 @@ function TestimonialCard({ t }: { t: Testimonial }) {
         </p>
 
         <div className="mt-6 flex items-center gap-4 border-t border-[var(--color-border-subtle)] pt-5">
-          {avatar ? (
-            <Image
-              src={avatar}
-              alt={t.author}
-              width={48}
-              height={48}
-              className="size-12 shrink-0 rounded-2xl object-cover"
-            />
-          ) : (
-            <span
-              aria-hidden
-              className={`inline-flex size-12 shrink-0 items-center justify-center rounded-2xl text-sm font-bold ${style.chip}`}
-            >
-              {initials(t.author)}
-            </span>
-          )}
+          <span
+            aria-hidden
+            className={`inline-flex size-12 shrink-0 items-center justify-center rounded-2xl text-sm font-bold ${style.chip}`}
+          >
+            {initials(t.author)}
+          </span>
           <div className="min-w-0">
             <p className="truncate font-semibold text-[var(--color-text-primary)]">
               {t.author}

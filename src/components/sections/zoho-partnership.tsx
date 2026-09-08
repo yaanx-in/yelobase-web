@@ -74,8 +74,8 @@ export function ZohoPartnership() {
             <Image
               src="/graphics/zoho-partnership.svg"
               alt="Yelobase as an Official Zoho Authorized Partner"
-              width={449}
-              height={263}
+              width={482}
+              height={536}
               unoptimized
               className="mx-auto h-auto w-full max-w-[480px] lg:justify-self-end"
             />

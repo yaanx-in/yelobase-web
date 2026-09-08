@@ -36,11 +36,17 @@ export function ZohoHero() {
 
           <Stagger.Item>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-6">
-              <ButtonLink href="/contact" variant="link" size="lg">
+              <ButtonLink href="/about#contact" variant="link" size="lg">
                 Get Your Zoho Assessment
                 <ArrowRight className="size-4" />
               </ButtonLink>
-              <ButtonLink href="#applications" variant="primary" size="lg">
+              <ButtonLink
+                href="https://store.zoho.com/ResellerCustomerSignUp.do?id=fdc5be28e5b313b2201828f57d8d5d0444e8da2ab560cd1fece885ad416790df"
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="primary"
+                size="lg"
+              >
                 Try Zoho Free for 30 Days
                 <ArrowRight className="size-4" />
               </ButtonLink>

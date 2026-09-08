@@ -18,7 +18,7 @@ type Info = {
 };
 
 const INFO: Info[] = [
-  { icon: Mail, label: "Email", value: "hello@yelobase.com", href: "mailto:hello@yelobase.com" },
+  { icon: Mail, label: "Email", value: "soulutions@yelobase.com", href: "mailto:soulutions@yelobase.com" },
   { icon: Phone, label: "Phone", value: "+91 9551714690", href: "tel:+919551714690" },
   { icon: MapPin, label: "We serve", value: "USA · UK · UAE · India" },
   { icon: Clock, label: "Response time", value: "Within 24 hours" },
@@ -100,7 +100,7 @@ export function AboutContact() {
                 Book a free 30 minute session directly in our calendar. No prep needed.
               </p>
               <ButtonLink
-                href="mailto:hello@yelobase.com"
+                href="mailto:soulutions@yelobase.com"
                 variant="primary"
                 size="lg"
                 className="mt-5 w-full"

@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { Container } from "./container";
 import { Logo } from "@/components/ui/logo";
-import { ButtonLink } from "@/components/ui/button";
+import { BookAuditButton } from "@/components/ui/book-audit";
 import { Menu, Close, ChevronDown } from "@/components/ui/icon";
 
 type NavChild = { label: string; href: string };
@@ -207,9 +207,9 @@ export function Header() {
         </nav>
 
         <div className="hidden lg:block">
-          <ButtonLink href="/contact" variant="dark">
+          <BookAuditButton variant="dark">
             Book Free Audit
-          </ButtonLink>
+          </BookAuditButton>
         </div>
 
         {/* Mobile toggle */}
@@ -304,14 +304,13 @@ export function Header() {
                   )}
                 </ul>
               </nav>
-              <ButtonLink
-                href="/contact"
+              <BookAuditButton
                 variant="dark"
                 className="mt-6 w-full"
                 onClick={close}
               >
                 Book Free Audit
-              </ButtonLink>
+              </BookAuditButton>
             </motion.div>
           </motion.div>
         )}
