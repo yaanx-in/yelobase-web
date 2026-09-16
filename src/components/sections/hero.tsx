@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { Stagger, Float } from "@/components/ui/reveal";
 import { ButtonLink } from "@/components/ui/button";
 import { BookAuditButton } from "@/components/ui/book-audit";
@@ -61,12 +60,10 @@ export function Hero() {
             aria-hidden
             className="pointer-events-none absolute left-1/2 top-1/2 size-[26rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-purple/10 blur-3xl"
           />
-          <Image
-            src="/graphics/hero-mark.webp"
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/graphics/decor-427320873.svg"
             alt="Yelobase isometric mark"
-            width={640}
-            height={375}
-            priority
             className="absolute left-[49%] top-1/2 w-[23rem] -translate-x-1/2 -translate-y-1/2 lg:w-[26rem]"
           />
 
@@ -108,12 +105,10 @@ export function Hero() {
 
         {/* Mobile/tablet: mark + stacked badges + chips */}
         <div className="md:hidden">
-          <Image
-            src="/graphics/hero-mark.webp"
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/graphics/decor-427320873.svg"
             alt="Yelobase isometric mark"
-            width={640}
-            height={375}
-            priority
             className="mx-auto mt-12 w-56"
           />
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
