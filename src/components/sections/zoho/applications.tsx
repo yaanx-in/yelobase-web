@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { ButtonLink } from "@/components/ui/button";
@@ -125,17 +124,13 @@ export function ZohoApplications() {
                 exit={reduceMotion ? { opacity: 0 } : { opacity: 0, y: -12 }}
                 transition={{ duration: 0.3, ease: EASE_OUT }}
               >
-                {/* App icon per Zoho product */}
-                <div className="relative aspect-[742/440] w-full">
-                  <Image
-                    src={app.cover}
-                    alt={`${app.name} logo`}
-                    fill
-                    sizes="(min-width: 1024px) 50vw, 100vw"
-                    className="object-contain p-10"
-                    priority={active === 0}
-                  />
-                </div>
+                {/* App screenshot SVG — natural aspect, fills the panel width */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={app.cover}
+                  alt={`${app.name} screenshot`}
+                  className="block h-auto w-full"
+                />
 
                 <div className="p-6 sm:p-8">
                   <p className="text-[var(--color-text-secondary)]">{app.body}</p>

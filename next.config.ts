@@ -7,9 +7,6 @@ const nextConfig: NextConfig = {
   output: "standalone",
   images: {
     remotePatterns: [{ protocol: "https", hostname: "cdn.sanity.io" }],
-    // Serve trusted local SVG app icons through next/image.
-    dangerouslyAllowSVG: true,
-    contentDispositionType: "inline",
   },
 };
 
