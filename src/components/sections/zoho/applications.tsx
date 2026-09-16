@@ -27,20 +27,20 @@ const ACCENT: Record<Accent, { dot: string; pill: string }> = {
 };
 
 const APPS: App[] = [
-  { name: "Zoho CRM", label: "Most Popular", popular: true, accent: "coral", cover: "/graphics/zoho/crm.webp", body: "Complete CRM customization with automated workflows, lead scoring, and pipeline management.", features: ["Custom modules", "Workflow automation", "Integration setup", "Report customization"] },
-  { name: "Zoho Campaigns", label: "Marketing", accent: "purple", cover: "/graphics/zoho/campaigns.webp", body: "Email marketing automation with advanced segmentation and personalization.", features: ["Campaign automation", "A/B testing", "Analytics setup", "Template design"] },
-  { name: "Zoho Analytics", label: "Insights", accent: "teal", cover: "/graphics/zoho/analytics.webp", body: "Business intelligence dashboards and automated reporting solutions.", features: ["Custom dashboards", "Data visualization", "Automated reports", "KPI tracking"] },
-  { name: "Zoho Creator", label: "Low Code", accent: "amber", cover: "/graphics/zoho/creator.webp", body: "Custom business applications built to match your unique processes.", features: ["App development", "Database design", "Mobile optimization", "Integration APIs"] },
-  { name: "Zoho Projects", label: "Productivity", accent: "purple", cover: "/graphics/zoho/projects.webp", body: "Project management automation with resource allocation and time tracking.", features: ["Project templates", "Resource planning", "Time automation", "Progress tracking"] },
-  { name: "Zoho Books", label: "Finance", accent: "teal", cover: "/graphics/zoho/books.webp", body: "Financial management automation with invoice generation and expense tracking.", features: ["Invoice automation", "Expense tracking", "Tax compliance", "Financial reports"] },
-  { name: "Zoho People", label: "HR", accent: "coral", cover: "/graphics/zoho/people.webp", body: "HR management automation for employee lifecycle and performance tracking.", features: ["Employee onboarding", "Time tracking", "Performance management", "Leave automation"] },
-  { name: "Zoho Desk", label: "Support", accent: "amber", cover: "/graphics/zoho/desk.webp", body: "Customer support automation with ticket management and knowledge base.", features: ["Ticket automation", "SLA management", "Knowledge base", "Customer satisfaction"] },
-  { name: "Zoho Flow", label: "Automation", accent: "purple", cover: "/graphics/zoho/flow.webp", body: "Powerful workflow automation connecting all your business applications.", features: ["Multi app workflows", "Conditional logic", "Real time sync", "Custom triggers"] },
-  { name: "Zoho Expense", label: "Finance", accent: "teal", cover: "/graphics/zoho/expense.webp", body: "Expense management automation with receipt scanning and approval workflows.", features: ["Receipt scanning", "Expense tracking", "Approval workflows", "Reimbursement automation"] },
-  { name: "Zoho Payroll", label: "Payroll", accent: "coral", cover: "/graphics/zoho/payroll.webp", body: "Comprehensive payroll management with automated calculations and compliance tracking.", features: ["Salary calculations", "Tax compliance", "Employee self-service", "Statutory reports"] },
-  { name: "Zoho Inventory", label: "Operations", accent: "amber", cover: "/graphics/zoho/inventory.webp", body: "Complete inventory management with automated stock tracking and order fulfillment.", features: ["Stock automation", "Order management", "Supplier tracking", "Multi-warehouse"] },
-  { name: "Zoho Commerce", label: "E-Commerce", accent: "purple", cover: "/graphics/zoho/commerce.webp", body: "E-commerce platform with automated inventory and order management.", features: ["Online store setup", "Inventory sync", "Order automation", "Payment integration"] },
-  { name: "Zoho Bigin", label: "Small Biz", accent: "teal", cover: "/graphics/zoho/bigin.webp", body: "Simple CRM for small businesses with essential automation features.", features: ["Pipeline management", "Contact automation", "Deal tracking", "Mobile CRM"] },
+  { name: "Zoho CRM", label: "Most Popular", popular: true, accent: "coral", cover: "/graphics/zoho/crm.svg", body: "Complete CRM customization with automated workflows, lead scoring, and pipeline management.", features: ["Custom modules", "Workflow automation", "Integration setup", "Report customization"] },
+  { name: "Zoho Campaigns", label: "Marketing", accent: "purple", cover: "/graphics/zoho/campaigns.svg", body: "Email marketing automation with advanced segmentation and personalization.", features: ["Campaign automation", "A/B testing", "Analytics setup", "Template design"] },
+  { name: "Zoho Analytics", label: "Insights", accent: "teal", cover: "/graphics/zoho/analytics.svg", body: "Business intelligence dashboards and automated reporting solutions.", features: ["Custom dashboards", "Data visualization", "Automated reports", "KPI tracking"] },
+  { name: "Zoho Creator", label: "Low Code", accent: "amber", cover: "/graphics/zoho/creator.svg", body: "Custom business applications built to match your unique processes.", features: ["App development", "Database design", "Mobile optimization", "Integration APIs"] },
+  { name: "Zoho Projects", label: "Productivity", accent: "purple", cover: "/graphics/zoho/projects.svg", body: "Project management automation with resource allocation and time tracking.", features: ["Project templates", "Resource planning", "Time automation", "Progress tracking"] },
+  { name: "Zoho Books", label: "Finance", accent: "teal", cover: "/graphics/zoho/books.svg", body: "Financial management automation with invoice generation and expense tracking.", features: ["Invoice automation", "Expense tracking", "Tax compliance", "Financial reports"] },
+  { name: "Zoho People", label: "HR", accent: "coral", cover: "/graphics/zoho/people.svg", body: "HR management automation for employee lifecycle and performance tracking.", features: ["Employee onboarding", "Time tracking", "Performance management", "Leave automation"] },
+  { name: "Zoho Desk", label: "Support", accent: "amber", cover: "/graphics/zoho/desk.svg", body: "Customer support automation with ticket management and knowledge base.", features: ["Ticket automation", "SLA management", "Knowledge base", "Customer satisfaction"] },
+  { name: "Zoho Flow", label: "Automation", accent: "purple", cover: "/graphics/zoho/flow.svg", body: "Powerful workflow automation connecting all your business applications.", features: ["Multi app workflows", "Conditional logic", "Real time sync", "Custom triggers"] },
+  { name: "Zoho Expense", label: "Finance", accent: "teal", cover: "/graphics/zoho/expense.svg", body: "Expense management automation with receipt scanning and approval workflows.", features: ["Receipt scanning", "Expense tracking", "Approval workflows", "Reimbursement automation"] },
+  { name: "Zoho Payroll", label: "Payroll", accent: "coral", cover: "/graphics/zoho/payroll.svg", body: "Comprehensive payroll management with automated calculations and compliance tracking.", features: ["Salary calculations", "Tax compliance", "Employee self-service", "Statutory reports"] },
+  { name: "Zoho Inventory", label: "Operations", accent: "amber", cover: "/graphics/zoho/inventory.svg", body: "Complete inventory management with automated stock tracking and order fulfillment.", features: ["Stock automation", "Order management", "Supplier tracking", "Multi-warehouse"] },
+  { name: "Zoho Commerce", label: "E-Commerce", accent: "purple", cover: "/graphics/zoho/commerce.svg", body: "E-commerce platform with automated inventory and order management.", features: ["Online store setup", "Inventory sync", "Order automation", "Payment integration"] },
+  { name: "Zoho Bigin", label: "Small Biz", accent: "teal", cover: "/graphics/zoho/bigin.svg", body: "Simple CRM for small businesses with essential automation features.", features: ["Pipeline management", "Contact automation", "Deal tracking", "Mobile CRM"] },
 ];
 
 const EASE_OUT = [0.16, 1, 0.3, 1] as const;
@@ -125,14 +125,14 @@ export function ZohoApplications() {
                 exit={reduceMotion ? { opacity: 0 } : { opacity: 0, y: -12 }}
                 transition={{ duration: 0.3, ease: EASE_OUT }}
               >
-                {/* Baked-in tinted product screenshot per app */}
+                {/* App icon per Zoho product */}
                 <div className="relative aspect-[742/440] w-full">
                   <Image
                     src={app.cover}
-                    alt={`${app.name} interface`}
+                    alt={`${app.name} logo`}
                     fill
                     sizes="(min-width: 1024px) 50vw, 100vw"
-                    className="object-cover"
+                    className="object-contain p-10"
                     priority={active === 0}
                   />
                 </div>
