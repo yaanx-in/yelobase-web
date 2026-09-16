@@ -4,7 +4,7 @@ import { useMemo, useState } from "react";
 import { motion, type Variants } from "framer-motion";
 import { ChevronDown, ArrowRight } from "@/components/ui/icon";
 import { Container } from "@/components/layout/container";
-import { POSTS, BlogCard } from "./posts";
+import { BlogCard, type Post } from "./posts";
 
 const EASE_OUT = [0.16, 1, 0.3, 1] as const;
 
@@ -16,13 +16,13 @@ const gridChild: Variants = {
   show: { opacity: 1, y: 0, transition: { duration: 0.4, ease: EASE_OUT } },
 };
 
-export function BlogList() {
+export function BlogList({ posts }: { posts: Post[] }) {
   const [category, setCategory] = useState<(typeof CATEGORIES)[number]>("All Blogs");
   const [page, setPage] = useState(1);
 
   const filtered = useMemo(
-    () => (category === "All Blogs" ? POSTS : POSTS.filter((p) => p.tags.includes(category))),
-    [category],
+    () => (category === "All Blogs" ? posts : posts.filter((p) => p.tags.includes(category))),
+    [category, posts],
   );
 
   return (

@@ -3,7 +3,7 @@
 import { motion, type Variants } from "framer-motion";
 import { ArrowRight } from "@/components/ui/icon";
 import { Container } from "@/components/layout/container";
-import { POSTS, BlogCard } from "./posts";
+import { BlogCard, type Post } from "./posts";
 
 const EASE_OUT = [0.16, 1, 0.3, 1] as const;
 
@@ -13,8 +13,8 @@ const child: Variants = {
   show: { opacity: 1, y: 0, transition: { duration: 0.4, ease: EASE_OUT } },
 };
 
-export function BlogOther() {
-  const posts = POSTS.slice(0, 3);
+export function BlogOther({ posts: all }: { posts: Post[] }) {
+  const posts = all.slice(0, 3);
 
   return (
     <section className="bg-[var(--color-background)] py-[var(--section-padding-y)]">

@@ -2,55 +2,68 @@
 
 import { useEffect, useState, type ReactNode } from "react";
 import { motion } from "framer-motion";
+import {
+  PortableText,
+  type PortableTextBlock,
+  type PortableTextComponents,
+} from "@portabletext/react";
 import { Mail } from "@/components/ui/icon";
 import { Container } from "@/components/layout/container";
-import { TagRow, AuthorRow, coverClass, type Article, type Block } from "./posts";
+import { TagRow, AuthorRow, coverClass, type Article } from "./posts";
 
 const EASE_OUT = [0.16, 1, 0.3, 1] as const;
 
-function Body({ blocks }: { blocks: Block[] }) {
+const PT_COMPONENTS: PortableTextComponents = {
+  block: {
+    normal: ({ children }) => (
+      <p className="mt-4 leading-relaxed text-[var(--color-text-secondary)]">{children}</p>
+    ),
+    lead: ({ children }) => (
+      <p className="text-lg font-semibold leading-relaxed text-[var(--color-text-primary)]">
+        {children}
+      </p>
+    ),
+    h2: ({ children }) => (
+      <h2 className="mt-10 text-2xl font-bold tracking-tight text-[var(--color-text-primary)]">
+        {children}
+      </h2>
+    ),
+    h3: ({ children }) => (
+      <h3 className="mt-8 text-lg font-bold text-[var(--color-text-primary)]">{children}</h3>
+    ),
+  },
+  list: {
+    bullet: ({ children }) => (
+      <ul className="mt-4 list-disc space-y-2 pl-5 leading-relaxed text-[var(--color-text-secondary)] marker:text-brand-coral">
+        {children}
+      </ul>
+    ),
+  },
+  listItem: {
+    bullet: ({ children }) => <li>{children}</li>,
+  },
+  marks: {
+    strong: ({ children }) => (
+      <strong className="font-semibold text-[var(--color-text-primary)]">{children}</strong>
+    ),
+    em: ({ children }) => <em>{children}</em>,
+    link: ({ children, value }) => (
+      <a
+        href={value?.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="font-medium text-brand-coral-strong underline underline-offset-2"
+      >
+        {children}
+      </a>
+    ),
+  },
+};
+
+function Body({ blocks }: { blocks: PortableTextBlock[] }) {
   return (
     <div className="max-w-3xl">
-      {blocks.map((b, i) => {
-        const first = i === 0;
-        switch (b.t) {
-          case "lead":
-            return (
-              <p key={i} className="text-lg font-semibold leading-relaxed text-[var(--color-text-primary)]">
-                {b.text}
-              </p>
-            );
-          case "p":
-            return (
-              <p key={i} className={`${first ? "" : "mt-4"} leading-relaxed text-[var(--color-text-secondary)]`}>
-                {b.text}
-              </p>
-            );
-          case "h2":
-            return (
-              <h2 key={i} className="mt-10 text-2xl font-bold tracking-tight text-[var(--color-text-primary)]">
-                {b.text}
-              </h2>
-            );
-          case "h3":
-            return (
-              <h3 key={i} className="mt-8 text-lg font-bold text-[var(--color-text-primary)]">
-                {b.text}
-              </h3>
-            );
-          case "ul":
-            return (
-              <ul
-                key={i}
-                className="mt-4 list-disc space-y-2 pl-5 leading-relaxed text-[var(--color-text-secondary)] marker:text-brand-coral"
-              >
-                {b.items.map((it) => (
-                  <li key={it}>{it}</li>
-                ))}
-              </ul>
-            );
-        }
-      })}
+      <PortableText value={blocks} components={PT_COMPONENTS} />
     </div>
   );
 }

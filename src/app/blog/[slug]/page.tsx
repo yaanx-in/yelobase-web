@@ -8,10 +8,11 @@ import { ArrowRight } from "@/components/ui/icon";
 import { BlogArticle } from "@/components/sections/blog/article";
 import { BlogOther } from "@/components/sections/blog/other-blogs";
 import { WallCta } from "@/components/sections/wall/cta";
-import { ARTICLES, getArticle } from "@/components/sections/blog/posts";
+import { getArticle, getAllSlugs, getPosts } from "@/lib/sanity/blog";
 
-export function generateStaticParams() {
-  return ARTICLES.map((a) => ({ slug: a.slug }));
+export async function generateStaticParams() {
+  const slugs = await getAllSlugs();
+  return slugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({
@@ -20,7 +21,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const article = getArticle(slug);
+  const article = await getArticle(slug);
   if (!article) return { title: "Blog Yelobase" };
   return {
     title: `${article.title} Yelobase Blog`,
@@ -34,7 +35,7 @@ export default async function BlogArticlePage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const article = getArticle(slug);
+  const [article, posts] = await Promise.all([getArticle(slug), getPosts()]);
   if (!article) notFound();
 
   return (
@@ -51,7 +52,7 @@ export default async function BlogArticlePage({
           </Link>
         </Container>
         <BlogArticle article={article} />
-        <BlogOther />
+        <BlogOther posts={posts} />
         <WallCta />
       </main>
       <Footer />
