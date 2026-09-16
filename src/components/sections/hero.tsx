@@ -64,7 +64,7 @@ export function Hero() {
           <img
             src="/graphics/decor-427320873.svg"
             alt="Yelobase isometric mark"
-            className="absolute left-[49%] top-1/2 w-[23rem] -translate-x-1/2 -translate-y-1/2 lg:w-[26rem]"
+            className="absolute left-1/2 top-1/2 w-[262px] -translate-x-1/2 -translate-y-1/2"
           />
 
           {/* Floating cards + badges positioned per Figma coordinates. */}
