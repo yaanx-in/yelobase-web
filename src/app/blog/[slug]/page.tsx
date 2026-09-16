@@ -99,7 +99,7 @@ export default async function BlogArticlePage({
         </Container>
         <BlogArticle article={article} />
         <BlogOther posts={others} />
-        <WallCta />
+        <WallCta className="bg-[var(--color-background-warm)]" />
       </main>
       <Footer />
     </>

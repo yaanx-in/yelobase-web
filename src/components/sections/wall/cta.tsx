@@ -6,14 +6,15 @@ import { Eyebrow } from "@/components/ui/eyebrow";
 import { ButtonLink } from "@/components/ui/button";
 import { ArrowRight } from "@/components/ui/icon";
 import { Container } from "@/components/layout/container";
+import { cn } from "@/lib/utils";
 
 const EASE_OUT = [0.16, 1, 0.3, 1] as const;
 
-export function WallCta() {
+export function WallCta({ className }: { className?: string }) {
   const reduceMotion = useReducedMotion();
 
   return (
-    <section className="bg-[var(--color-background)] pb-20">
+    <section className={cn(className ?? "bg-[var(--color-background)]", "pb-20")}>
       <Container>
         <motion.div
           initial={reduceMotion ? false : { opacity: 0, y: 28 }}

@@ -37,7 +37,7 @@ export default async function BlogPage() {
         <BlogHero />
         {featured && <BlogFeatured post={featured} />}
         <BlogList posts={listPosts} />
-        <WallCta />
+        <WallCta className="bg-[var(--color-background-warm)]" />
       </main>
       <Footer />
     </>
