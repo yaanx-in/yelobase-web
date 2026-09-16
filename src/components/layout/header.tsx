@@ -18,11 +18,11 @@ const NAV_LINKS: NavItem[] = [
     label: "Industry Solutions",
     children: [{ label: "Golf Academy", href: "/golf" }],
   },
+  { label: "Customer Stories", href: "/wall-of-love" },
   {
     label: "Resources",
     children: [{ label: "Blogs", href: "/blog" }],
   },
-  { label: "Customer Stories", href: "/wall-of-love" },
   { label: "Who are we", href: "/about" },
 ];
 
