@@ -73,7 +73,7 @@ export function TagRow({ tags, className }: { tags: string[]; className?: string
       {tags.map((t) => (
         <span
           key={t}
-          className="rounded-md border border-[var(--color-border-subtle)] bg-[var(--color-background)] px-2 py-0.5 text-[11px] font-medium text-[var(--color-text-secondary)]"
+          className="rounded-md border border-[var(--color-border-subtle)] bg-[var(--color-background)] px-2 py-1 text-xs font-medium text-[var(--color-text-secondary)]"
         >
           {t}
         </span>
@@ -102,12 +102,12 @@ export function AuthorRow({
           alt={author.name}
           width={32}
           height={32}
-          className="size-8 shrink-0 rounded-full object-cover"
+          className="size-9 shrink-0 rounded-xl border-2 border-[var(--color-text-primary)] object-cover"
         />
       ) : (
         <span
           aria-hidden
-          className={`inline-flex size-8 shrink-0 items-center justify-center rounded-full text-[11px] font-bold text-white ${coverClass(post.accent)}`}
+          className={`inline-flex size-9 shrink-0 items-center justify-center rounded-xl border-2 border-[var(--color-text-primary)] text-[11px] font-bold text-white ${coverClass(post.accent)}`}
         >
           {initials(author.name)}
         </span>

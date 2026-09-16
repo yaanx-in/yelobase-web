@@ -26,7 +26,7 @@ export function BlogFeatured({ post }: { post: Post }) {
           />
 
           <div className="bg-tint-lavender p-8 sm:p-10">
-            <span className="inline-flex rounded-pill bg-tint-cream px-3 py-1 text-xs font-semibold text-[#8a6a12]">
+            <span className="inline-flex rounded-md bg-[#F5C451] px-3 py-1.5 text-sm font-semibold text-[var(--color-text-primary)]">
               Featured Blog
             </span>
             <h2 className="mt-4 text-balance text-2xl font-bold leading-tight tracking-tight text-[var(--color-text-primary)] sm:text-3xl">
