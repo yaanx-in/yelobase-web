@@ -33,7 +33,7 @@ export default async function BlogPage() {
   return (
     <>
       <Header />
-      <main id="main">
+      <main id="main" className="bg-[var(--color-background-warm)]">
         <BlogHero />
         {featured && <BlogFeatured post={featured} />}
         <BlogList posts={listPosts} />

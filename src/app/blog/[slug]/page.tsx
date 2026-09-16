@@ -83,7 +83,7 @@ export default async function BlogArticlePage({
   return (
     <>
       <Header />
-      <main id="main">
+      <main id="main" className="bg-[var(--color-background-warm)]">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
