@@ -34,7 +34,7 @@ const PT_COMPONENTS: PortableTextComponents = {
   },
   list: {
     bullet: ({ children }) => (
-      <ul className="mt-4 list-disc space-y-2 pl-5 leading-relaxed text-[var(--color-text-secondary)] marker:text-brand-coral">
+      <ul className="mt-4 list-disc space-y-2 pl-5 leading-relaxed text-[var(--color-text-secondary)] marker:text-[var(--color-text-primary)]">
         {children}
       </ul>
     ),
