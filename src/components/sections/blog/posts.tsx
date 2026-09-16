@@ -150,7 +150,7 @@ export function BlogCard({ post }: { post: Post }) {
         cover={post.cover}
         accent={post.accent}
         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-        className="aspect-[16/10] w-full rounded-[16px] transition-transform duration-[var(--duration-micro)] motion-safe:group-hover:-translate-y-1"
+        className="aspect-[5/4] w-full rounded-[24px] border border-[var(--color-text-primary)] transition-transform duration-[var(--duration-micro)] motion-safe:group-hover:-translate-y-1"
       />
       <h3 className="mt-4 line-clamp-3 text-lg font-semibold leading-snug text-[var(--color-text-primary)] transition-colors group-hover:text-brand-coral-strong">
         {post.title}
