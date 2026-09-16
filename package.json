@@ -12,6 +12,7 @@
   "dependencies": {
     "@portabletext/react": "^8.0.1",
     "@sanity/client": "^8.6.2",
+    "@sanity/image-url": "^2.1.1",
     "framer-motion": "^12.40.0",
     "next": "^15.3.0",
     "react": "^19.3.0",

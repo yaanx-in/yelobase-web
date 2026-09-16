@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, type ReactNode } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   PortableText,
@@ -9,7 +10,8 @@ import {
 } from "@portabletext/react";
 import { Mail } from "@/components/ui/icon";
 import { Container } from "@/components/layout/container";
-import { TagRow, AuthorRow, coverClass, type Article } from "./posts";
+import { urlFor } from "@/lib/sanity/image";
+import { TagRow, AuthorRow, CoverMedia, type Article } from "./posts";
 
 const EASE_OUT = [0.16, 1, 0.3, 1] as const;
 
@@ -57,6 +59,19 @@ const PT_COMPONENTS: PortableTextComponents = {
         {children}
       </a>
     ),
+  },
+  types: {
+    image: ({ value }) =>
+      value?.asset ? (
+        <Image
+          src={urlFor(value).width(1600).auto("format").url()}
+          alt={value.alt ?? ""}
+          width={1600}
+          height={900}
+          sizes="(max-width: 768px) 100vw, 768px"
+          className="mt-8 h-auto w-full rounded-2xl"
+        />
+      ) : null,
   },
 };
 
@@ -130,13 +145,17 @@ export function BlogArticle({ article }: { article: Article }) {
           transition={{ duration: 0.45, ease: EASE_OUT }}
           className="grid gap-8 lg:grid-cols-2 lg:items-center"
         >
-          {/* placeholder cover ponytail: swap with the real article image */}
-          <div className={`aspect-[4/3] w-full rounded-[20px] ${coverClass(article.accent)}`} />
+          <CoverMedia
+            cover={article.cover}
+            accent={article.accent}
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            className="aspect-[4/3] w-full rounded-[20px]"
+          />
           <div>
             <h1 className="text-balance text-3xl font-bold leading-tight tracking-tight text-[var(--color-text-primary)] sm:text-4xl">
               {article.title}
             </h1>
-            <TagRow tags={article.tags} className="mt-4" />
+            <TagRow tags={article.categories.map((c) => c.title)} className="mt-4" />
             <AuthorRow post={article} meta={article.readTime} className="mt-6" />
           </div>
         </motion.div>

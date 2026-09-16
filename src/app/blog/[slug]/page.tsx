@@ -9,6 +9,7 @@ import { BlogArticle } from "@/components/sections/blog/article";
 import { BlogOther } from "@/components/sections/blog/other-blogs";
 import { WallCta } from "@/components/sections/wall/cta";
 import { getArticle, getAllSlugs, getPosts } from "@/lib/sanity/blog";
+import { SITE_URL } from "@/lib/site";
 
 export async function generateStaticParams() {
   const slugs = await getAllSlugs();
@@ -23,9 +24,30 @@ export async function generateMetadata({
   const { slug } = await params;
   const article = await getArticle(slug);
   if (!article) return { title: "Blog Yelobase" };
+
+  const url = `${SITE_URL}/blog/${slug}`;
+  const images = article.ogImageUrl ? [{ url: article.ogImageUrl, width: 1200, height: 630 }] : undefined;
+
   return {
     title: `${article.title} Yelobase Blog`,
     description: article.excerpt,
+    alternates: { canonical: url },
+    openGraph: {
+      type: "article",
+      title: article.title,
+      description: article.excerpt,
+      url,
+      siteName: "Yelobase",
+      publishedTime: article.publishedAt,
+      authors: article.author.name ? [article.author.name] : undefined,
+      images,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: article.title,
+      description: article.excerpt,
+      images: article.ogImageUrl ? [article.ogImageUrl] : undefined,
+    },
   };
 }
 
@@ -38,10 +60,34 @@ export default async function BlogArticlePage({
   const [article, posts] = await Promise.all([getArticle(slug), getPosts()]);
   if (!article) notFound();
 
+  const others = posts.filter((p) => p.slug !== slug);
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: article.title,
+    description: article.excerpt,
+    image: article.ogImageUrl ? [article.ogImageUrl] : undefined,
+    datePublished: article.publishedAt,
+    author: article.author.name
+      ? { "@type": "Person", name: article.author.name }
+      : undefined,
+    publisher: {
+      "@type": "Organization",
+      name: "Yelobase",
+      url: SITE_URL,
+    },
+    mainEntityOfPage: { "@type": "WebPage", "@id": `${SITE_URL}/blog/${slug}` },
+  };
+
   return (
     <>
       <Header />
       <main id="main">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <Container className="pt-6">
           <Link
             href="/blog"
@@ -52,7 +98,7 @@ export default async function BlogArticlePage({
           </Link>
         </Container>
         <BlogArticle article={article} />
-        <BlogOther posts={posts} />
+        <BlogOther posts={others} />
         <WallCta />
       </main>
       <Footer />

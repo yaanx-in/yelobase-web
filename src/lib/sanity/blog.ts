@@ -1,13 +1,12 @@
 import type { PortableTextBlock } from "@portabletext/react";
 import { sanity } from "./client";
-import type { Post, Article } from "@/components/sections/blog/posts";
+import { urlFor } from "./image";
+import type { Accent, Author, Category, Cover, Post, Article } from "@/components/sections/blog/posts";
 
-const ACCENTS: readonly Post["accent"][] = ["purple", "coral", "teal", "amber"];
+const ACCENTS: readonly Accent[] = ["purple", "coral", "teal", "amber"];
 
-function normAccent(a: unknown): Post["accent"] {
-  return (ACCENTS as readonly string[]).includes(a as string)
-    ? (a as Post["accent"])
-    : "purple";
+function normAccent(a: unknown): Accent {
+  return (ACCENTS as readonly string[]).includes(a as string) ? (a as Accent) : "purple";
 }
 
 function fmtDate(iso?: string): string {
@@ -19,36 +18,67 @@ function fmtDate(iso?: string): string {
   });
 }
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
+function coverFrom(img: any, title: string): Cover {
+  if (!img?.asset) return null;
+  return {
+    url: urlFor(img).width(1200).height(750).fit("crop").auto("format").url(),
+    alt: img.alt ?? title,
+  };
+}
+
+function authorFrom(a: any): Author {
+  if (!a) return { name: "" };
+  return {
+    name: a.name ?? "",
+    role: a.role ?? undefined,
+    imageUrl: a.image?.asset
+      ? urlFor(a.image).width(96).height(96).fit("crop").auto("format").url()
+      : undefined,
+  };
+}
+
 type RawPost = {
   slug: string;
   title: string;
-  tags?: string[];
-  author?: string;
   date?: string;
   accent?: string;
+  coverImage?: any;
+  author?: any;
+  categories?: Array<{ title: string; slug: string } | null>;
 };
 type RawArticle = RawPost & {
   readTime?: string;
   excerpt?: string;
   body?: PortableTextBlock[];
 };
+/* eslint-enable @typescript-eslint/no-explicit-any */
 
-const toPost = (r: RawPost): Post => ({
-  slug: r.slug,
-  title: r.title,
-  tags: r.tags ?? [],
-  author: r.author ?? "",
-  date: fmtDate(r.date),
-  accent: normAccent(r.accent),
-});
+function toPost(r: RawPost): Post {
+  return {
+    slug: r.slug,
+    title: r.title,
+    categories: ((r.categories ?? []).filter(Boolean) as Category[]),
+    author: authorFrom(r.author),
+    date: fmtDate(r.date),
+    accent: normAccent(r.accent),
+    cover: coverFrom(r.coverImage, r.title),
+  };
+}
 
-const POST_FIELDS = `"slug": slug.current, title, tags, author, "date": publishedAt, accent`;
+const POST_FIELDS = `
+  "slug": slug.current,
+  title,
+  "date": publishedAt,
+  accent,
+  coverImage,
+  author->{name, role, image},
+  categories[]->{title, "slug": slug.current}
+`;
 
-// Content is fetched fresh at most once per 60s (ISR); publishing shows up automatically.
-const OPTS = { next: { revalidate: 60 } } as const;
+// Cached; the /api/revalidate webhook busts the "post" tag on publish for instant updates.
+const OPTS = { next: { revalidate: 60, tags: ["post"] } };
 
-// Any API failure (empty/private/unreachable dataset) degrades to empty
-// rather than breaking the build or the page render.
 async function safeFetch<T>(query: string, params: Record<string, unknown>, fallback: T): Promise<T> {
   try {
     return await sanity.fetch<T>(query, params, OPTS);
@@ -88,6 +118,10 @@ export async function getArticle(slug: string): Promise<Article | null> {
     readTime: row.readTime ?? "",
     excerpt: row.excerpt ?? "",
     body: row.body ?? [],
+    publishedAt: row.date,
+    ogImageUrl: row.coverImage?.asset
+      ? urlFor(row.coverImage).width(1200).height(630).fit("crop").auto("format").url()
+      : undefined,
   };
 }
 

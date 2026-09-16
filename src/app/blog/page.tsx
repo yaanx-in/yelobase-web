@@ -6,15 +6,29 @@ import { BlogFeatured } from "@/components/sections/blog/featured";
 import { BlogList } from "@/components/sections/blog/list";
 import { WallCta } from "@/components/sections/wall/cta";
 import { getPosts, getFeaturedPost } from "@/lib/sanity/blog";
+import { SITE_URL } from "@/lib/site";
+
+const title = "Blog Yelobase | Insights, trends & best practices";
+const description =
+  "The Yelobase blog insights, trends, and best practices on Zoho, automation, AI agents, and running a more efficient business.";
 
 export const metadata: Metadata = {
-  title: "Blog Yelobase | Insights, trends & best practices",
-  description:
-    "The Yelobase blog insights, trends, and best practices on Zoho, automation, AI agents, and running a more efficient business.",
+  title,
+  description,
+  alternates: { canonical: `${SITE_URL}/blog` },
+  openGraph: {
+    title,
+    description,
+    url: `${SITE_URL}/blog`,
+    siteName: "Yelobase",
+    type: "website",
+  },
+  twitter: { card: "summary_large_image", title, description },
 };
 
 export default async function BlogPage() {
   const [posts, featured] = await Promise.all([getPosts(), getFeaturedPost()]);
+  const listPosts = featured ? posts.filter((p) => p.slug !== featured.slug) : posts;
 
   return (
     <>
@@ -22,7 +36,7 @@ export default async function BlogPage() {
       <main id="main">
         <BlogHero />
         {featured && <BlogFeatured post={featured} />}
-        <BlogList posts={posts} />
+        <BlogList posts={listPosts} />
         <WallCta />
       </main>
       <Footer />
