@@ -136,7 +136,7 @@ function ShareBar({ title }: { title: string }) {
 
 export function BlogArticle({ article }: { article: Article }) {
   return (
-    <section className="bg-[var(--color-background)] pb-16 pt-4">
+    <section className="bg-[var(--color-background-warm)] pb-16 pt-4">
       <Container>
         {/* header */}
         <motion.div

@@ -38,7 +38,7 @@ export function BlogList({ posts }: { posts: Post[] }) {
   const pageItems = filtered.slice((current - 1) * PAGE_SIZE, current * PAGE_SIZE);
 
   return (
-    <section className="bg-[var(--color-background)] pb-[var(--section-padding-y)] pt-8">
+    <section className="bg-[var(--color-background-warm)] pb-[var(--section-padding-y)] pt-8">
       <Container>
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <h2 className="text-2xl font-bold tracking-tight text-[var(--color-text-primary)] sm:text-3xl">

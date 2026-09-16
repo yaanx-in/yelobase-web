@@ -17,7 +17,7 @@ export function BlogOther({ posts: all }: { posts: Post[] }) {
   const posts = all.slice(0, 3);
 
   return (
-    <section className="bg-[var(--color-background)] py-[var(--section-padding-y)]">
+    <section className="bg-[var(--color-background-warm)] py-[var(--section-padding-y)]">
       <Container>
         <div className="flex items-end justify-between">
           <h2 className="text-2xl font-bold tracking-tight text-[var(--color-text-primary)] sm:text-3xl">

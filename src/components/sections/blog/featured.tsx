@@ -9,7 +9,7 @@ const EASE_OUT = [0.16, 1, 0.3, 1] as const;
 
 export function BlogFeatured({ post }: { post: Post }) {
   return (
-    <section className="bg-[var(--color-background)] pb-10 pt-6">
+    <section className="bg-[var(--color-background-warm)] pb-10 pt-6">
       <Container>
         <motion.article
           initial={{ opacity: 0, y: 24 }}
