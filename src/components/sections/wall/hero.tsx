@@ -58,10 +58,11 @@ export function WallHero() {
           </Stagger.Item>
 
         </Stagger>
-      </Container>
 
-      {/* Client logo strip full-bleed, edge-to-edge like the home page */}
-      <LogoMarquee className="mt-10" />
+        {/* Client logo strip constrained to the 1200px content width, per Figma
+            (aligns with the stat bar and testimonial grid). */}
+        <LogoMarquee className="mt-10" />
+      </Container>
     </section>
   );
 }
