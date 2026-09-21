@@ -117,7 +117,7 @@ export function Footer() {
             width={1402}
             height={258}
             unoptimized
-            className="relative left-1/2 h-auto w-[122%] max-w-none -translate-x-1/2"
+            className="relative left-1/2 h-auto w-[122%] max-w-none -translate-x-1/2 [filter:drop-shadow(0_0_45px_rgba(140,120,255,0.22))]"
           />
         </Container>
       </div>
