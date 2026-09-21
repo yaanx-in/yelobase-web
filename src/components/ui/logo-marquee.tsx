@@ -1,7 +1,4 @@
-"use client";
-
 import Image from "next/image";
-import { motion, useReducedMotion } from "framer-motion";
 
 const LOGOS = [1, 2, 3, 4, 5, 6, 7].map((n) => `/graphics/trusted/logo-${n}.svg`);
 
@@ -29,28 +26,21 @@ function LogoRow({ ariaHidden = false }: { ariaHidden?: boolean }) {
   );
 }
 
-/** Edge-to-edge auto-scrolling client-logo marquee (static row on reduced motion). */
+/**
+ * Edge-to-edge auto-scrolling client-logo marquee. Two identical rows are
+ * translated by exactly one row width (-50% of the track) via a CSS keyframe,
+ * so the loop is seamless and runs on the compositor thread (no JS jank).
+ * The global prefers-reduced-motion guard freezes it.
+ */
 export function LogoMarquee({ className = "" }: { className?: string }) {
-  const reduceMotion = useReducedMotion();
-
   return (
     <div
       className={`relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)] ${className}`}
     >
-      {reduceMotion ? (
-        <div className="mx-auto flex max-w-6xl flex-wrap justify-center gap-4 px-4">
-          <LogoRow />
-        </div>
-      ) : (
-        <motion.div
-          className="flex w-max"
-          animate={{ x: ["0%", "-50%"] }}
-          transition={{ duration: 28, ease: "linear", repeat: Infinity }}
-        >
-          <LogoRow />
-          <LogoRow ariaHidden />
-        </motion.div>
-      )}
+      <div className="animate-marquee flex w-max">
+        <LogoRow />
+        <LogoRow ariaHidden />
+      </div>
     </div>
   );
 }

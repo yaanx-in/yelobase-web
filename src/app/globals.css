@@ -161,3 +161,34 @@ body {
 .animate-float {
   animation: float 5s ease-in-out infinite;
 }
+
+/* Seamless client-logo marquee: two identical rows translated by exactly one
+   row width (-50% of the track). Compositor-thread, no JS jank. */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 28s linear infinite;
+  will-change: transform;
+}
+
+/* Very slow, mild glow pulse for the footer wordmark (~5-10% intensity swing). */
+@keyframes wordmark-glow {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 40px rgba(140, 120, 255, 0.16));
+  }
+  50% {
+    filter: drop-shadow(0 0 54px rgba(140, 120, 255, 0.26));
+  }
+}
+
+.animate-wordmark-glow {
+  animation: wordmark-glow 7s ease-in-out infinite;
+}
