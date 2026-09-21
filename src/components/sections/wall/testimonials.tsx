@@ -321,7 +321,7 @@ export function WallTestimonials() {
             role="tablist"
             aria-label="Filter testimonials by category"
             onKeyDown={onKeyDown}
-            className="mx-auto flex w-fit max-w-full flex-wrap items-center justify-center gap-1 rounded-[var(--radius-sm)] border border-[var(--color-border)] bg-[var(--color-surface)] p-1.5 shadow-sm"
+            className="mx-auto flex w-fit max-w-full flex-wrap items-center justify-center gap-1"
           >
             {CATEGORIES.map((cat, i) => {
               const selected = cat === active;
