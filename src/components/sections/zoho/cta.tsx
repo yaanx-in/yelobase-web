@@ -64,7 +64,7 @@ export function ZohoCta() {
               <ButtonLink href="#capabilities" variant="outline" size="lg" className="bg-[var(--color-background)]">
                 Explore AI Automations
               </ButtonLink>
-              <ButtonLink href="/contact" variant="primary" size="lg">
+              <ButtonLink href="/about#contact" variant="primary" size="lg">
                 Schedule Free Consultation
                 <ArrowRight className="size-4" />
               </ButtonLink>
