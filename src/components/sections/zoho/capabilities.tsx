@@ -3,8 +3,6 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import {
-  AnimatePresence,
-  LayoutGroup,
   animate,
   motion,
   useInView,
@@ -114,11 +112,6 @@ const SERVICE_CARDS: ServiceCard[] = [
   },
 ];
 
-const TABS = [
-  { key: "integrations", label: "Custom Integrations & Automations", subline: "Bespoke integrations and automations built for your unique business" },
-  { key: "services", label: "Our Zoho Services", subline: "End-to-end Zoho solutions from initial setup to ongoing optimization" },
-] as const;
-
 const gridParent: Variants = { hidden: {}, show: { transition: { staggerChildren: 0.08 } } };
 const gridChild: Variants = {
   hidden: { opacity: 0, y: 24 },
@@ -226,73 +219,56 @@ function ServiceCardView({ card }: { card: ServiceCard }) {
   );
 }
 
-export function ZohoCapabilities() {
-  const [tab, setTab] = useState<(typeof TABS)[number]["key"]>("integrations");
-  const reduceMotion = useReducedMotion();
-  const current = TABS.find((t) => t.key === tab)!;
+function SectionHeading({ title, subline }: { title: string; subline: string }) {
+  return (
+    <div className="mx-auto max-w-2xl text-center">
+      <h2 className="text-balance text-3xl font-bold tracking-tight text-[var(--color-text-primary)] sm:text-4xl">
+        {title}
+      </h2>
+      <p className="mt-3 text-[var(--color-text-secondary)]">{subline}</p>
+    </div>
+  );
+}
 
+export function ZohoCapabilities() {
   return (
     <section id="capabilities" className="scroll-mt-24 bg-[var(--color-background-warm)] py-[var(--section-padding-y)]">
       <Container>
-        {/* Segmented toggle */}
-        <LayoutGroup>
-          <div className="mx-auto flex w-fit items-center gap-1 rounded-[var(--radius-sm)] border border-[var(--color-border)] bg-[var(--color-background)] p-1">
-            {TABS.map((t) => {
-              const selected = t.key === tab;
-              return (
-                <button
-                  key={t.key}
-                  onClick={() => setTab(t.key)}
-                  aria-pressed={selected}
-                  className={`relative rounded-[var(--radius-2xs)] px-4 py-2 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2 ${
-                    selected ? "text-white" : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]"
-                  }`}
-                >
-                  {selected && (
-                    <motion.span
-                      aria-hidden
-                      layoutId={reduceMotion ? undefined : "cap-pill"}
-                      className="absolute inset-0 z-0 rounded-[var(--radius-2xs)] bg-[var(--color-surface-dark)]"
-                      transition={{ type: "spring", stiffness: 400, damping: 32 }}
-                    />
-                  )}
-                  <span className="relative z-10">{t.label}</span>
-                </button>
-              );
-            })}
-          </div>
-        </LayoutGroup>
+        {/* Custom Integrations & Automations */}
+        <SectionHeading
+          title="Custom Integrations & Automations"
+          subline="Bespoke integrations and automations built for your unique business"
+        />
+        <motion.div
+          variants={gridParent}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "0px 0px -10% 0px" }}
+          className="mt-12 grid gap-6 lg:grid-cols-3"
+        >
+          {STAT_CARDS.map((c) => (
+            <StatCardView key={c.title} card={c} />
+          ))}
+        </motion.div>
 
-        {/* Swapping content */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={tab}
-            initial={reduceMotion ? false : { opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={reduceMotion ? { opacity: 0 } : { opacity: 0, y: -16 }}
-            transition={{ duration: 0.32, ease: EASE_OUT }}
-          >
-            <div className="mx-auto mt-9 max-w-2xl text-center">
-              <h2 className="text-balance text-3xl font-bold tracking-tight text-[var(--color-text-primary)] sm:text-4xl">
-                {current.label}
-              </h2>
-              <p className="mt-3 text-[var(--color-text-secondary)]">{current.subline}</p>
-            </div>
-
-            <motion.div
-              variants={gridParent}
-              initial="hidden"
-              animate="show"
-              className={`mt-12 grid gap-6 ${
-                tab === "integrations" ? "lg:grid-cols-3" : "md:grid-cols-2"
-              }`}
-            >
-              {tab === "integrations"
-                ? STAT_CARDS.map((c) => <StatCardView key={c.title} card={c} />)
-                : SERVICE_CARDS.map((c) => <ServiceCardView key={c.title} card={c} />)}
-            </motion.div>
-          </motion.div>
-        </AnimatePresence>
+        {/* Our Zoho Services */}
+        <div className="mt-20 sm:mt-24">
+          <SectionHeading
+            title="Our Zoho Services"
+            subline="End-to-end Zoho solutions from initial setup to ongoing optimization"
+          />
+        </div>
+        <motion.div
+          variants={gridParent}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "0px 0px -10% 0px" }}
+          className="mt-12 grid gap-6 md:grid-cols-2"
+        >
+          {SERVICE_CARDS.map((c) => (
+            <ServiceCardView key={c.title} card={c} />
+          ))}
+        </motion.div>
       </Container>
     </section>
   );
