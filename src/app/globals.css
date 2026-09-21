@@ -114,6 +114,17 @@ body {
   }
 }
 
+/* Tailwind Preflight resets buttons to the default cursor; restore the
+   pointer on every enabled clickable control so nothing shows the arrow. */
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  label[for],
+  summary {
+    cursor: pointer;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
