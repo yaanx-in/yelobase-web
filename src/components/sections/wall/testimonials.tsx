@@ -9,6 +9,7 @@ import {
 } from "framer-motion";
 import { Container } from "@/components/layout/container";
 import { Star, Quote, MapPin } from "@/components/ui/icon";
+import { cn } from "@/lib/utils";
 
 const EASE_OUT = [0.16, 1, 0.3, 1] as const;
 
@@ -317,43 +318,42 @@ export function WallTestimonials() {
       <Container>
         <LayoutGroup>
           {/* Segmented filter */}
-          <div
-            role="tablist"
-            aria-label="Filter testimonials by category"
-            onKeyDown={onKeyDown}
-            className="mx-auto flex w-fit max-w-full flex-wrap items-center justify-center gap-1"
-          >
-            {CATEGORIES.map((cat, i) => {
-              const selected = cat === active;
-              return (
-                <button
-                  key={cat}
-                  ref={(el) => {
-                    tabRefs.current[i] = el;
-                  }}
-                  role="tab"
-                  id={`${baseId}-tab-${i}`}
-                  aria-selected={selected}
-                  tabIndex={selected ? 0 : -1}
-                  onClick={() => setActive(cat)}
-                  className={`relative rounded-[var(--radius-sm)] px-4 py-2 text-sm font-medium transition-colors duration-[var(--duration-micro)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-offset-2 ${
-                    selected
-                      ? "text-white"
-                      : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]"
-                  }`}
-                >
-                  {selected && (
-                    <motion.span
-                      aria-hidden
-                      layoutId={reduceMotion ? undefined : `${baseId}-pill`}
-                      className="absolute inset-0 z-0 rounded-[var(--radius-sm)] bg-[var(--color-surface-dark)]"
-                      transition={{ type: "spring", stiffness: 400, damping: 32 }}
-                    />
-                  )}
-                  <span className="relative z-10">{cat}</span>
-                </button>
-              );
-            })}
+          {/* Segmented filter — same joined toggle style as the golf
+              Problem / What-we-Build control (bordered box, active = black). */}
+          <div className="flex justify-center overflow-x-auto">
+            <div
+              role="tablist"
+              aria-label="Filter testimonials by category"
+              onKeyDown={onKeyDown}
+              className="flex w-fit shrink-0 overflow-hidden rounded-lg border border-[var(--color-border)] shadow-sm"
+            >
+              {CATEGORIES.map((cat, i) => {
+                const selected = cat === active;
+                return (
+                  <button
+                    key={cat}
+                    ref={(el) => {
+                      tabRefs.current[i] = el;
+                    }}
+                    role="tab"
+                    id={`${baseId}-tab-${i}`}
+                    aria-selected={selected}
+                    tabIndex={selected ? 0 : -1}
+                    onClick={() => setActive(cat)}
+                    className={cn(
+                      "whitespace-nowrap px-4 py-2.5 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple focus-visible:ring-inset",
+                      i !== CATEGORIES.length - 1 &&
+                        "border-r border-[var(--color-border)]",
+                      selected
+                        ? "bg-black text-white"
+                        : "bg-[#fafafa] text-[#252b37] hover:bg-[var(--color-surface)]",
+                    )}
+                  >
+                    {cat}
+                  </button>
+                );
+              })}
+            </div>
           </div>
 
           {/* Masonry grid */}
