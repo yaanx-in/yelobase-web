@@ -57,7 +57,7 @@ export function WallCta({ className }: { className?: string }) {
               </p>
             </div>
             <div className="shrink-0">
-              <ButtonLink href="/contact" variant="primary" size="lg">
+              <ButtonLink href="/about#contact" variant="primary" size="lg">
                 Get started
                 <ArrowRight className="size-4" />
               </ButtonLink>

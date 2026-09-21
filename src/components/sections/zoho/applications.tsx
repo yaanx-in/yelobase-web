@@ -145,7 +145,7 @@ export function ZohoApplications() {
                       </span>
                     ))}
                   </div>
-                  <ButtonLink href="/contact" variant="outline" size="md" className="mt-7">
+                  <ButtonLink href="/about#contact" variant="outline" size="md" className="mt-7">
                     Schedule Now
                     <ArrowRight className="size-4" />
                   </ButtonLink>
