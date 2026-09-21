@@ -57,12 +57,11 @@ export function WallHero() {
             </dl>
           </Stagger.Item>
 
-          {/* Client logo strip same marquee as the home page */}
-          <Stagger.Item>
-            <LogoMarquee className="mt-10" />
-          </Stagger.Item>
         </Stagger>
       </Container>
+
+      {/* Client logo strip full-bleed, edge-to-edge like the home page */}
+      <LogoMarquee className="mt-10" />
     </section>
   );
 }
