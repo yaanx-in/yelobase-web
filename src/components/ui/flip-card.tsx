@@ -29,7 +29,7 @@ export function FlipCard({
           "motion-reduce:transition-none",
         )}
       >
-        <div className="absolute inset-0 flex flex-col rounded-md border border-[var(--color-border-subtle)] bg-[var(--color-surface)] p-6 [backface-visibility:hidden]">
+        <div className="absolute inset-0 flex flex-col rounded-md border border-[var(--color-border-subtle)] bg-[var(--color-background)] p-6 [backface-visibility:hidden]">
           {front}
         </div>
         <div

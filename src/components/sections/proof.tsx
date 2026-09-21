@@ -40,7 +40,7 @@ export function Proof() {
             {STATS.map((stat) => (
               <div
                 key={stat.value}
-                className="flex h-[400px] flex-col overflow-hidden rounded-2xl border border-[var(--color-border-subtle)] bg-[var(--color-background)] p-6 shadow-sm"
+                className="flex h-[400px] flex-col overflow-hidden rounded-2xl border border-[var(--color-border-subtle)] bg-[var(--color-background)] p-6 shadow-sm transition-[transform,box-shadow] duration-[var(--duration-micro)] ease-[var(--ease-out)] motion-safe:hover:-translate-y-1.5 hover:shadow-lg"
               >
                 <p className="font-mono text-[2.6rem] font-bold leading-none tracking-tight text-[var(--color-text-primary)]">
                   {stat.value}
@@ -61,7 +61,7 @@ export function Proof() {
             ))}
 
             {/* Dark highlight stat coral number, avatar cluster, white CTA */}
-            <div className="relative h-[400px] overflow-hidden rounded-2xl bg-gradient-to-br from-[#2b2b2d] to-[#100f12] p-6 text-white shadow-sm">
+            <div className="relative h-[400px] overflow-hidden rounded-2xl bg-gradient-to-br from-[#2b2b2d] to-[#100f12] p-6 text-white shadow-sm transition-[transform,box-shadow] duration-[var(--duration-micro)] ease-[var(--ease-out)] motion-safe:hover:-translate-y-1.5 hover:shadow-lg">
               <p className="font-mono text-[2.6rem] font-bold leading-none tracking-tight text-brand-coral">
                 100%
               </p>

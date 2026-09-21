@@ -106,7 +106,7 @@ export function CustomerStories() {
                 </dl>
               </div>
 
-              <div className="grid gap-6 sm:grid-cols-2">
+              <div className="grid flex-1 gap-6 sm:grid-cols-2">
                 {rest.map((t) => (
                   <div
                     key={t.name}

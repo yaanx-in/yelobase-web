@@ -16,14 +16,14 @@ export function FinalCta() {
               src="/decor/cta-top.webp"
               alt=""
               aria-hidden
-              className="pointer-events-none absolute left-10 top-[-26px] z-20 hidden w-[72px] lg:block"
+              className="animate-float pointer-events-none absolute left-10 top-[-26px] z-20 hidden w-[72px] lg:block"
             />
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/decor/cta-bottom.webp"
               alt=""
               aria-hidden
-              className="pointer-events-none absolute bottom-[-22px] right-[42px] z-20 hidden w-[54px] lg:block"
+              className="animate-float [animation-delay:1.6s] pointer-events-none absolute bottom-[-22px] right-[42px] z-20 hidden w-[54px] lg:block"
             />
 
             <div className="relative z-10 rounded-[24px] bg-[var(--color-surface-dark)] px-7 py-12 shadow-xl sm:px-14">

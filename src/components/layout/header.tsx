@@ -138,7 +138,12 @@ export function Header() {
                 );
                 const menuOpen = openMenu === link.label;
                 return (
-                  <li key={link.label} className="relative">
+                  <li
+                    key={link.label}
+                    className="relative"
+                    onMouseEnter={() => setOpenMenu(link.label)}
+                    onMouseLeave={() => setOpenMenu(null)}
+                  >
                     <button
                       type="button"
                       aria-expanded={menuOpen}
@@ -146,7 +151,7 @@ export function Header() {
                       onClick={() =>
                         setOpenMenu((v) => (v === link.label ? null : link.label))
                       }
-                      className={`inline-flex items-center gap-1 ${linkClass(groupActive)}`}
+                      className={`inline-flex cursor-pointer items-center gap-1 ${linkClass(groupActive)}`}
                     >
                       {link.label}
                       <ChevronDown
@@ -157,13 +162,16 @@ export function Header() {
                     </button>
                     <AnimatePresence>
                       {menuOpen && (
-                        <motion.ul
-                          role="menu"
+                        <motion.div
                           initial={reduceMotion ? false : { opacity: 0, y: 6 }}
                           animate={{ opacity: 1, y: 0 }}
                           exit={reduceMotion ? { opacity: 0 } : { opacity: 0, y: 6 }}
                           transition={{ duration: 0.16, ease: [0.16, 1, 0.3, 1] }}
-                          className="absolute left-0 top-full z-50 mt-3 min-w-[200px] rounded-xl border border-[var(--color-border-subtle)] bg-[var(--color-background)] p-2 shadow-lg"
+                          className="absolute left-0 top-full z-50 pt-3"
+                        >
+                        <ul
+                          role="menu"
+                          className="min-w-[200px] rounded-xl border border-[var(--color-border-subtle)] bg-[var(--color-background)] p-2 shadow-lg"
                         >
                           {link.children.map((child) => {
                             const active =
@@ -186,7 +194,8 @@ export function Header() {
                               </li>
                             );
                           })}
-                        </motion.ul>
+                        </ul>
+                        </motion.div>
                       )}
                     </AnimatePresence>
                   </li>
