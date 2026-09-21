@@ -346,7 +346,7 @@ export function WallTestimonials() {
                         "border-r border-[var(--color-border)]",
                       selected
                         ? "bg-black text-white"
-                        : "bg-[#fafafa] text-[#252b37] hover:bg-[var(--color-surface)]",
+                        : "bg-white text-[#252b37] hover:bg-[var(--color-surface)]",
                     )}
                   >
                     {cat}
