@@ -32,7 +32,7 @@ export function WallCta({ className }: { className?: string }) {
             width={73}
             height={58}
             unoptimized
-            className="pointer-events-none absolute -top-6 left-6 h-auto w-[58px] sm:left-8 sm:w-[73px]"
+            className="animate-float pointer-events-none absolute -top-6 left-6 h-auto w-[58px] sm:left-8 sm:w-[73px]"
           />
           <Image
             src="/decor/cta-coin.svg"
@@ -41,7 +41,7 @@ export function WallCta({ className }: { className?: string }) {
             width={57}
             height={64}
             unoptimized
-            className="pointer-events-none absolute -bottom-6 right-8 h-auto w-[46px] sm:right-12 sm:w-[57px]"
+            className="animate-float [animation-delay:1.6s] pointer-events-none absolute -bottom-6 right-8 h-auto w-[46px] sm:right-12 sm:w-[57px]"
           />
 
           <div className="relative z-10 flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">

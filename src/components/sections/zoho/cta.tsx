@@ -22,22 +22,28 @@ export function ZohoCta() {
           transition={{ duration: 0.45, ease: EASE_OUT }}
           className="relative rounded-[24px] bg-[#d9d9d9] px-7 py-12 sm:px-14 lg:py-14"
         >
-          {/* 3D decor objects peeking out of the corners */}
-          <Image
-            src="/graphics/zoho/cta-chalk.webp"
-            alt=""
+          {/* 3D decor objects peeking out of the corners (mild floating).
+              The chalk floats via a wrapper so its rotation is preserved
+              (animate-float sets transform: translateY and would override it). */}
+          <span
             aria-hidden
-            width={146}
-            height={116}
-            className="pointer-events-none absolute -top-6 left-8 w-16 -rotate-[8deg] sm:w-20"
-          />
+            className="animate-float pointer-events-none absolute -top-6 left-8"
+          >
+            <Image
+              src="/graphics/zoho/cta-chalk.webp"
+              alt=""
+              width={146}
+              height={116}
+              className="block w-16 -rotate-[8deg] sm:w-20"
+            />
+          </span>
           <Image
             src="/graphics/zoho/cta-ring.webp"
             alt=""
             aria-hidden
             width={114}
             height={128}
-            className="pointer-events-none absolute -bottom-6 right-10 w-12 sm:w-14"
+            className="animate-float [animation-delay:1.6s] pointer-events-none absolute -bottom-6 right-10 w-12 sm:w-14"
           />
 
           <div className="relative z-10 flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
